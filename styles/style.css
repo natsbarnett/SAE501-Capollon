@@ -1,10 +1,16 @@
-:root{
-    --gold : #DAA520;
-    --noir : #1E1E1E;
-    --white : #FBFBFB;
+:root {
+    --gold: #DAA520;
+    --gold-clair: #e8b533;
+    --noir: #1E1E1E;
+    --noir-profond: #000;
+    --white: #FBFBFB;
+    --border-radius: 8px
 }
 
-body{
+/*
+    Elements de base
+*/
+body {
     background-color: var(--noir);
     color: var(--white);
     font-family: "Raleway", sans-serif;
@@ -12,10 +18,11 @@ body{
     font-style: normal;
 }
 
-main{
+main {
     margin: 0 5vw;
 }
 
+/********************************************************************   Titres */
 h1,
 h2,
 h3,
@@ -28,7 +35,117 @@ h6 {
     font-style: normal;
 }
 
-p{
+h1 {
+    font-size: 50px
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+/********************************************************************   Texte */
+p {
     color: var(--white);
 }
 
+
+.text-right{
+    text-align: right;
+}
+
+/**********************************************************************
+    Classes personnalisées
+***********************************************************************/
+
+/********************************************************************   Liste des produits*/
+.list-prod {
+    display: flex;
+    justify-content: space-evenly;
+    row-gap: 40px;
+    column-gap: 10px;
+    flex-wrap: wrap;
+}
+
+/********************************************************************   Cartes des produits*/
+.product-card {
+    flex: 0 0 29%;
+    min-width: 300px;
+}
+.card-image{
+    width: 400px;
+    height: 400px;
+}
+
+.card-image img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.card-body {
+    padding: 5px 10px;
+}
+
+.voir-plus-prod {
+    display: block !important;
+    background-color: var(--gold);
+    padding: 10px 20px;
+    display: flex;
+    text-align: center;
+    font-family: "Marcellus", serif;
+    border-radius: var(--border-radius);
+    transition: 0.2s ease-in-out;
+    flex: 1;
+    color: var(--noir);
+    text-decoration: none;
+}
+
+.voir-plus-prod:hover {
+    background-color: var(--gold-clair);
+}
+
+/********************************************************************   Barre de recherche */
+
+.barre-recherche{
+    display: flex;
+}
+
+.recherche{
+    flex: 0 0 95%;
+    background-color: var(--noir);
+    border: 2px solid var(--gold);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+}
+
+.search-button{
+    flex: 0 0 5%;
+    background: url('../assets/search.svg') no-repeat center right;
+}
+
+/********************************************************************   Pagination */
+.pagination, .pages-pagination{
+    display: flex;
+    gap: 1%;
+    font-size: 20px;
+}
+
+.page-active{
+    color: var(--gold);
+}
+
+.btn-pagination{
+    color: var(--gold);
+    background-color: transparent;
+    border: none;
+    transition: 0.2s ease-in-out;
+}
+
+.btn-pagination:hover{
+    color: var(--gold-clair);
+}
