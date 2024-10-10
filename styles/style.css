@@ -2,6 +2,7 @@
     --gold: #DAA520;
     --gold-clair: #e8b533;
     --noir: #1E1E1E;
+    --header: #1e1e1ebd;
     --noir-profond: #000;
     --white: #FBFBFB;
     --border-radius: 8px;
@@ -11,6 +12,11 @@
 /*
     Elements de base
 */
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--noir);
     color: var(--white);
@@ -22,6 +28,50 @@ body {
 
 main {
     margin: 0 5vw;
+}
+
+/********************************************************************   Header */
+header {
+    background: var(--header);
+    position: sticky;
+    padding: var(--padding);
+    transition: 0.2s ease-in-out;
+}
+
+header:hover {
+    background: var(--noir);
+}
+
+header div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    width: 50px;
+}
+
+.header-links {
+    display: flex;
+    width: 21.5rem;
+    height: 3.1875rem;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.3125rem;
+    flex-shrink: 0;
+    font-family: "Marcellus", serif;
+}
+
+.header-links a {
+    color: var(--gold);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+
+.header-links a:hover {
+    color: var(--gold-clair);
 }
 
 /********************************************************************   Titres */
@@ -212,33 +262,15 @@ p {
     resize: none;
 }
 
-.contact-form .submit-container {
-    text-align: right;
+.submit-container {
+    display: flex;
+    justify-content: right;
 }
 
-.contact-form input[type=submit] {
-    background-color: var(--gold);
-    padding: var(--padding);
-    border: none;
-    border-radius: var(--border-radius);
-    font-family: 'Marcellus', 'serif';
-    font-size: 15px;
-    min-width: 15vw;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-}
-
-.contact-form input[type=submit]:hover {
-    background-color: var(--gold-clair) !important;
-}
 
 /********************************************************************   Fiche produit */
 
-#fiche-produit {
-    float: right;
-    border-left: 2px solid var(--gold);
-    padding-left: 40px;
-}
+
 
 #fiche-produit div {
     margin: 2vh auto;
@@ -292,7 +324,8 @@ p {
     align-items: center;
 }
 
-#fiche-produit .panier .nombre {
+#fiche-produit .panier .nombre,
+.panier-infos .qnt {
     flex: 0 0 47%;
     border: 2px solid var(--gold);
     display: flex;
@@ -300,7 +333,8 @@ p {
     border-radius: var(--border-radius);
 }
 
-#fiche-produit input[type=number] {
+#fiche-produit input[type=number],
+.panier-infos input[type=number] {
     font-size: 20px;
     border: none !important;
     max-width: 50px;
@@ -311,15 +345,18 @@ p {
     flex: 1;
 }
 
-#fiche-produit input[type=number]:focus {
+#fiche-produit input[type=number]:focus,
+.panier-infos input[type=number]:focus {
     outline: none !important;
 }
 
-#fiche-produit input[type=number]::-webkit-inner-spin-button {
+#fiche-produit input[type=number]::-webkit-inner-spin-button,
+.panier-infos input[type=number]::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
 
-#fiche-produit .panier .nombre button {
+#fiche-produit .panier .nombre button,
+.panier-infos button {
     background-color: var(--gold);
     border: none;
     font-size: 25px;
@@ -419,7 +456,7 @@ p {
     font-family: 'Marcellus', 'serif';
 }
 
-.comment-section .infos .note{
+.comment-section .infos .note {
     display: flex;
     gap: 1%;
     margin: 0px auto 10px;
@@ -432,7 +469,7 @@ p {
     height: 20px;
 }
 
-.comment-section .infos .star-full{
+.comment-section .infos .star-full {
     background: url('../assets/star-full.svg') no-repeat center center;
     background-size: contain;
     width: 20px;
@@ -440,13 +477,146 @@ p {
 }
 
 
-.comment-section .commentaire .corps .titre{
+.comment-section .commentaire .corps .titre {
     font-family: 'Marcellus', 'serif';
     color: var(--gold);
     font-size: 20px;
     margin: 0px auto 15px;
 }
 
+
+
+/********************************************************************   Page panier */
+
+
+
+.panier-aside .infos,
+.panier-aside .livraison,
+.panier-aside .total {
+    display: flex;
+    margin: 3vh auto;
+}
+
+.panier-aside .infos div,
+.panier-aside .livraison div,
+.panier-aside .total div {
+    flex: 0 0 50%;
+}
+
+
+.panier-aside .infos div:first-child,
+.panier-aside .livraison div:first-child,
+.panier-aside .total div:first-child {
+    font-family: 'Marcellus', 'serif';
+    color: var(--gold);
+    font-size: 16px;
+}
+
+.panier-aside .total {
+    border-top: .5px solid var(--gold);
+    padding-top: 25px;
+}
+
+.panier-aside .commande-btn {
+    margin-top: 5vh !important;
+}
+
+
+.panier-list {
+    max-width: 50vw;
+}
+
+.panier-list .panier-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    margin: 5% auto;
+}
+
+.panier-list .image-panier {
+    flex: 0 0 40%;
+}
+
+.panier-list .image-panier .image {
+    width: 300px;
+    height: 300px;
+}
+
+.panier-list .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.panier-list .panier-infos {
+    flex: 0 0 45%;
+}
+
+.panier-list .qnt-trash {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.panier-list .qnt-trash .qnt {
+    flex: 0 0 60%;
+}
+
+.panier-list .qnt-trash .trash {
+    flex: 0 0 20%;
+    background: url('../assets/trash.svg') no-repeat center right;
+    width: 100%;
+}
+
+.panier-card .prix-tot {
+    font-size: 40px;
+    margin-top: 5vh;
+}
+
+.panier-card .prix-unitaire {
+    font-size: 20px;
+}
+
+/******************************************************************************* Page gammes */
+
+/******************************************************************************* Boutons */
+
+
+.btn {
+    display: block;
+    text-align: center;
+    background-color: var(--gold);
+    color: var(--noir);
+    font-family: 'Marcellus', 'serif';
+    font-size: 15px;
+    text-decoration: none;
+    padding: var(--padding);
+    min-width: 15vw;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+
+.btn:hover {
+    background-color: var(--gold-clair) !important;
+}
+
+
+@media (min-width:1127px) {
+    .panier-aside {
+        float: right;
+        border-left: 2px solid var(--gold);
+        padding-left: 50px;
+        width: 15vw;
+    }
+
+    #fiche-produit {
+        float: right;
+        border-left: 2px solid var(--gold);
+        padding-left: 40px;
+    }
+}
 
 
 
