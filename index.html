@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Document</title>
+    <title>Styles prédéfinis</title>
 
     <!--Ajouter dans le head des pages-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,6 +21,10 @@
 
 <body>
     <main>
+
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                       Texte et titres                                    -->
+        <!---------------------------------------------------------------------------------------------->
         <section>
             <h1>Test de h1</h1>
             <h2>Test de h2</h2>
@@ -33,10 +37,14 @@
                 ullam corporis eos?</p>
         </section>
 
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                      Liste des produits                                  -->
+        <!---------------------------------------------------------------------------------------------->
         <section>
             <div class="list-prod">
                 <div class="product-card">
-                    <div class="card-image"><img src="https://placehold.co/500x400.png" alt="image-placeholder" width="100%"></div>
+                    <div class="card-image"><img src="https://placehold.co/500x400.png" alt="image-placeholder"
+                            width="100%"></div>
                     <div class="card-body">
                         <h3>Nom produit</h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil nostrum assumenda a soluta
@@ -46,7 +54,8 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="card-image"><img src="https://placehold.co/400x400.png" alt="image-placeholder" width="100%"></div>
+                    <div class="card-image"><img src="https://placehold.co/400x400.png" alt="image-placeholder"
+                            width="100%"></div>
                     <div class="card-body">
                         <h3>Nom produit</h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil nostrum assumenda a soluta
@@ -56,7 +65,8 @@
                     </div>
                 </div>
                 <div class="product-card">
-                    <div class="card-image"><img src="https://placehold.co/400x600.png" alt="image-placeholder" width="100%"></div>
+                    <div class="card-image"><img src="https://placehold.co/400x600.png" alt="image-placeholder"
+                            width="100%"></div>
                     <div class="card-body">
                         <h3>Nom produit</h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil nostrum assumenda a soluta
@@ -67,7 +77,9 @@
                 </div>
             </div>
         </section>
-
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                        Texte accueil                                     -->
+        <!---------------------------------------------------------------------------------------------->
         <section>
             <div class="histoire">
                 <h2>Notre histoire</h2>
@@ -82,7 +94,9 @@
                     eligendi totam vitae.</p>
             </div>
         </section>
-
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                      Barre recherche                                     -->
+        <!---------------------------------------------------------------------------------------------->
         <section>
             <div class="barre-recherche">
                 <input type="text" class="recherche">
@@ -90,7 +104,9 @@
             </div>
         </section>
 
-
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                    Pagination produits                                   -->
+        <!---------------------------------------------------------------------------------------------->
         <section>
             <div class="pagination">
                 <button class="btn-pagination">⟪</button>
@@ -100,6 +116,141 @@
                     <div class="page">45</div>
                 </div>
                 <button class="btn-pagination">⟫</button>
+            </div>
+        </section>
+
+
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                    Formulaire contact                                    -->
+        <!---------------------------------------------------------------------------------------------->
+        <section>
+            <div class="contact-form">
+                <form action="">
+                    <div>
+                        <label for="nom">
+                            <span></span>
+                            <input type="text" name="nom" id="nom" placeholder="Votre nom" required>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="mail">
+                            <span></span>
+                            <input type="email" name="email" id="mail" placeholder="Votre email" required>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="contenu">
+                            <span></span>
+                            <textarea name="contenu" id="contenu" placeholder="Votre message" required></textarea>
+                        </label>
+                    </div>
+                    <div class="submit-container">
+                        <input type="submit" value="Envoyer">
+                    </div>
+                </form>
+            </div>
+        </section>
+
+
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                      Fiche produit                                       -->
+        <!---------------------------------------------------------------------------------------------->
+        <section>
+            <aside id="fiche-produit">
+                <h1>Produit</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <div class="prix-gamme">
+                    <span class="prix">12.00 €</span>
+                    <div class="gammes-list">
+                        <small class="gamme">Gamme</small>
+                        <small class="gamme">Gamme</small>
+                    </div>
+                </div>
+                <div class="choix-taille">
+                    <div value="s" class="taille-capote">
+                        <label for="taille-s">
+                            <img src="assets/capotes/taille-s.svg" alt="">
+                            <span>S</span>
+                            <input type="checkbox" name="taille" id="taille-s" value="s">
+                        </label>
+                    </div>
+                    <div value="m" class="taille-capote">
+                        <label for="taille-m">
+                            <img src="assets/capotes/taille-m.svg" alt="">
+                            <span>M</span>
+                            <input type="checkbox" name="taille" id="taille-m" value="m">
+                        </label>
+                    </div>
+                    <div value="l" class="taille-capote">
+                        <label for="taille-l" class="taille-capote">
+                            <img src="assets/capotes/taille-l.svg" alt="">
+                            <span>L</span>
+                            <input type="checkbox" name="taille" id="taille-l" value="l">
+                        </label>
+                    </div>
+                    <div value="xl" class="taille-capote">
+                        <label for="taille-xl" class="taille-capote">
+                            <img src="assets/capotes/taille-xl.svg" alt="">
+                            <span>XL</span>
+                            <input type="checkbox" name="taille" id="taille-xl" value="xl">
+                        </label>
+                    </div>
+                </div>
+                <div class="panier">
+                    <div class="nombre">
+                        <button>-</button>
+                        <label for="qnt">
+                            <input type="number" name="quantite" id="qnt" max="999" min="0" placeholder="0">
+                        </label>
+                        <button>+</button>
+                    </div>
+                    <div class="ajout">
+                        <a href="#" class="ajout-panier">Ajouter au panier</a>
+                    </div>
+                </div>
+            </aside>
+            <div class="image-produit">
+                <div class="image">
+                    <img src="https://placehold.co/500x500.png" alt="image-placeholder" width="100%">
+                </div>
+            </div>
+            <p class="description-prod">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi adipisci ad
+                temporibus. Facilis laboriosam quaerat quam! Deserunt doloribus ratione, eos ducimus nobis dolor natus
+                voluptates asperiores a officia similique distinctio! Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Possimus aspernatur eveniet obcaecati totam magnam iste porro impedit dolorum. In velit voluptates
+                ipsam. Ipsam qui sequi ut at omnis doloremque assumenda. Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Quisquam quidem laboriosam itaque harum numquam, modi alias est dignissimos non eaque
+                quas facere asperiores explicabo quos, dolorum delectus facilis eligendi vitae? Lorem ipsum dolor sit
+                amet consectetur, adipisicing elit. Eaque ea repellat porro cumque aspernatur similique tempora
+                consequatur odit asperiores, quia consectetur in fuga cum itaque delectus perferendis omnis dicta
+                aliquid!</p>
+            <div class="comment-section">
+                <h2>Donnez votre avis</h2>
+                <div class="rediger">
+                    <a href="#" class="bouton-commentaire">Rédigez un commentaire</a>
+                </div>
+                <div class="commentaires">
+                    <div class="nombre"><span id="nb-comm">1</span> commentaire<span id="multi-comms">s</span></div>
+                    <div class="commentaire">
+                        <div class="infos">
+                            <div class="note">
+                                <div class="star-full"></div>
+                                <div class="star-full"></div>
+                                <div class="star-full"></div>
+                                <div class="star-full"></div>
+                                <div class="star"></div>
+                            </div>
+                            <div class="date">24/09/24</div>
+                            <div class="nom">Par J. Doe</div>
+                        </div>
+                        <div class="corps">
+                            <div class="titre">Magnifique thème de btp !</div>
+                            <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad vero quis
+                                sunt eveniet, odit fugit modi aut aspernatur nobis ipsam iste aperiam perferendis soluta
+                                voluptates repudiandae eos dignissimos sequi vitae? </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

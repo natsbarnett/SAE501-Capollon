@@ -4,7 +4,8 @@
     --noir: #1E1E1E;
     --noir-profond: #000;
     --white: #FBFBFB;
-    --border-radius: 8px
+    --border-radius: 8px;
+    --padding: 10px 20px;
 }
 
 /*
@@ -15,6 +16,7 @@ body {
     color: var(--white);
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
+    max-width: calc(100vw - (100vw - 100%));
     font-style: normal;
 }
 
@@ -53,7 +55,7 @@ p {
 }
 
 
-.text-right{
+.text-right {
     text-align: right;
 }
 
@@ -74,13 +76,15 @@ p {
 .product-card {
     flex: 0 0 29%;
     min-width: 300px;
-}
-.card-image{
-    width: 400px;
-    height: 400px;
+    max-width: 300px;
 }
 
-.card-image img{
+.card-image {
+    width: 300px;
+    height: 300px;
+}
+
+.card-image img {
     object-fit: cover;
     height: 100%;
     width: 100%;
@@ -93,7 +97,7 @@ p {
 .voir-plus-prod {
     display: block !important;
     background-color: var(--gold);
-    padding: 10px 20px;
+    padding: var(--padding);
     display: flex;
     text-align: center;
     font-family: "Marcellus", serif;
@@ -110,42 +114,348 @@ p {
 
 /********************************************************************   Barre de recherche */
 
-.barre-recherche{
+.barre-recherche {
     display: flex;
+    max-width: 95%;
 }
 
-.recherche{
-    flex: 0 0 95%;
+.recherche {
+    flex: 0 0 80%;
     background-color: var(--noir);
     border: 2px solid var(--gold);
     color: var(--white);
-    padding: 10px 20px;
+    padding: var(--padding);
     border-radius: var(--border-radius);
 }
 
-.search-button{
-    flex: 0 0 5%;
+.recherche:focus {
+    outline: none !important;
+}
+
+.search-button {
+    flex: 0 0 20%;
     background: url('../assets/search.svg') no-repeat center right;
 }
 
+@media (min-width:1050px) {
+    .recherche {
+        flex: 0 0 95%;
+    }
+
+    .search-button {
+        flex: 0 0 5%;
+    }
+}
+
 /********************************************************************   Pagination */
-.pagination, .pages-pagination{
+.pagination,
+.pages-pagination {
     display: flex;
-    gap: 1%;
+    gap: 2%;
     font-size: 20px;
 }
 
-.page-active{
+.page-active {
     color: var(--gold);
 }
 
-.btn-pagination{
+.btn-pagination {
     color: var(--gold);
     background-color: transparent;
     border: none;
     transition: 0.2s ease-in-out;
 }
 
-.btn-pagination:hover{
+.btn-pagination:hover {
     color: var(--gold-clair);
+}
+
+/********************************************************************   formulaire de contact */
+
+.contact-form form {
+    max-width: 100%;
+}
+
+.contact-form div {
+    margin: 10px auto;
+}
+
+.contact-form input[type=text],
+.contact-form input[type=email],
+.contact-form textarea {
+    width: 100%;
+    border: 2px solid var(--gold);
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    color: var(--white);
+    padding: var(--padding);
+    font-size: 15px;
+}
+
+.contact-form input[type=text]:focus,
+.contact-form input[type=email]:focus,
+.contact-form textarea:focus {
+    outline: none !important;
+}
+
+
+.contact-form input[type=text],
+.contact-form input[type=email] {
+    font-family: "Marcellus", serif;
+}
+
+.contact-form textarea {
+    font-family: "Raleway", sans-serif;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 25vh;
+    resize: none;
+}
+
+.contact-form .submit-container {
+    text-align: right;
+}
+
+.contact-form input[type=submit] {
+    background-color: var(--gold);
+    padding: var(--padding);
+    border: none;
+    border-radius: var(--border-radius);
+    font-family: 'Marcellus', 'serif';
+    font-size: 15px;
+    min-width: 15vw;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.contact-form input[type=submit]:hover {
+    background-color: var(--gold-clair) !important;
+}
+
+/********************************************************************   Fiche produit */
+
+#fiche-produit {
+    float: right;
+    border-left: 2px solid var(--gold);
+    padding-left: 40px;
+}
+
+#fiche-produit div {
+    margin: 2vh auto;
+}
+
+#fiche-produit .prix-gamme {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1%;
+    align-items: center;
+}
+
+
+#fiche-produit .prix {
+    font-size: 25px;
+    flex: 0 0 30%;
+}
+
+#fiche-produit .gammes-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    flex: 0 0 65%;
+}
+
+#fiche-produit .gammes-list .gamme {
+    color: var(--gold);
+    padding: var(--padding);
+    border: 1px solid var(--gold);
+    border-radius: var(--border-radius);
+}
+
+#fiche-produit .choix-taille {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5%;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+#fiche-produit .taille-capote label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#fiche-produit .panier {
+    display: flex;
+    gap: 5%;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#fiche-produit .panier .nombre {
+    flex: 0 0 47%;
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    border-radius: var(--border-radius);
+}
+
+#fiche-produit input[type=number] {
+    font-size: 20px;
+    border: none !important;
+    max-width: 50px;
+    text-align: center;
+    height: fit-content;
+    background-color: transparent;
+    color: var(--white);
+    flex: 1;
+}
+
+#fiche-produit input[type=number]:focus {
+    outline: none !important;
+}
+
+#fiche-produit input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#fiche-produit .panier .nombre button {
+    background-color: var(--gold);
+    border: none;
+    font-size: 25px;
+    width: 50px;
+    text-align: center;
+    flex: 1;
+}
+
+#fiche-produit .panier .ajout {
+    flex: 0 0 47%;
+}
+
+#fiche-produit .panier .ajout a {
+    display: block;
+    text-align: center;
+    background-color: var(--gold);
+    color: var(--noir);
+    font-family: 'Marcellus', 'serif';
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+    width: 100%;
+    transition: 0.2s ease-in-out;
+}
+
+#fiche-produit .panier .ajout a:hover {
+    background-color: var(--gold-clair);
+}
+
+.image-produit {
+    background: url('../assets/cadre.svg') no-repeat center center;
+    background-size: 550px 550px;
+    padding: 50px 50px;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    margin: 10vh auto;
+}
+
+.image-produit .image {
+    max-width: 500px;
+    max-height: 500px;
+}
+
+.image-produit .image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.description-prod {
+    margin: auto 8vw;
+}
+
+.comment-section {
+    margin: auto 7vw;
+}
+
+.comment-section .rediger a {
+    display: block;
+    padding: var(--padding);
+    padding-left: 50px;
+    background: var(--gold) url('../assets/comment.svg') no-repeat 10px center;
+    width: fit-content;
+    border-radius: var(--border-radius);
+    font-family: 'Marcellus', 'serif';
+    color: var(--noir);
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+    margin: 2vh auto;
+}
+
+.comment-section .rediger a:hover {
+    background: var(--gold-clair) url('../assets/comment.svg') no-repeat 10px center;
+}
+
+
+.comment-section .commentaires .nombre {
+    color: var(--gold);
+    font-family: 'Marcellus', 'serif';
+    font-size: 20px;
+}
+
+.comment-section .commentaires .nombre #multi-comms {
+    display: none;
+}
+
+.comment-section .commentaire {
+    display: flex;
+    align-items: flex-start;
+    gap: 5%;
+    margin-top: 15px;
+}
+
+.comment-section .commentaire .infos {
+    flex: 0 0 20%;
+    font-family: 'Marcellus', 'serif';
+}
+
+.comment-section .infos .note{
+    display: flex;
+    gap: 1%;
+    margin: 0px auto 10px;
+}
+
+.comment-section .infos .star {
+    background: url('../assets/star.svg') no-repeat center center;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+}
+
+.comment-section .infos .star-full{
+    background: url('../assets/star-full.svg') no-repeat center center;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+}
+
+
+.comment-section .commentaire .corps .titre{
+    font-family: 'Marcellus', 'serif';
+    color: var(--gold);
+    font-size: 20px;
+    margin: 0px auto 15px;
+}
+
+
+
+
+
+
+/*****************************************************************************************
+Rien à voir avec le style prédéfini
+******************************************************************************************/
+
+section {
+    margin: 10vh auto;
 }
