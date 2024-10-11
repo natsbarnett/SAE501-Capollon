@@ -21,6 +21,7 @@
 
 <body>
     <header>
+        <button>Menu</button>
         <div>
             <div><a href="#"><img src="assets/logo.svg" alt="logo" class="logo"></a></div>
             <div class="header-links">
@@ -368,7 +369,138 @@
                 </div>
             </div>
         </section>
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                     Page login                                           -->
+        <!---------------------------------------------------------------------------------------------->
+        <section>
+            <h1>Vous connecter</h1>
+            <div class="login-form">
+                <form action="">
+                    <label for="email">
+                        <span>Email</span>
+                        <input type="email" name="" id="" placeholder="john.doe@example.com" required>
+                    </label>
+                    <label for="password">
+                        <span>Mot de passe</span>
+                        <div>
+                            <input type="password" name="" id="" placeholder="***" required>
+                            <button class="btn">Afficher</button>
+                        </div>
+                    </label>
+                    <span><a href="#">Mot de passe oublié ?</a></span>
+                    <input type="submit" value="Se connecter" class="btn">
+                </form>
+                <div id="pas-compte">
+                    <p>Pas de compte ? </p><a href="#">Créez-en un !</a>
+                </div>
+            </div>
+        </section>
+
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                    Page register                                         -->
+        <!---------------------------------------------------------------------------------------------->
+        <section>
+            <h1>Créer un compte</h1>
+            <div id="connect">
+                <p>Vous avez déjà un compte ? </p><a href="#">Connectez-vous</a>
+            </div>
+            <div class="form-register">
+                <form action="">
+                    <div id="civilite">
+                        <span>Titre</span>
+                        <div>
+                            <label for="titre-m">
+                                <input type="radio" name="titre" id="titre-m" value="M" required>
+                                <span>M.</span>
+                            </label>
+                            <label for="titre-mme">
+                                <input type="radio" name="titre" id="titre-mme" value="Mme" required>
+                                <span>Mme</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="prenom">
+                            <span>Prénom</span>
+                            <input type="text" name="prenom" id="prenom" required placeholder="John">
+                        </label>
+                    </div>
+                    <div>
+                        <label for="lastname">
+                            <span>Nom de famille</span>
+                            <input type="text" name="lastname" id="lastname" required placeholder="Doe">
+                        </label>
+                    </div>
+                    <div>
+                        <label for="email">
+                            <span>E-mail</span>
+                            <input type="email" name="email" id="email" required placeholder="john.doe@example.com">
+                        </label>
+                    </div>
+                    <div>
+                        <label for="password">
+                            <span>Mot de passe</span>
+                            <div>
+                                <input type="password" name="password" id="password" required placeholder="***">
+                                <button class="btn">Afficher</button>
+                            </div>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="dob">
+                            <span>Date de naissance</span>
+                            <input type="date" name="dob" id="dob">
+                        </label>
+                    </div>
+                    <div class="checks">
+                        <div>
+                            <label for="offres-partenaires">
+                                <input type="checkbox" name="inscription-accept" id="offres-partenaires">
+                                <span>Recevoir des offres de nos partenaires</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label for="cgv-pc">
+                                <input type="checkbox" name="inscription-accept" id="cgv-pc" required>
+                                <span>J'accepte les conditions générales et la politique de confidentialité</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label for="newsletter">
+                                <input type="checkbox" name="inscription-accept" id="newsletter">
+                                <div class="form-col">
+                                    <span>Recevoir notre newsletter</span>
+                                    <span class="italique">Vous pouvez vous désinscrire à tout moment. Vous trouverez
+                                        pour cela nos informations de contact dans les conditions d'utilisation du
+                                        site.</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div>
+                            <label for="message-donnees">
+                                <input type="checkbox" name="inscription-accept" id="message-donnees" required>
+                                <div class="form-col">
+                                    <span>Message concernant la confidentialité des données clients</span>
+                                    <span class="italique">Conformément aux dispositions de la loi du n°78-17 du 6
+                                        janvier 1978, vous disposez d'un droit d'accès, de rectification et d'opposition
+                                        sur les données nominatives vous concernant.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <input type="submit" value="S'inscrire" class="btn">
+                </form>
+            </div>
+        </section>
     </main>
+    <footer>
+        <img src="assets/logo-long.svg" alt="logo capollon" width="100px">
+        <div>
+            <div><a href="#">Mentions légales</a></div>
+            <div><a href="#">Politique de confidentialité</a></div>
+            <div><a href="#">Conditions générales de vente</a></div>
+        </div>
+    </footer>
 </body>
 
 </html>

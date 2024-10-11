@@ -24,6 +24,7 @@ body {
     font-optical-sizing: auto;
     max-width: calc(100vw - (100vw - 100%));
     font-style: normal;
+    margin: 0;
 }
 
 main {
@@ -32,10 +33,13 @@ main {
 
 /********************************************************************   Header */
 header {
-    background: var(--header);
     position: sticky;
+    top: 0;
+    left: 0 !important;
+    background: var(--header);
     padding: var(--padding);
     transition: 0.2s ease-in-out;
+    margin: 0 !important;
 }
 
 header:hover {
@@ -72,6 +76,59 @@ header img {
 
 .header-links a:hover {
     color: var(--gold-clair);
+}
+
+@media (min-width:900px) {
+    header button {
+        display: none;
+    }
+}
+
+/********************************************************************   Footer */
+
+footer {
+    padding: var(--padding);
+    max-width: 100%;
+    background-color: var(--noir-profond);
+}
+
+@media (max-width:999px) {
+    footer img {
+        width: 50%;
+    }
+}
+
+footer div a {
+    color: var(--gold);
+    display: block;
+    text-decoration: none;
+    font-family: "Marcellus", serif;
+    transition: 0.2s ease-in-out;
+}
+
+footer a:hover {
+    color: var(--gold-clair);
+}
+
+@media (min-width:1000px) {
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    footer img {
+        flex: 0 0 30%;
+        max-width: 200px;
+    }
+
+    footer div {
+        flex: 0 0 70% !important;
+    }
+
+    footer div a {
+        text-align: right;
+    }
 }
 
 /********************************************************************   Titres */
@@ -576,7 +633,234 @@ p {
     font-size: 20px;
 }
 
-/******************************************************************************* Page gammes */
+/******************************************************************************* Page login */
+.login-form form {
+    max-width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (min-width:1000px) {
+    .login-form form {
+        max-width: 60% !important;
+    }
+}
+
+.login-form form label,
+.form-register form label,
+.form-register form #civilite {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 1vh 0;
+}
+
+
+.login-form label span,
+.form-register label span {
+    flex: 0 0 30%;
+    font-family: 'Marcellus', 'serif';
+}
+
+.login-form label input[type=email],
+.form-register label input[type=email],
+.form-register label input[type=text],
+.form-register label input[type=date] {
+    flex: 1;
+}
+
+.login-form label div,
+.form-register label div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1%;
+    flex: 1;
+}
+
+.login-form label div input[type=password],
+.form-register label div input[type=password] {
+    flex: 1;
+}
+
+
+@media (min-width:500px) {
+
+    .login-form label div button,
+    .form-register label div button {
+        flex: 0 0 10%;
+    }
+
+
+}
+
+.login-form input[type=submit],
+.form-register input[type=submit] {
+    display: block;
+    margin: 0 auto;
+}
+
+.login-form input[type=password],
+.login-form input[type=email],
+.form-register label input[type=text],
+.form-register label input[type=date],
+.form-register label input[type=password],
+.form-register input[type=email] {
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    height: fit-content;
+    background-color: transparent;
+    color: var(--white);
+    border: 3px solid var(--gold);
+}
+
+
+.login-form form a {
+    color: var(--gold);
+    text-decoration: none;
+    font-family: 'Marcellus', 'serif';
+    display: block;
+    text-align: center;
+    margin: 5vh auto;
+    transition: 0.2s ease-in-out;
+}
+
+.login-form form a:hover {
+    color: var(--gold-clair);
+}
+
+.login-form form input:focus,
+.form-register form input:focus {
+    outline: none !important;
+}
+
+#pas-compte {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Marcellus', 'serif';
+    gap: 10px;
+}
+
+#pas-compte a {
+    display: inline-block;
+    color: var(--gold);
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+
+#pas-compte a:hover {
+    color: var(--gold-clair);
+}
+
+
+/******************************************************************************* Page register */
+
+#connect {
+    display: flex;
+    align-items: center;
+    font-family: "Marcellus", "serif";
+    gap: 10px;
+}
+
+#connect a {
+    display: inline-block;
+    color: var(--gold);
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+
+#connect a:hover {
+    color: var(--gold-clair);
+}
+
+.form-register form {
+    max-width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-register form #civilite div {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex: 0 0 70%;
+}
+
+.form-register form #civilite div label,
+.form-register .checks label {
+    display: flex;
+    gap: 15px;
+}
+
+.form-register input[type=radio],
+.form-register input[type=checkbox] {
+    appearance: none;
+    background-color: var(--gold);
+    margin: 0;
+    font: inherit;
+    color: var(--gold);
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid var(--gold);
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+.form-register input[type=radio],
+.form-register input[type=radio]::before {
+    border-radius: 50%;
+}
+
+.form-register input[type="radio"]::before,
+.form-register input[type=checkbox]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+}
+
+.form-register input[type="radio"]:checked::before,
+.form-register input[type=checkbox]:checked::before {
+    transform: scale(1);
+    background-color: var(--noir);
+}
+
+
+.form-register .checks{
+    margin: 5vh auto;
+}
+
+.checks div label {
+    display: flex;
+    justify-content: left !important;
+    align-items: baseline !important;
+}
+
+.checks div label div {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start !important;
+}
+
+.checks div label div .italique{
+    font-style: italic;
+    font-family:  "Raleway", sans-serif;
+    font-size: smaller;
+}
+
+@media (min-width:100px) {
+    .form-register form {
+        max-width: 70% !important;
+    }
+}
+
+
+
 
 /******************************************************************************* Boutons */
 
