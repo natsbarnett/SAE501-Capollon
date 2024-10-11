@@ -40,6 +40,7 @@ header {
     padding: var(--padding);
     transition: 0.2s ease-in-out;
     margin: 0 !important;
+    z-index: 15;
 }
 
 header:hover {
