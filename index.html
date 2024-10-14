@@ -57,6 +57,8 @@
         <!---------------------------------------------------------------------------------------------->
         <!--                                      Liste des produits                                  -->
         <!---------------------------------------------------------------------------------------------->
+        <div class="separator"></div>
+
         <section>
             <div class="list-prod">
                 <div class="product-card">
@@ -114,6 +116,8 @@
         <!---------------------------------------------------------------------------------------------->
         <!--                                      Barre recherche                                     -->
         <!---------------------------------------------------------------------------------------------->
+        <div class="separator"></div>
+
         <section>
             <div class="barre-recherche">
                 <input type="text" class="recherche">
@@ -124,6 +128,8 @@
         <!---------------------------------------------------------------------------------------------->
         <!--                                    Pagination produits                                   -->
         <!---------------------------------------------------------------------------------------------->
+
+
         <section>
             <div class="pagination">
                 <button class="btn-pagination">⟪</button>
@@ -167,6 +173,7 @@
                 </form>
             </div>
         </section>
+        <div class="separator"></div>
 
 
         <!---------------------------------------------------------------------------------------------->
@@ -270,6 +277,7 @@
                 </div>
             </div>
         </section>
+        <div class="separator"></div>
 
         <!---------------------------------------------------------------------------------------------->
         <!--                                     Page panier                                          -->
@@ -372,6 +380,8 @@
         <!---------------------------------------------------------------------------------------------->
         <!--                                     Page login                                           -->
         <!---------------------------------------------------------------------------------------------->
+        <div class="separator"></div>
+
         <section>
             <h1>Vous connecter</h1>
             <div class="login-form">
@@ -396,6 +406,7 @@
             </div>
         </section>
 
+        <div class="separator"></div>
         <!---------------------------------------------------------------------------------------------->
         <!--                                    Page register                                         -->
         <!---------------------------------------------------------------------------------------------->
@@ -492,13 +503,209 @@
                 </form>
             </div>
         </section>
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                    Page register                                         -->
+        <!---------------------------------------------------------------------------------------------->
+        <div class="separator"></div>
+        <section>
+            <aside></aside>
+            <h1 id="command-title">Commander</h1>
+            <div class="form-commande">
+                <form action="">
+                    <div class="etape complete">
+                        <div class="title">
+                            <span>1</span>
+                            <h2>Informations personnelles</h2>
+                        </div>
+                        <div class="form-elements">
+                            <div class="links">
+                                <p>Continuer en tant qu'invité | </p><a href="#">Connexion</a>
+                            </div>
+                            <div class="form-register">
+                                <!-------------------------------------------------->
+                                <!--        Formulaire de register                -->
+                                <!-------------------------------------------------->
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="etape">
+                        <div class="title">
+                            <span>2</span>
+                            <h2>Adresses</h2>
+                        </div>
+                        <div class="form-elements">
+                            <div>
+                                <label for="prenom">
+                                    <span>Prénom</span>
+                                    <input type="text" id="prenom" name="prenom" required>
+                                </label>
+                                <label for="lastname">
+                                    <span>Nom de famille</span>
+                                    <input type="text" id="lastname" name="lastname" required>
+                                </label>
+                                <label for="societe">
+                                    <span>Société</span>
+                                    <input type="text" id="societe" name="societe">
+                                    <p>Optionnel</p>
+                                </label>
+                                <label for="n-tva">
+                                    <span>Société</span>
+                                    <input type="text" id="n-tva" name="n-tva">
+                                    <p>Optionnel</p>
+                                </label>
+                                <label for="adresse">
+                                    <span>Adresse</span>
+                                    <input type="text" id="adresse" name="adresse" required>
+                                </label>
+                                <label for="comp-adresse">
+                                    <span>Complément d'adresse</span>
+                                    <input type="text" id="comp-adresse" name="comp-adresse">
+                                    <p>Optionnel</p>
+                                </label>
+                                <label for="zip-code">
+                                    <span>Code postal</span>
+                                    <input type="text" id="zip-code" name="zip-code" required>
+                                </label>
+                                <label for="ville">
+                                    <span>Ville</span>
+                                    <input type="text" id="ville" name="ville" required>
+                                </label>
+                                <label for="pays">
+                                    <span>Complément d'adresse</span>
+                                    <select name="pays" id="pays" required>
+                                        <option value=""></option>
+                                        <option value="fr">France</option>
+                                        <option value="us">Etats-Unis</option>
+                                    </select>
+                                </label>
+                                <label for="tel">
+                                    <span>Téléphone</span>
+                                    <input type="text" id="tel" name="tel">
+                                    <p>Optionnel</p>
+                                </label>
+                                <label for="facturation" class="checks">
+                                    <input type="checkbox" name="facturation" id="facturation">
+                                    <span>Utiliser aussi cette adresse pour la factuation</span>
+                                </label>
+                                <input type="submit" value="Continuer" class="btn">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="etape follow">
+                        <div class="title">
+                            <span>3</span>
+                            <h2>Mode de livraison</h2>
+                        </div>
+                        <div class="form-elements">
+                            <div class="mode-liv">
+                                <div>
+                                    <label for="click-collect">
+                                        <input type="radio" name="mode-liv" id="click-collect" required>
+                                        <div class="carrier-logo"></div>
+                                        <h5 class="carrier-name">Click and collect</h5>
+                                        <span class="carrier-delay">Retrait en magasin</span>
+                                        <span class="carrier-price">gratuit</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label for="my-carrier">
+                                        <input type="radio" name="mode-liv" id="my-carrier" required>
+                                        <div class="carrier-logo"></div>
+                                        <h5 class="carrier-name">My Carrier</h5>
+                                        <span class="carrier-delay">Livraison le lendemain !</span>
+                                        <span class="carrier-price">8.40 € TTC</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label for="message" id="message">
+                                        <span>Si vous voulez nous laisser un message à propos de votre commande, merci
+                                            de
+                                            bien vouloir le renseigner dans le champ ci-contre</span>
+                                        <textarea name="message" id="message"></textarea>
+                                    </label>
+                                </div>
+                                <input type="submit" value="Continuer" class="btn">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="etape follow">
+                        <div class="title">
+                            <span>4</span>
+                            <h2>Paiement</h2>
+                        </div>
+                        <div class="form-elements">
+                            <div class="mode-pay">
+                                <div>
+                                    <label for="arg-comptant">
+                                        <input type="radio" name="mode-pay" id="arg-comptant" required>
+                                        <span>Payer comptant à la livraison</span>
+                                    </label>
+                                    <p>Vous payez lors de la livraison de votre commande
+                                    </p>
+                                </div>
+                                <div>
+                                    <label for="cheque">
+                                        <input type="radio" name="mode-pay" id="cheque" required>
+                                        <span>Payer par chèque</span>
+                                    </label>
+                                    <div>
+                                        <table>
+                                            <tr>
+                                                <td>Montant</td>
+                                                <td id="prix">34.80&nbsp;€ TTC</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bénéficiaire</td>
+                                                <td id="beneficiaire">___________</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Envoyez votre chèque à cette adresse</td>
+                                                <td>___________</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="vir">
+                                        <input type="radio" name="mode-pay" id="vir" required>
+                                        <span>Payer par virement bancaire</span>
+                                    </label>
+                                    <p>Il vous faudra transférer le montant de la facture sur notre compte bancaire.
+                                        Vous recevrez votre confirmation de commande par e-mail, comprenant nos
+                                        coordonnées bancaires et le numéro de commande.</p>
+                                </div>
+                                <div>
+                                    <label for="cgv">
+                                        <input type="checkbox" name="cgv" id="cgv" required>
+                                        <span>J'ai lu les <a href="#">conditions générales de vente</a> et j'y adhère
+                                            sans réserve.</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <input type="submit" value="Commander" class="btn">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <div class="separator"></div>
+        <section>
+            <h1>Paramètres du compte</h1>
+
+        </section>
+        </div>
     </main>
     <footer>
-        <img src="assets/logo-long.svg" alt="logo capollon" width="100px">
-        <div>
-            <div><a href="#">Mentions légales</a></div>
-            <div><a href="#">Politique de confidentialité</a></div>
-            <div><a href="#">Conditions générales de vente</a></div>
+        <div class="separator"></div>
+        <div class="content">
+            <img src="assets/logo-long.svg" alt="logo capollon" width="100px">
+            <div>
+                <div><a href="#">Mentions légales</a></div>
+                <div><a href="#">Politique de confidentialité</a></div>
+                <div><a href="#">Conditions générales de vente</a></div>
+            </div>
         </div>
     </footer>
 </body>

@@ -7,6 +7,9 @@
     --white: #FBFBFB;
     --border-radius: 8px;
     --padding: 10px 20px;
+    --padding-footer: 20px 40px;
+    --taille-ronds-commande: 100px;
+    --margin-section: 0 5vw;
 }
 
 /*
@@ -27,8 +30,8 @@ body {
     margin: 0;
 }
 
-main {
-    margin: 0 5vw;
+section {
+    margin: var(--margin-section);
 }
 
 /********************************************************************   Header */
@@ -88,7 +91,17 @@ header img {
 /********************************************************************   Footer */
 
 footer {
-    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    gap: 0 !important;
+}
+
+footer .separator {
+    margin: 0 !important;
+}
+
+footer .content {
+    padding: var(--padding-footer);
     max-width: 100%;
     background-color: var(--noir-profond);
 }
@@ -99,7 +112,7 @@ footer {
     }
 }
 
-footer div a {
+footer .content div a {
     color: var(--gold);
     display: block;
     text-decoration: none;
@@ -112,7 +125,7 @@ footer a:hover {
 }
 
 @media (min-width:1000px) {
-    footer {
+    footer .content {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -123,14 +136,26 @@ footer a:hover {
         max-width: 200px;
     }
 
-    footer div {
+    footer .content div {
         flex: 0 0 70% !important;
     }
 
-    footer div a {
+    footer .content div a {
         text-align: right;
     }
 }
+
+/********************************************************************   Séparateur */
+
+.separator {
+    display: block;
+    width: 100%;
+    margin: 2vh auto;
+    height: 5.5vh;
+    background: url('../assets/Bordure.svg') center center no-repeat;
+    background-size: cover;
+}
+
 
 /********************************************************************   Titres */
 h1,
@@ -649,7 +674,8 @@ p {
 
 .login-form form label,
 .form-register form label,
-.form-register form #civilite {
+.form-register form #civilite,
+.form-commande form label {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -659,7 +685,8 @@ p {
 
 
 .login-form label span,
-.form-register label span {
+.form-register label span,
+.form-commande label span {
     flex: 0 0 30%;
     font-family: 'Marcellus', 'serif';
 }
@@ -667,7 +694,9 @@ p {
 .login-form label input[type=email],
 .form-register label input[type=email],
 .form-register label input[type=text],
-.form-register label input[type=date] {
+.form-register label input[type=date],
+.form-commande label input[type=text],
+.form-commande label select {
     flex: 1;
 }
 
@@ -690,7 +719,8 @@ p {
 @media (min-width:500px) {
 
     .login-form label div button,
-    .form-register label div button {
+    .form-register label div button,
+    .form-commande label p {
         flex: 0 0 10%;
     }
 
@@ -698,7 +728,8 @@ p {
 }
 
 .login-form input[type=submit],
-.form-register input[type=submit] {
+.form-register input[type=submit],
+.form-commande input[type=submit] {
     display: block;
     margin: 0 auto;
 }
@@ -708,7 +739,9 @@ p {
 .form-register label input[type=text],
 .form-register label input[type=date],
 .form-register label input[type=password],
-.form-register input[type=email] {
+.form-register input[type=email],
+.form-commande label input[type=text],
+.form-commande label select {
     padding: var(--padding);
     border-radius: var(--border-radius);
     height: fit-content;
@@ -716,7 +749,6 @@ p {
     color: var(--white);
     border: 3px solid var(--gold);
 }
-
 
 .login-form form a {
     color: var(--gold);
@@ -733,7 +765,9 @@ p {
 }
 
 .login-form form input:focus,
-.form-register form input:focus {
+.form-register form input:focus,
+.form-commande form input:focus,
+.form-commande form select:focus {
     outline: none !important;
 }
 
@@ -797,7 +831,9 @@ p {
 }
 
 .form-register input[type=radio],
-.form-register input[type=checkbox] {
+.form-register input[type=checkbox],
+.form-commande input[type=checkbox],
+.form-commande input[type=radio] {
     appearance: none;
     background-color: var(--gold);
     margin: 0;
@@ -812,12 +848,16 @@ p {
 }
 
 .form-register input[type=radio],
-.form-register input[type=radio]::before {
+.form-register input[type=radio]::before,
+.form-commande input[type=radio],
+.form-commande input[type=radio]::before {
     border-radius: 50%;
 }
 
 .form-register input[type="radio"]::before,
-.form-register input[type=checkbox]::before {
+.form-register input[type=checkbox]::before,
+.form-commande input[type=checkbox]::before,
+.form-commande input[type=radio]::before {
     content: "";
     width: 0.65em;
     height: 0.65em;
@@ -826,13 +866,16 @@ p {
 }
 
 .form-register input[type="radio"]:checked::before,
-.form-register input[type=checkbox]:checked::before {
+.form-register input[type=checkbox]:checked::before,
+.form-commande input[type=checkbox]:checked::before,
+.form-commande input[type=radio]:checked::before {
     transform: scale(1);
     background-color: var(--noir);
 }
 
 
-.form-register .checks{
+.form-register .checks,
+.form-commande .checks {
     margin: 5vh auto;
 }
 
@@ -848,9 +891,9 @@ p {
     align-items: flex-start !important;
 }
 
-.checks div label div .italique{
+.checks div label div .italique {
     font-style: italic;
-    font-family:  "Raleway", sans-serif;
+    font-family: "Raleway", sans-serif;
     font-size: smaller;
 }
 
@@ -860,7 +903,160 @@ p {
     }
 }
 
+.form-register input[type=date]::-webkit-calendar-picker-indicator {
+    filter: invert(99%);
+}
 
+
+
+/******************************************************************************* Page commande */
+
+#command-title{
+    background: url('../assets/cap-commande.svg') left center no-repeat;
+    background-size: 50px 50px;
+    padding-left: 70px;
+}
+
+.form-commande {
+    max-width: 80%;
+    margin: 5vh auto;
+}
+
+.form-commande .form-elements {
+    display: block;
+    margin: 5vh 10vw;
+}
+
+.form-commande .links {
+    display: flex;
+    align-items: center;
+    gap: 2%;
+}
+
+.form-commande .links a {
+    color: var(--gold);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: "Marcellus", "serif";
+    transition: 0.2s ease-in-out;
+}
+
+.form-commande .links a:hover {
+    color: var(--gold-clair);
+}
+
+.form-commande .etape {
+    margin: 2vh auto;
+}
+
+.form-commande .etape .title {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-commande .etape .title span {
+    font-size: 35px;
+    font-family: "Marcellus", "serif";
+    border: 3px solid var(--gold);
+    width: var(--taille-ronds-commande);
+    height: var(--taille-ronds-commande);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: var(--gold);
+    color: var(--noir);
+}
+
+.form-commande .complete .title span {
+    background-color: transparent !important;
+    color: var(--gold) !important;
+}
+
+.form-commande .complete .form-elements,
+.form-commande .follow .form-elements {
+    display: none;
+}
+
+.form-commande .follow {
+    opacity: 0.8;
+}
+
+.form-commande .follow:hover {
+    cursor: not-allowed;
+}
+
+.form-commande label select option {
+    color: var(--noir) !important;
+}
+
+.form-commande p {
+    padding: 0px 20px;
+}
+
+.form-commande .checks,
+.form-commande .mode-pay label {
+    gap: 5px;
+}
+
+.form-commande .checks span,
+.form-commande .mode-pay span {
+    flex: 1 !important;
+}
+
+.form-commande #message {
+    flex-direction: column !important;
+    gap: 15px;
+}
+
+.form-commande textarea {
+    width: 100%;
+    border: 2px solid var(--gold);
+    border-radius: var(--border-radius);
+    background-color: transparent;
+    color: var(--white);
+    padding: var(--padding);
+    font-size: 15px;
+}
+
+.form-commande textarea:focus {
+    outline: none !important;
+}
+
+.form-commande textarea {
+    font-family: "Raleway", sans-serif;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 25vh;
+    resize: none;
+}
+
+.form-commande .mode-pay div p,
+.form-commande .mode-pay div table {
+    margin: auto 3vw;
+    display: none;
+}
+
+.form-commande .mode-pay div table{
+    border-collapse: collapse;
+}
+.form-commande .mode-pay div table td{
+    border: 2px solid var(--gold);
+    padding: var(--padding);
+}
+
+.form-commande .mode-pay a{
+    color: var(--gold);
+    text-decoration: none;
+    font-family: "Marcellus", "serif";
+    transition: 0.2s ease-in-out;
+}
+
+.form-commande .mode-pay a:hover {
+    color: var(--gold-clair);
+}
 
 
 /******************************************************************************* Boutons */
@@ -901,16 +1097,4 @@ p {
         border-left: 2px solid var(--gold);
         padding-left: 40px;
     }
-}
-
-
-
-
-
-/*****************************************************************************************
-Rien à voir avec le style prédéfini
-******************************************************************************************/
-
-section {
-    margin: 10vh auto;
 }
