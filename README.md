@@ -6,7 +6,7 @@ Ne modifiez pas nécéssairement le nom de la branche parce que c'est le nom de 
 
 ## FEATURES DES ISSUES :
 |  NOM | STATUT (à changer une fois commit dans le main) |
-|--------------------------------------------------------|
+|---------| --------------------|
 | Chatbot | Not done|
 | API Content | Not done|
 | IA Texte | Not done|
