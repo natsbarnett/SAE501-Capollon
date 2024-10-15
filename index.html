@@ -21,7 +21,30 @@
 
 <body>
     <header>
-        <button>Menu</button>
+        <nav role="navigation" id="navig" class="mobile-menu">
+            <div class="header-links-toggle">
+                <div class="liens">
+                    <div>
+                        <div>
+                            <a href="#"><img src="assets/profile.svg" alt="profil" class="profil"></a>
+                        </div>
+                        <div>
+                            <a href="#">Accueil</a>
+                        </div>
+                        <div>
+                            <a href="#">Nos produits</a>
+                        </div>
+                        <div>
+                            <a href="#">Contact</a>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="assets/burger.svg" alt="" class="menu-button-close" width="100%">
+                    </div>
+                </div>
+            </div>
+            <div class="separator"></div>
+        </nav>
         <div>
             <div><a href="#"><img src="assets/logo.svg" alt="logo" class="logo"></a></div>
             <div class="header-links">
@@ -35,6 +58,7 @@
                     <a href="#"><img src="assets/profile.svg" alt="profil" class="profil"></a>
                 </div>
             </div>
+            <img src="assets/burger-lines.svg" alt="" class="menu-button" width="100%">
         </div>
     </header>
     <main>
@@ -283,6 +307,8 @@
         <!--                                     Page panier                                          -->
         <!---------------------------------------------------------------------------------------------->
         <section>
+
+            <h1>Votre panier</h1>
             <aside class="panier-aside">
                 <div class="infos">
                     <div class="nombre"><span class="nb-art">5</span> articles</div>
@@ -301,9 +327,7 @@
                     <a href="#" class="btn commande-btn">Commander</a>
                 </div>
             </aside>
-
             <div class="content">
-                <h1>Votre panier</h1>
                 <div class="panier-list">
                     <div class="panier-card">
                         <div class="image-panier">
@@ -508,8 +532,45 @@
         <!---------------------------------------------------------------------------------------------->
         <div class="separator"></div>
         <section>
-            <aside></aside>
             <h1 id="command-title">Commander</h1>
+            <aside id="aside-commande">
+                <div>1 article
+                    <p class="collapse"><a href="#">Afficher les détails</a><i class="material-icons"></i>
+                    </p>
+                    <div class="collapse-in">
+                        <div class="prod-list-commande">
+                            <div class="prod-fiche-commande">
+                                <img src="https://placehold.co/100x100.png" alt="image-placeholder" width="100%">
+                                <div class="texte">
+                                    <div>
+                                        <p>Produit</p>
+                                        <span class="quantity">x1</span><br>
+                                        <span class="dimension">Dimensions : 45cm x 25cm</span>
+                                    </div>
+                                    <div>
+                                        <span class="prix">35€</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="total">
+                        <div>
+                            <span>Sous-total</span>
+                            <span>35€</span>
+                        </div>
+                        <div>
+                            <span>Livraison</span>
+                            <span>gratuit</span>
+                        </div>
+                        <div class="ttc">
+                            <span>Total TTC</span>
+                            <span>35€</span>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
             <div class="form-commande">
                 <form action="">
                     <div class="etape complete">
@@ -546,23 +607,20 @@
                                     <input type="text" id="lastname" name="lastname" required>
                                 </label>
                                 <label for="societe">
-                                    <span>Société</span>
+                                    <span>Société (opt.)</span>
                                     <input type="text" id="societe" name="societe">
-                                    <p>Optionnel</p>
                                 </label>
                                 <label for="n-tva">
-                                    <span>Société</span>
+                                    <span>Numéro TVA (opt.)</span>
                                     <input type="text" id="n-tva" name="n-tva">
-                                    <p>Optionnel</p>
                                 </label>
                                 <label for="adresse">
                                     <span>Adresse</span>
                                     <input type="text" id="adresse" name="adresse" required>
                                 </label>
                                 <label for="comp-adresse">
-                                    <span>Complément d'adresse</span>
+                                    <span>Comp. d'adresse (opt.)</span>
                                     <input type="text" id="comp-adresse" name="comp-adresse">
-                                    <p>Optionnel</p>
                                 </label>
                                 <label for="zip-code">
                                     <span>Code postal</span>
@@ -573,7 +631,7 @@
                                     <input type="text" id="ville" name="ville" required>
                                 </label>
                                 <label for="pays">
-                                    <span>Complément d'adresse</span>
+                                    <span>Pays</span>
                                     <select name="pays" id="pays" required>
                                         <option value=""></option>
                                         <option value="fr">France</option>
@@ -581,9 +639,8 @@
                                     </select>
                                 </label>
                                 <label for="tel">
-                                    <span>Téléphone</span>
+                                    <span>Tél (opt.)</span>
                                     <input type="text" id="tel" name="tel">
-                                    <p>Optionnel</p>
                                 </label>
                                 <label for="facturation" class="checks">
                                     <input type="checkbox" name="facturation" id="facturation">
@@ -693,7 +750,33 @@
         <div class="separator"></div>
         <section>
             <h1>Paramètres du compte</h1>
-
+            <div class="infos-flex">
+                <div>
+                    <img src="assets/user.svg" alt="" srcset="" width="50px">
+                    <a href="#">Mes informations</a>
+                </div>
+                <div>
+                    <img src="assets/localisation.svg" alt="" width="50px">
+                    <a href="#">Ajouter / Modifier une adresse</a>
+                </div>
+                <div>
+                    <img src="assets/history.svg" alt="" width="50px">
+                    <a href="#">Historique des commandes</a>
+                </div>
+                <div>
+                    <img src="assets/ticket.svg" alt="" width="50px">
+                    <a href="#">Avoirs et bons</a>
+                </div>
+                <div>
+                    <img src="assets/heart.svg" alt="" width="50px">
+                    <a href="#">Ma liste de souhaits</a>
+                </div>
+                <div>
+                    <img src="assets/info-perso.svg" alt="" width="50px">
+                    <a href="#">Mes données personnelles</a>
+                </div>
+            </div>
+            <a href="#" class="btn" id="logout-btn">Déconnexion</a>
         </section>
         </div>
     </main>
@@ -708,6 +791,7 @@
             </div>
         </div>
     </footer>
+    <script src="js/header.js"></script>
 </body>
 
 </html>
