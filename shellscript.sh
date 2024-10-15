@@ -1,5 +1,7 @@
 #!/bin/bash
 
+INSTALLDIR = /var/www/html
+
 # Vérifier si le script est exécuté en tant que superutilisateur
 if [ "$EUID" -ne 0 ]; then
     echo "Veuillez exécuter ce script en tant que superutilisateur."
@@ -48,24 +50,33 @@ else
 fi
 
 #--------------------------------------------------------------------------- Création d'un nouvel utilisateur
-# Demander le nom d'utilisateur
-read -p "Entrez le nom d'utilisateur à créer : " username
+# Boucle pour créer des utilisateurs
+while true; do
+    # Demander le nom d'utilisateur ou "quit" pour sortir
+    read -p "Entrez le nom d'utilisateur à créer et ajouter au groupe www-data (ou tapez 'quit' pour sortir) : " username
+    
+    # Vérifier si l'utilisateur veut quitter
+    if [ "$username" == "quit" ]; then
+        echo "Sortie de la création d'utilisateurs."
+        break
+    fi
+    
+    # Demander le mot de passe
+    read -sp "Entrez le mot de passe pour $username : " password
+    echo
 
-# Demander le mot de passe
-read -sp "Entrez le mot de passe pour $username : " password
-echo
+    # Créer l'utilisateur
+    useradd -m "$username"
 
-# Créer l'utilisateur
-useradd -m "$username"
+    # Définir le mot de passe
+    echo "$username:$password" | chpasswd
 
-# Définir le mot de passe
-echo "$username:$password" | chpasswd
+    # Ajouter l'utilisateur au groupe sudo (facultatif)
+    usermod -aG www-data "$username"
 
-# Ajouter l'utilisateur au groupe www-data
-usermod -aG www-data "$username"
-
-# Confirmation de la création
-echo "L'utilisateur $username a été créé avec succès."
+    # Confirmation de la création
+    echo "L'utilisateur $username a été créé avec succès."
+done
 
 # Fin du script
-echo "L'installation du stack LAMP et la création de l'utilisateur sont terminées !"
+echo "L'installation du stack LAMP avec MariaDB est terminée !"
