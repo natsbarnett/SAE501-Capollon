@@ -1367,6 +1367,15 @@ p {
 
 /******************************************************************************* Boutons */
 
+.gammes-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/******************************************************************************* Boutons */
+
 
 .btn {
     display: block;
