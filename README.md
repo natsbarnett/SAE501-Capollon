@@ -5,24 +5,23 @@ Vous pourrez créer des issues dans cette page [ici](https://github.com/natsbarn
 Ne modifiez pas nécéssairement le nom de la branche parce que c'est le nom de la feature que vous aurez à faire
 
 ## FEATURES DES ISSUES :
-  NOM                        -                        STATUT 
-                                                (à changer une fois 
-                                                commit dans le main)
-- Chatbot                    -                    Not done
-- API Content                -                    Not done
-- IA Texte                   -                    Not done
-- IA Image                   -                    Not done
-- Automatisation de l'IA     -                    Not done
-- IA Recommandations         -                    Not done
-- Page Hooks                 -                    Not done
-- Prestashop                 -                    Not done
-- Page d'accueil             -                    Not done
-- Page produit               -                    Not done
-- Page des gammes            -                    Not done
-- Page de la gamme           -                    Not done
-- Page de panier             -                    Not done
-- Page de commande           -                    Not done
-- Pages Login / Register     -                    Not done
-- Page Contact               -                    Not done
+|  NOM | STATUT (à changer une fois commit dans le main) |
+|--------------------------------------------------------|
+| Chatbot | Not done|
+| API Content | Not done|
+| IA Texte | Not done|
+| IA Image | Not done|
+| Automatisation de l'IA | Not done|
+| IA Recommandations | Not done|
+| Page Hooks | Not done|
+| Prestashop | Not done|
+| Page d'accueil | Not done|
+| Page produit | Not done|
+| Page des gammes | Not done|
+| Page de la gamme | Not done|
+| Page de panier | Not done|
+| Page de commande | Not done|
+| Pages Login / Register | Not done|
+| Page Contact | Not done|
 
   Si vous avez des questions concernant Jira : https://jira-ticket-bot.app/
