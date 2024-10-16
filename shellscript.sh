@@ -8,6 +8,10 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 #------------------------------------------------------------ Installation des dépendances
+echo "+-----------------------------------------------------------------------------------+"
+echo "+---                    Installation du stack LAMP                               ---+"
+echo "+-----------------------------------------------------------------------------------+"
+
 # Mettre à jour les paquets
 echo "Mise à jour des paquets..."
 apt update
@@ -50,6 +54,9 @@ else
 fi
 
 #--------------------------------------------------------------------------- Création d'un nouvel utilisateur
+echo "+-----------------------------------------------------------------------------------+"
+echo "+---                       Créer les utilisateurs                                ---+"
+echo "+-----------------------------------------------------------------------------------+"
 # Boucle pour créer des utilisateurs
 while true; do
     # Demander le nom d'utilisateur ou "quit" pour sortir
@@ -77,6 +84,14 @@ while true; do
     # Confirmation de la création
     echo "L'utilisateur $username a été créé avec succès."
 done
+
+echo "+-----------------------------------------------------------------------------------+"
+echo "+---                       Droits utilisateurs                                   ---+"
+echo "+-----------------------------------------------------------------------------------+"
+echo "Modification des droits utilisateurs du dossier /var/www/html/..."
+
+chown -R www-data:www-data /var/www/html/
+chmod -R 775 /var/www/html/
 
 # Fin du script
 echo "L'installation du stack LAMP avec MariaDB est terminée !"
