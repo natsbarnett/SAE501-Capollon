@@ -637,7 +637,7 @@ p {
     display: flex;
     align-items: flex-start;
     gap: 5%;
-    margin-top: 15px;
+    margin: 15px auto;
   }
 }
 
@@ -765,16 +765,23 @@ p {
 
 .panier-list .qnt-trash .trash {
   flex: 1;
+  cursor: pointer;
   background: url("../assets/trash.svg") no-repeat center right;
   width: 100%;
 }
 
 @media (max-width: 564px) {
   .panier-list .qnt-trash {
-    display: block;
+    display: flex;
+    align-items: center;
+  }
+
+  .panier-list .qnt-trash .qnt {
+    flex: 0 0 80%;
   }
 
   .panier-list .qnt-trash .trash {
+    flex: 1;
     width: 50px;
     height: 50px;
   }
@@ -844,7 +851,6 @@ p {
 }
 
 @media (min-width: 500px) {
-  .login-form label div button,
   .form-register label div button,
   .form-commande label p {
     flex: 0 0 10%;
@@ -1360,4 +1366,26 @@ textarea:focus {
     border-left: 2px solid var(--gold);
     padding-left: 40px;
   }
+}
+
+
+/************************************************************************************** Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--noir);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-clair);
 }
