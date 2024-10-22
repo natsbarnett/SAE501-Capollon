@@ -304,6 +304,643 @@
       </section>
       <div class="separator"></div>
 
+
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                      Fiche produit                                       -->
+        <!---------------------------------------------------------------------------------------------->
+        <section>
+            <aside id="fiche-produit">
+                <h1>Produit</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                <div class="prix-gamme">
+                    <span class="prix">12.00 €</span>
+                    <div class="gammes-list">
+                        <small class="gamme">Gamme</small>
+                        <small class="gamme">Gamme</small>
+                    </div>
+                </div>
+                <div class="choix-taille">
+                    <div value="s" class="taille-capote">
+                        <label for="taille-s">
+                            <img src="assets/capotes/taille-s.svg" alt="">
+                            <span>S</span>
+                            <input type="checkbox" name="taille" id="taille-s" value="s">
+                        </label>
+                    </div>
+                    <div value="m" class="taille-capote">
+                        <label for="taille-m">
+                            <img src="assets/capotes/taille-m.svg" alt="">
+                            <span>M</span>
+                            <input type="checkbox" name="taille" id="taille-m" value="m">
+                        </label>
+                    </div>
+                    <div value="l" class="taille-capote">
+                        <label for="taille-l" class="taille-capote">
+                            <img src="assets/capotes/taille-l.svg" alt="">
+                            <span>L</span>
+                            <input type="checkbox" name="taille" id="taille-l" value="l">
+                        </label>
+                    </div>
+                    <div value="xl" class="taille-capote">
+                        <label for="taille-xl" class="taille-capote">
+                            <img src="assets/capotes/taille-xl.svg" alt="">
+                            <span>XL</span>
+                            <input type="checkbox" name="taille" id="taille-xl" value="xl">
+                        </label>
+                    </div>
+                </div>
+                <div class="panier">
+                    <div class="nombre">
+                        <button>-</button>
+                        <label for="qnt">
+                            <input type="number" name="quantite" id="qnt" max="999" min="0" placeholder="0">
+                        </label>
+                        <button>+</button>
+                    </div>
+                    <div class="ajout">
+                        <a href="#" class="ajout-panier">Ajouter au panier</a>
+                    </div>
+                </div>
+            </aside>
+            <div class="image-produit">
+                <div class="image">
+                    <img src="https://placehold.co/500x500.png" alt="image-placeholder" width="100%">
+                </div>
+            </div>
+            <p class="description-prod">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi adipisci ad
+                temporibus. Facilis laboriosam quaerat quam! Deserunt doloribus ratione, eos ducimus nobis dolor natus
+                voluptates asperiores a officia similique distinctio! Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Possimus aspernatur eveniet obcaecati totam magnam iste porro impedit dolorum. In velit voluptates
+                ipsam. Ipsam qui sequi ut at omnis doloremque assumenda. Lorem ipsum dolor sit, amet consectetur
+                adipisicing elit. Quisquam quidem laboriosam itaque harum numquam, modi alias est dignissimos non eaque
+                quas facere asperiores explicabo quos, dolorum delectus facilis eligendi vitae? Lorem ipsum dolor sit
+                amet consectetur, adipisicing elit. Eaque ea repellat porro cumque aspernatur similique tempora
+                consequatur odit asperiores, quia consectetur in fuga cum itaque delectus perferendis omnis dicta
+                aliquid!</p>
+            <div class="comment-section">
+                <h2>Donnez votre avis</h2>
+                <div class="rediger">
+                    <a href="#" class="bouton-commentaire">Rédigez un commentaire</a>
+                </div>
+                <div class="commentaires">
+                    <div class="nombre"><span id="nb-comm">1</span> commentaire<span id="multi-comms">s</span></div>
+                    <div class="commentaire">
+                        <div class="infos">
+                            <div class="note">
+                                <div class="star-full"></div>
+                                <div class="star-full"></div>
+                                <div class="star-full"></div>
+                                <div class="star-full"></div>
+                                <div class="star"></div>
+                            </div>
+                            <div class="date">24/09/24</div>
+                            <div class="nom">Par J. Doe</div>
+                        </div>
+                        <div class="corps">
+                            <div class="titre">Magnifique thème de btp !</div>
+                            <div class="content">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad vero quis
+                                sunt eveniet, odit fugit modi aut aspernatur nobis ipsam iste aperiam perferendis soluta
+                                voluptates repudiandae eos dignissimos sequi vitae? </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="separator"></div>
+
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                     Page panier                                          -->
+        <!---------------------------------------------------------------------------------------------->
+        <section>
+
+            <h1>Votre panier</h1>
+            <aside class="panier-aside">
+                <div class="infos">
+                    <div class="nombre"><span class="nb-art">5</span> articles</div>
+                    <div class="prix">84.75 €</div>
+                </div>
+                <div class="livraison">
+                    <div>Livraison</div>
+                    <div class="prix-livraison">gratuite</div>
+                </div>
+                <div class="total">
+                    <div>Total TTC</div>
+                    <div>84.75€</div>
+                </div>
+
+                <div>
+                    <a href="#" class="btn commande-btn">Commander</a>
+                </div>
+            </aside>
+            <div class="content">
+                <div class="panier-list">
+                    <div class="panier-card">
+                        <div class="image-panier">
+                            <div class="image">
+                                <img src="https://placehold.co/500x500.png" alt="image-placeholder" width="100%">
+                            </div>
+                        </div>
+                        <div class="panier-infos">
+                            <h3>Produit</h3>
+                            <p class="prix-unitaire">16.85 €</p>
+                            <div class="qnt-trash">
+                                <div class="qnt">
+                                    <button>-</button>
+                                    <label for="qnt-panier">
+                                        <input type="number" name="quantite" id="qnt-panier" max="999" min="0"
+                                            placeholder="0">
+                                    </label>
+                                    <button>+</button>
+                                </div>
+                                <div class="trash"></div>
+                            </div>
+                            <div class="prix-tot">84.75 €</div>
+                        </div>
+                    </div>
+                    <div class="panier-card">
+                        <div class="image-panier">
+                            <div class="image">
+                                <img src="https://placehold.co/500x500.png" alt="image-placeholder" width="100%">
+                            </div>
+                        </div>
+                        <div class="panier-infos">
+                            <h3>Produit</h3>
+                            <p class="prix-unitaire">16.85 €</p>
+                            <div class="qnt-trash">
+                                <div class="qnt">
+                                    <button>-</button>
+                                    <label for="qnt-panier">
+                                        <input type="number" name="quantite" id="qnt-panier" max="999" min="0"
+                                            placeholder="0">
+                                    </label>
+                                    <button>+</button>
+                                </div>
+                                <div class="trash"></div>
+                            </div>
+                            <div class="prix-tot">84.75 €</div>
+                        </div>
+                    </div>
+                    <div class="panier-card">
+                        <div class="image-panier">
+                            <div class="image">
+                                <img src="https://placehold.co/500x500.png" alt="image-placeholder" width="100%">
+                            </div>
+                        </div>
+                        <div class="panier-infos">
+                            <h3>Produit</h3>
+                            <p class="prix-unitaire">16.85 €</p>
+                            <div class="qnt-trash">
+                                <div class="qnt">
+                                    <button>-</button>
+                                    <label for="qnt-panier">
+                                        <input type="number" name="quantite" id="qnt-panier" max="999" min="0"
+                                            placeholder="0">
+                                    </label>
+                                    <button>+</button>
+                                </div>
+                                <div class="trash"></div>
+                            </div>
+                            <div class="prix-tot">84.75 €</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                     Page login                                           -->
+        <!---------------------------------------------------------------------------------------------->
+        <div class="separator"></div>
+
+        <section>
+            <h1>Vous connecter</h1>
+            <div class="login-form">
+                <form action="">
+                    <label for="email">
+                        <span>Email</span>
+                        <input type="email" name="" id="" placeholder="john.doe@example.com" required>
+                    </label>
+                    <label for="password">
+                        <span>Mot de passe</span>
+                        <div>
+                            <input type="password" name="" id="" placeholder="***" required>
+                            <button class="btn">Afficher</button>
+                        </div>
+                    </label>
+                    <span><a href="#">Mot de passe oublié ?</a></span>
+                    <input type="submit" value="Se connecter" class="btn">
+                </form>
+                <div id="pas-compte">
+                    <p>Pas de compte ? </p><a href="#">Créez-en un !</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="separator"></div>
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                    Page register                                         -->
+        <!---------------------------------------------------------------------------------------------->
+        <section>
+            <h1>Créer un compte</h1>
+            <div id="connect">
+                <p>Vous avez déjà un compte ? </p><a href="#">Connectez-vous</a>
+            </div>
+            <div class="form-register">
+                <form action="">
+                    <div id="civilite">
+                        <span>Titre</span>
+                        <div>
+                            <label for="titre-m">
+                                <input type="radio" name="titre" id="titre-m" value="M" required>
+                                <span>M.</span>
+                            </label>
+                            <label for="titre-mme">
+                                <input type="radio" name="titre" id="titre-mme" value="Mme" required>
+                                <span>Mme</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="prenom">
+                            <span>Prénom</span>
+                            <input type="text" name="prenom" id="prenom" required placeholder="John">
+                        </label>
+                    </div>
+                    <div>
+                        <label for="lastname">
+                            <span>Nom de famille</span>
+                            <input type="text" name="lastname" id="lastname" required placeholder="Doe">
+                        </label>
+                    </div>
+                    <div>
+                        <label for="email">
+                            <span>E-mail</span>
+                            <input type="email" name="email" id="email" required placeholder="john.doe@example.com">
+                        </label>
+                    </div>
+                    <div>
+                        <label for="password">
+                            <span>Mot de passe</span>
+                            <div>
+                                <input type="password" name="password" id="password" required placeholder="***">
+                                <button class="btn">Afficher</button>
+                            </div>
+                        </label>
+                    </div>
+                    <div>
+                        <label for="dob">
+                            <span>Date de naissance</span>
+                            <input type="date" name="dob" id="dob">
+                        </label>
+                    </div>
+                    <div class="checks">
+                        <div>
+                            <label for="offres-partenaires">
+                                <input type="checkbox" name="inscription-accept" id="offres-partenaires">
+                                <span>Recevoir des offres de nos partenaires</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label for="cgv-pc">
+                                <input type="checkbox" name="inscription-accept" id="cgv-pc" required>
+                                <span>J'accepte les conditions générales et la politique de confidentialité</span>
+                            </label>
+                        </div>
+                        <div>
+                            <label for="newsletter">
+                                <input type="checkbox" name="inscription-accept" id="newsletter">
+                                <div class="form-col">
+                                    <span>Recevoir notre newsletter</span>
+                                    <span class="italique">Vous pouvez vous désinscrire à tout moment. Vous trouverez
+                                        pour cela nos informations de contact dans les conditions d'utilisation du
+                                        site.</span>
+                                </div>
+                            </label>
+                        </div>
+                        <div>
+                            <label for="message-donnees">
+                                <input type="checkbox" name="inscription-accept" id="message-donnees" required>
+                                <div class="form-col">
+                                    <span>Message concernant la confidentialité des données clients</span>
+                                    <span class="italique">Conformément aux dispositions de la loi du n°78-17 du 6
+                                        janvier 1978, vous disposez d'un droit d'accès, de rectification et d'opposition
+                                        sur les données nominatives vous concernant.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <input type="submit" value="S'inscrire" class="btn">
+                </form>
+            </div>
+        </section>
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                    Page commande                                         -->
+        <!---------------------------------------------------------------------------------------------->
+        <div class="separator"></div>
+        <section>
+            <h1 id="command-title">Commander</h1>
+            <aside id="aside-commande">
+                <div>1 article
+                    <p class="collapse"><a href="#">Afficher les détails</a><i class="material-icons"></i>
+                    </p>
+                    <div class="collapse-in">
+                        <div class="prod-list-commande">
+                            <div class="prod-fiche-commande">
+                                <img src="https://placehold.co/100x100.png" alt="image-placeholder" width="100%">
+                                <div class="texte">
+                                    <div>
+                                        <p>Produit</p>
+                                        <span class="quantity">x1</span><br>
+                                        <span class="dimension">Dimensions : 45cm x 25cm</span>
+                                    </div>
+                                    <div>
+                                        <span class="prix">35€</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="total">
+                        <div>
+                            <span>Sous-total</span>
+                            <span>35€</span>
+                        </div>
+                        <div>
+                            <span>Livraison</span>
+                            <span>gratuit</span>
+                        </div>
+                        <div class="ttc">
+                            <span>Total TTC</span>
+                            <span>35€</span>
+                        </div>
+                    </div>
+                </div>
+
+            </aside>
+            <div class="form-commande">
+                <form action="">
+                    <div class="etape complete">
+                        <div class="title">
+                            <span>1</span>
+                            <h2>Informations personnelles</h2>
+                        </div>
+                        <div class="form-elements">
+                            <div class="links">
+                                <p>Continuer en tant qu'invité | </p><a href="#">Connexion</a>
+                            </div>
+                            <div class="form-register">
+                                <!-------------------------------------------------->
+                                <!--        Formulaire de register                -->
+                                <!-------------------------------------------------->
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="etape">
+                        <div class="title">
+                            <span>2</span>
+                            <h2>Adresses</h2>
+                        </div>
+                        <div class="form-elements">
+                            <div>
+                                <label for="prenom">
+                                    <span>Prénom</span>
+                                    <input type="text" id="prenom" name="prenom" required>
+                                </label>
+                                <label for="lastname">
+                                    <span>Nom de famille</span>
+                                    <input type="text" id="lastname" name="lastname" required>
+                                </label>
+                                <label for="societe">
+                                    <span>Société (opt.)</span>
+                                    <input type="text" id="societe" name="societe">
+                                </label>
+                                <label for="n-tva">
+                                    <span>Numéro TVA (opt.)</span>
+                                    <input type="text" id="n-tva" name="n-tva">
+                                </label>
+                                <label for="adresse">
+                                    <span>Adresse</span>
+                                    <input type="text" id="adresse" name="adresse" required>
+                                </label>
+                                <label for="comp-adresse">
+                                    <span>Comp. d'adresse (opt.)</span>
+                                    <input type="text" id="comp-adresse" name="comp-adresse">
+                                </label>
+                                <label for="zip-code">
+                                    <span>Code postal</span>
+                                    <input type="text" id="zip-code" name="zip-code" required>
+                                </label>
+                                <label for="ville">
+                                    <span>Ville</span>
+                                    <input type="text" id="ville" name="ville" required>
+                                </label>
+                                <label for="pays">
+                                    <span>Pays</span>
+                                    <select name="pays" id="pays" required>
+                                        <option value=""></option>
+                                        <option value="fr">France</option>
+                                        <option value="us">Etats-Unis</option>
+                                    </select>
+                                </label>
+                                <label for="tel">
+                                    <span>Tél (opt.)</span>
+                                    <input type="text" id="tel" name="tel">
+                                </label>
+                                <label for="facturation" class="checks">
+                                    <input type="checkbox" name="facturation" id="facturation">
+                                    <span>Utiliser aussi cette adresse pour la factuation</span>
+                                </label>
+                                <input type="submit" value="Continuer" class="btn">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="etape follow">
+                        <div class="title">
+                            <span>3</span>
+                            <h2>Mode de livraison</h2>
+                        </div>
+                        <div class="form-elements">
+                            <div class="mode-liv">
+                                <div>
+                                    <label for="click-collect">
+                                        <input type="radio" name="mode-liv" id="click-collect" required>
+                                        <div class="carrier-logo"></div>
+                                        <h5 class="carrier-name">Click and collect</h5>
+                                        <span class="carrier-delay">Retrait en magasin</span>
+                                        <span class="carrier-price">gratuit</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label for="my-carrier">
+                                        <input type="radio" name="mode-liv" id="my-carrier" required>
+                                        <div class="carrier-logo"></div>
+                                        <h5 class="carrier-name">My Carrier</h5>
+                                        <span class="carrier-delay">Livraison le lendemain !</span>
+                                        <span class="carrier-price">8.40 € TTC</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <label for="message" id="message">
+                                        <span>Si vous voulez nous laisser un message à propos de votre commande, merci
+                                            de
+                                            bien vouloir le renseigner dans le champ ci-contre</span>
+                                        <textarea name="message" id="message"></textarea>
+                                    </label>
+                                </div>
+                                <input type="submit" value="Continuer" class="btn">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="etape follow">
+                        <div class="title">
+                            <span>4</span>
+                            <h2>Paiement</h2>
+                        </div>
+                        <div class="form-elements">
+                            <div class="mode-pay">
+                                <div>
+                                    <label for="arg-comptant">
+                                        <input type="radio" name="mode-pay" id="arg-comptant" required>
+                                        <span>Payer comptant à la livraison</span>
+                                    </label>
+                                    <p>Vous payez lors de la livraison de votre commande
+                                    </p>
+                                </div>
+                                <div>
+                                    <label for="cheque">
+                                        <input type="radio" name="mode-pay" id="cheque" required>
+                                        <span>Payer par chèque</span>
+                                    </label>
+                                    <div>
+                                        <table>
+                                            <tr>
+                                                <td>Montant</td>
+                                                <td id="prix">34.80&nbsp;€ TTC</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bénéficiaire</td>
+                                                <td id="beneficiaire">___________</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Envoyez votre chèque à cette adresse</td>
+                                                <td>___________</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="vir">
+                                        <input type="radio" name="mode-pay" id="vir" required>
+                                        <span>Payer par virement bancaire</span>
+                                    </label>
+                                    <p>Il vous faudra transférer le montant de la facture sur notre compte bancaire.
+                                        Vous recevrez votre confirmation de commande par e-mail, comprenant nos
+                                        coordonnées bancaires et le numéro de commande.</p>
+                                </div>
+                                <div>
+                                    <label for="cgv">
+                                        <input type="checkbox" name="cgv" id="cgv" required>
+                                        <span>J'ai lu les <a href="#">conditions générales de vente</a> et j'y adhère
+                                            sans réserve.</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <input type="submit" value="Commander" class="btn">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <div class="separator"></div>
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                      Param. du compte                                    -->
+        <!---------------------------------------------------------------------------------------------->
+        <section>
+            <h1>Paramètres du compte</h1>
+            <div class="infos-flex">
+                <div>
+                    <img src="assets/user.svg" alt="" srcset="" width="50px">
+                    <a href="#">Mes informations</a>
+                </div>
+                <div>
+                    <img src="assets/localisation.svg" alt="" width="50px">
+                    <a href="#">Ajouter / Modifier une adresse</a>
+                </div>
+                <div>
+                    <img src="assets/history.svg" alt="" width="50px">
+                    <a href="#">Historique des commandes</a>
+                </div>
+                <div>
+                    <img src="assets/ticket.svg" alt="" width="50px">
+                    <a href="#">Avoirs et bons</a>
+                </div>
+                <div>
+                    <img src="assets/heart.svg" alt="" width="50px">
+                    <a href="#">Ma liste de souhaits</a>
+                </div>
+                <div>
+                    <img src="assets/info-perso.svg" alt="" width="50px">
+                    <a href="#">Mes données personnelles</a>
+                </div>
+            </div>
+            <a href="#" class="btn" id="logout-btn">Déconnexion</a>
+        </section>
+        </div>
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                     Page des gammes                                      -->
+        <!---------------------------------------------------------------------------------------------->
+        <section>
+            <h1>Gammes</h1>
+            <div class="gammes-list">
+                <div class="gamme-fiche">
+                    <div class="card-image"><img src="https://placehold.co/500x400.png" alt="image-placeholder"
+                            width="100%"></div>
+                    <div class="card-body">
+                        <h3>Nom gamme</h3>
+                        <div><a href="#" class="voir-plus-prod btn">Voir plus</a></div>
+                    </div>
+                </div>
+                <div class="gamme-fiche">
+                    <div class="card-image"><img src="https://placehold.co/500x400.png" alt="image-placeholder"
+                            width="100%"></div>
+                    <div class="card-body">
+                        <h3>Nom gamme</h3>
+                        <div><a href="#" class="voir-plus-prod btn">Voir plus</a></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+              <label for="mail">
+                <span></span>
+                <input
+                  type="email"
+                  name="email"
+                  id="mail"
+                  placeholder="Votre email"
+                  required
+                />
+              </label>
+            </div>
+            <div>
+              <label for="contenu">
+                <span></span>
+                <textarea
+                  name="contenu"
+                  id="contenu"
+                  placeholder="Votre message"
+                  required
+                ></textarea>
+              </label>
+            </div>
+            <div class="submit-container">
+              <input type="submit" value="Envoyer" class="btn" />
+            </div>
+          </form>
+        </div>
+      </section>
+      <div class="separator"></div>
+
       <!---------------------------------------------------------------------------------------------->
       <!--                                      Fiche produit                                       -->
       <!---------------------------------------------------------------------------------------------->
@@ -1145,6 +1782,9 @@
         </div>
       </section>
     </main>
+        <!---------------------------------------------------------------------------------------------->
+        <!--                                         Footer                                           -->
+        <!---------------------------------------------------------------------------------------------->
     <footer>
       <div class="separator"></div>
       <div class="content">
