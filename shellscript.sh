@@ -40,6 +40,10 @@ apt install php-cli php-curl php-gd php-mbstring php-xml php-zip -y
 echo "Installation de git..."
 apt install git -y
 
+# Installation de node JS
+echo "Installation de node JS ..."
+apt install nodejs npm -y
+
 # Installation de unzip
 # echo "Installation de unzip..."
 # apt install unzip -y
