@@ -16,4 +16,4 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.PRIVATE_KEY }}
       - name: Pull the latest changes on the server
-        run: ssh -o StrictHostKeyChecking=no cleliavps@87.106.123.87 'cd /var/www/html/ && git pull'
+        run: ssh -o StrictHostKeyChecking=no ${{ secrets.USER }} 'cd /var/www/html/ && git pull'
