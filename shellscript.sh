@@ -64,13 +64,13 @@ echo "+-------------------------------------------------------------------------
 while true; do
     # Demander le nom d'utilisateur ou "quit" pour sortir
     read -p "Entrez le nom d'utilisateur à créer et ajouter au groupe www-data (ou tapez 'quit' pour sortir) : " username
-    
+
     # Vérifier si l'utilisateur veut quitter
     if [ "$username" == "quit" ]; then
         echo "Sortie de la création d'utilisateurs."
         break
     fi
-    
+
     # Demander le mot de passe
     read -sp "Entrez le mot de passe pour $username : " password
     echo
