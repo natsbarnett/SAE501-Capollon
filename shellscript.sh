@@ -2,12 +2,22 @@
 
 INSTALLDIR = /var/www/html/
 
+
 # Vérifier si le script est exécuté en tant que superutilisateur
 if [ "$EUID" -ne 0 ]; then
     echo "Veuillez exécuter ce script en tant que superutilisateur."
     exit 1
 fi
 #------------------------------------------------------------ Installation des dépendances
+echo "+-----------------------------------------------------------------------------------+"
+echo "+---                          Installation de Gum                                ---+"
+echo "+-----------------------------------------------------------------------------------+"
+
+mkdir -p /etc/apt/keyrings
+curl -fsSL https://repo.charm.sh/apt/gpg.key | gpg --dearmor -o /etc/apt/keyrings/charm.gpg
+echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | tee /etc/apt/sources.list.d/charm.list
+apt update && apt install gum
+
 echo "+-----------------------------------------------------------------------------------+"
 echo "+---                    Installation du stack LAMP                               ---+"
 echo "+-----------------------------------------------------------------------------------+"
