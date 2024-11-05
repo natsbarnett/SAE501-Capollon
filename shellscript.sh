@@ -2,7 +2,6 @@
 
 INSTALLDIR = /var/www/html/
 
-
 # Vérifier si le script est exécuté en tant que superutilisateur
 if [ "$EUID" -ne 0 ]; then
     echo "Veuillez exécuter ce script en tant que superutilisateur."
