@@ -1,42 +1,40 @@
-version: '3'
 services:
-  mysql:
-    container_name: some-mysql
-    image: mysql:5.7
-    restart: unless-stopped
-    environment:
-      MYSQL_ROOT_PASSWORD: admin
-      MYSQL_DATABASE: prestashop
-    networks:
-      - prestashop_network
+  capollon_bdd:
+    container_name: capollon_bdd
+    image: mariadb
     volumes:
       - dbdata:/var/lib/mysql
-    ports:
-        - "3306:3306"
-
-  prestashop:
-    container_name: prestashop
+    networks:
+      - prestashop_network
+    environment:
+      MARIADB_DATABASE: ${ENV_DATABASE}
+      MARIADB_USER: ${ENV_USER}
+      MARIADB_PASSWORD: ${ENV_PASSWORD}
+      MARIADB_RANDOM_ROOT_PASSWORD: 1
+  capollon_web:
+    container_name: capollon_web
     image: prestashop/prestashop:latest
-    restart: unless-stopped
     depends_on:
-      - mysql
+      - capollon_bdd
     ports:
       - 8080:80
     environment:
-      DB_SERVER: some-mysql
-      DB_NAME: prestashop
-      DB_USER: root
-      DB_PASSWD: admin
-      PS_FOLDER_ADMIN: admin
-      PS_FOLDER_INSTALL: install
+      DB_NAME: ${ENV_DATABASE}
+      DB_USER: ${ENV_USER}
+      DB_PASSWD: ${ENV_PASSWORD}
+      PS_DOMAIN: ${ENV_DOMAIN}
+      ADMIN_MAIL: ${ENV_ADMIN_MAIL}
+      ADMIN_PASSWD: ${ENV_ADMIN_PASSWORD}
+      DB_SERVER: capollon_bdd
+      PS_INSTALL_AUTO: 1
     networks:
       - prestashop_network
     volumes:
       - psdata:/var/www/html
-
+      - ./capollon:/var/www/html/themes/capollon
+      - ./my_module:/var/www/html/modules/my_module
+volumes:
+  dbdata:
+  psdata:
 networks:
   prestashop_network:
-
-volumes:
-  psdata:
-  dbdata:
