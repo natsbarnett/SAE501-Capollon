@@ -65,18 +65,6 @@ header div {
 header img {
   width: 50px;
 }
-
-.header-links-toggle {
-  display: block !important;
-}
-
-.header-links-toggle .liens {
-  padding: var(--padding);
-  display: flex;
-  justify-content: space-between;
-  align-items: normal;
-}
-
 .header-links-toggle img {
   margin-top: 20px;
 }

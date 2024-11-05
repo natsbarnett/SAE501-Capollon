@@ -37,7 +37,182 @@ body {
   overflow-x: hidden;
 }
 
-/*************************************************************************
-Header
+/*************************************************************************  
+          Header
 **************************************************************************/
+header {
+  position: sticky !important;
+  top: 0;
+  left: 0 !important;
+  background: var(--header) !important;
+  padding: var(--padding);
+  transition: 0.2s ease-in-out;
+  margin: 0 !important;
+  z-index: 15;
+}
 
+header:hover {
+  background: var(--noir);
+}
+
+header div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  width: 50px;
+}
+
+.header-links-toggle img {
+  margin-top: 20px;
+}
+
+.header-links-toggle{
+  width: calc(100vw - (100vw - 100%));
+  padding: var(--padding);
+  display: block !important;
+}
+
+.header-links-toggle .liens{
+  display: flex;
+  align-items: flex-start !important;
+}
+
+.header-links-toggle .liens div {
+  display: block !important;
+}
+
+#header a {
+  color: var(--gold) !important;
+  font-family: "Marcellus", serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 2vh 0;
+  display: block;
+  font-size: 16px;
+}
+
+.header-links {
+  display: none;
+  width: 21.5rem;
+  height: 3.1875rem;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.3125rem;
+  flex-shrink: 0;
+  font-family: "Marcellus", serif;
+}
+
+.header-links a {
+  color: var(--gold);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+.header-links a:hover {
+  color: var(--gold-clair);
+}
+
+header .menu-button,
+header .menu-button-close {
+  width: 30px !important;
+}
+
+@media (min-width: 900px) {
+  header .menu-button {
+    display: none;
+  }
+
+  .header-links {
+    display: flex;
+  }
+}
+
+.mobile-menu {
+  height: fit-content;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--noir);
+  transition: 0.4s;
+  transform: translateX(-120%);
+  width: 100%;
+}
+
+.active {
+  transform: translateX(0);
+}
+
+#menu-button {
+  cursor: pointer;
+  /* Changer le curseur sur le bouton */
+}
+
+#header .header_top {
+  background-color: transparent !important;
+}
+/********************************************************************   Séparateur */
+
+.separator {
+  display: block;
+  width: 100%;
+  margin: 2vh auto;
+  height: 5.5vh;
+  background: url("../images/Bordure.svg") center center no-repeat;
+  background-size: cover;
+}
+
+/********************************************************************   Titres */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Marcellus", serif;
+  font-weight: 700;
+  color: var(--gold);
+  font-style: normal;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+/********************************************************************   Texte */
+p {
+  color: var(--white);
+}
+/************************************************************************************** Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--noir);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-clair);
+}

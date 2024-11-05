@@ -23,41 +23,48 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 
- {block name='header_banner'}
-  <div class="header-banner">
-    {hook h='displayBanner'}
-  </div>
-{/block}
 
 
 {block name='header_top'}
-  <div class="header-top">
-    <div class="container">
-       <div class="row">
-        <div class="col-md-2 hidden-sm-down" id="_desktop_logo">
-          {if $shop.logo_details}
-            {if $page.page_name == 'index'}
-              <h1>
-                {renderLogo}
-              </h1>
-            {else}
-              {renderLogo}
-            {/if}
-          {/if}
+  <nav role="navigation" id="navig" class="mobile-menu">
+    <div class="header-links-toggle">
+      <div class="liens">
+        <div>
+          <div>
+            <a href="#">
+            <img src="/themes/capollon/assets/images/profile.svg" alt="profil" class="profil" /></a>
+          </div>
+          <div>
+            <a href="/">Accueil</a>
+          </div>
+          <div>
+            <a href="#">Nos produits</a>
+          </div>
+          <div>
+            <a href="#">Contact</a>
+          </div>
         </div>
-        <div class="header-top-right col-md-10 col-sm-12 position-static">
-          {hook h='displayTop'}
-        </div>
-      </div>
-      <div id="mobile_top_menu_wrapper" class="row hidden-md-up" style="display:none;">
-        <div class="js-top-menu mobile" id="_mobile_top_menu"></div>
-        <div class="js-top-menu-bottom">
-          <div id="_mobile_currency_selector"></div>
-          <div id="_mobile_language_selector"></div>
-          <div id="_mobile_contact_link"></div>
+        <div>
+          <img src="/themes/capollon/assets/images/burger.svg" alt="" class="menu-button-close" width="100%" />
         </div>
       </div>
     </div>
-  </div>
-  {hook h='displayNavFullWidth'}
+    <div class="separator"></div>
+  </nav>
+  <div>
+    <div>
+      <a href="/"><img src="/themes/capollon/assets/images/logo.svg" alt="logo" class="logo" /></a>
+    </div>
+    <div class="header-links">
+      <div>
+        <a href="#">Nos produits</a>
+      </div>
+      <div>
+        <a href="#">Contact</a>
+      </div>
+      <div>
+        <a href="#"><img src="/themes/capollon/assets/images/profile.svg" alt="profil" class="profil" /></a>
+      </div>
+    </div>
+    <img src="/themes/capollon/assets/images/burger-lines.svg" alt="" class="menu-button" width="100%" />
 {/block}
