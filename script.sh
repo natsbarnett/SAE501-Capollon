@@ -1,55 +1,68 @@
 #!/bin/bash
 INSTALLDIR=/var/www/html/
+SETCOLOR_FAILURE="\\033[1;31m"
+SETCOLOR_SUCCESS="\\033[1;32m"
+SETCOLOR_WARNING="\\033[1;33m"
+SETCOLOR_NORMAL="\\033[0;39m"
+success() {
+    echo -e "${SETCOLOR_SUCCESS}$*${SETCOLOR_NORMAL}"
+}
+error() {
+    echo -e "${SETCOLOR_FAILURE}$*${SETCOLOR_NORMAL}"
+    exit 1
+}
+warn() {
+    echo -e "${SETCOLOR_WARNING}$*${SETCOLOR_NORMAL}"
+}
+export TERM=xterm
+export DEBIAN_FRONTEND=noninteractive
 # Vérifier si le script est exécuté en tant que superutilisateur
 # if [ "$EUID" -ne 0 ]; then
-#     echo "Veuillez exécuter ce script en tant que superutilisateur."
+#     error "Veuillez exécuter ce script en tant que superutilisateur."
 #     exit 1
 # fi
 #------------------------------------------------------------ Installation des dépendances
-echo "+-----------------------------------------------------------------------------------+"
-echo "+---                          Installation de Gum                                ---+"
-echo "+-----------------------------------------------------------------------------------+"
-# mkdir -p /etc/apt/keyrings
-# curl -fsSL https://repo.charm.sh/apt/gpg.key | gpg --dearmor -o /etc/apt/keyrings/charm.gpg
-# echo "deb [signed-by=/etc/apt/keyrings/charm.gpg] https://repo.charm.sh/apt/ * *" | tee /etc/apt/sources.list.d/charm.list
-# apt install gum
-echo "+-----------------------------------------------------------------------------------+"
-echo "+---                    Installation du stack LAMP                               ---+"
-echo "+-----------------------------------------------------------------------------------+"
+
+success "+-----------------------------------------------------------------------------------+"
+success "+---                    Installation du stack LAMP                               ---+"
+success "+-----------------------------------------------------------------------------------+"
 # Mettre à jour les paquets
-echo "Mise à jour des paquets..."
-apt update
-apt upgrade
+warn "Mise à jour des paquets..."
+
+apt-get -qq update
+apt-get -qq upgrade
+success "Mises à jour faites"
 # Installer Apache
-echo "Installation d'Apache..."
-apt -qq install apache2 
-systemctl enable --now apache2
+warn "Installation d'Apache..."
+apt-get -qq install apache2
+service apache2 start
+# systemctl enable --now apache2
 # Installer MariaDB
-echo "Installation de MariaDB..."
-apt install mariadb-server -y
-mysql_secure_installation
+# warn "Installation de MariaDB..."
+# apt-get -qq install mariadb-server -y
+# mysql_secure_installation
 # Installer PHP
-echo "Installation de PHP..."
-apt install php libapache2-mod-php php-mysql -y
-systemctl restart apache2
+warn "Installation de PHP..."
+apt-get -qq install php libapache2-mod-php php-mysql -y
+# systemctl restart apache2
 # Installer des modules PHP supplémentaires (facultatif)
-echo "Installation de modules PHP supplémentaires..."
-apt install php-cli php-curl php-gd php-mbstring php-xml php-zip -y
+warn "Installation de modules PHP supplémentaires..."
+apt-get -qq install php-cli php-curl php-gd php-mbstring php-xml php-zip -y
 # Installation de git
-echo "Installation de git..."
-apt install git -y
+warn "Installation de git..."
+apt-get -qq install git -y
 # Installation de node JS
-echo "Installation de node JS ..."
-apt install nodejs npm -y
+warn "Installation de node JS ..."
+apt-get -qq install nodejs npm -y
 # Installation de unzip
 # echo "Installation de unzip..."
-# apt install unzip -y
+# apt-get install unzip -y
 # Vérifier l'installation d'Apache
-echo "Vérification de l'installation d'Apache..."
-if systemctl status apache2; then
-    echo "Apache est installé et fonctionne."
+warn "Vérification de l'installation d'Apache..."
+if service apache2 status; then
+    success "Apache est installé et fonctionne."
 else
-    echo "Erreur lors de l'installation d'Apache."
+    error "Erreur lors de l'installation d'Apache."
 fi
 # #--------------------------------------------------------------------------- Création d'un nouvel utilisateur
 # echo "+-----------------------------------------------------------------------------------+"
@@ -96,21 +109,21 @@ fi
 # mysql -u root -p -e "quit;"
 # # Confirmation de la création
 # echo "L'utilisateur MariaDB $db_username a été créé avec succès."
-echo "+----------------------------------------------------------------------------------+"
-echo "+---                        Récupération du repository                          ---+"
-echo "+----------------------------------------------------------------------------------+"
-echo "Dossier d'installation : $INSTALLDIR"
+success "+----------------------------------------------------------------------------------+"
+success "+---                        Récupération du repository                          ---+"
+success "+----------------------------------------------------------------------------------+"
+success "Dossier d'installation : $INSTALLDIR"
 rm -rf $INSTALLDIR
-echo "Récupération de l'archive sur git"
+warn "Récupération de l'archive sur git"
 git clone git@github.com:natsbarnett/SAE501-Capollon.git $INSTALLDIR
-# wget -O "/tmp/archive.zip" "https://github.com/natsbarnett/SAE501-Capollon/archive/refs/heads/main.zip"
-echo "Fait :D"
-# echo "Extraction de l'archive :)"
+# # wget -O "/tmp/archive.zip" "https://github.com/natsbarnett/SAE501-Capollon/archive/refs/heads/main.zip"
+success "Fait :D"
+warn "Extraction de l'archive :)"
 # unzip -q /tmp/archive.zip -d $INSTALLDIR/capollon/
 chown -R www-data:www-data $INSTALLDIR
 chmod -R 775 $INSTALLDIR
-cat "L'installation automatique est terminée, maintenant, installez PHPMyAdmin et installez la base de données. 
+cat "L'installation automatique est terminée, maintenant, installez PHPMyAdmin et installez la base de données.
 Récupérez aussi les dépendances demandées par Prestashop et changez la taille maximale des upload dans php.ini
 Redémarrez le serveur web avec : systemctl restart apache2"
-# Fin du script
-echo "L'installation du stack LAMP avec MariaDB est terminée !"
+# # Fin du script
+success "L'installation du stack LAMP avec MariaDB est terminée !"
