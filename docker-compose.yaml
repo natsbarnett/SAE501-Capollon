@@ -1,0 +1,40 @@
+services:
+  capollon_bdd:
+    container_name: capollon_bdd
+    image: mariadb
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - prestashop_network
+    environment:
+      MARIADB_DATABASE: ${ENV_DATABASE}
+      MARIADB_USER: ${ENV_USER}
+      MARIADB_PASSWORD: ${ENV_PASSWORD}
+      MARIADB_RANDOM_ROOT_PASSWORD: 1
+  capollon_web:
+    container_name: capollon_web
+    image: prestashop/prestashop:latest
+    depends_on:
+      - capollon_bdd
+    ports:
+      - 8080:80
+    environment:
+      DB_NAME: ${ENV_DATABASE}
+      DB_USER: ${ENV_USER}
+      DB_PASSWD: ${ENV_PASSWORD}
+      PS_DOMAIN: ${ENV_DOMAIN}
+      ADMIN_MAIL: ${ENV_ADMIN_MAIL}
+      ADMIN_PASSWD: ${ENV_ADMIN_PASSWORD}
+      DB_SERVER: capollon_bdd
+      PS_INSTALL_AUTO: 1
+    networks:
+      - prestashop_network
+    volumes:
+      - psdata:/var/www/html
+      - ./capollon:/var/www/html/themes/capollon
+      - ./my_module:/var/www/html/modules/my_module
+volumes:
+  dbdata:
+  psdata:
+networks:
+  prestashop_network:

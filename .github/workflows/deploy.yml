@@ -1,0 +1,19 @@
+name: Deploy on Push to Main
+run-name: ${{ github.actor }} essaie le GitHub workflow
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Chekout Code
+        uses: actions/checkout@v2
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.PRIVATE_KEY }}
+      - name: Pull the latest changes on the server
+        run: ssh -o StrictHostKeyChecking=no ${{ secrets.USER }} 'cd /var/www/html/ && git pull'
