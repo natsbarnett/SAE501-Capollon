@@ -69,13 +69,13 @@ header img {
   margin-top: 20px;
 }
 
-.header-links-toggle{
+.header-links-toggle {
   width: calc(100vw - (100vw - 100%));
   padding: var(--padding);
   display: block !important;
 }
 
-.header-links-toggle .liens{
+.header-links-toggle .liens {
   display: flex;
   align-items: flex-start !important;
 }
@@ -156,6 +156,65 @@ header .menu-button-close {
 #header .header_top {
   background-color: transparent !important;
 }
+
+/********************************************************************   Footer */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.589em;
+  gap: 0 !important;
+}
+
+footer .separator {
+  margin: 0 !important;
+}
+
+footer .content {
+  padding: var(--padding-footer);
+  max-width: 100%;
+  background-color: var(--noir-profond);
+}
+
+@media (max-width: 999px) {
+  footer img {
+    width: 50%;
+  }
+}
+
+footer .content div a {
+  color: var(--gold);
+  display: block;
+  text-decoration: none;
+  font-family: "Marcellus", serif;
+  transition: 0.2s ease-in-out;
+}
+
+footer a:hover {
+  color: var(--gold-clair);
+}
+
+@media (min-width: 1000px) {
+  footer .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  footer img {
+    flex: 0 0 30%;
+    max-width: 200px;
+  }
+
+  footer .content div {
+    flex: 0 0 70% !important;
+  }
+
+  footer .content div a {
+    text-align: right;
+  }
+}
+
 /********************************************************************   Séparateur */
 
 .separator {
@@ -165,6 +224,18 @@ header .menu-button-close {
   height: 5.5vh;
   background: url("../images/Bordure.svg") center center no-repeat;
   background-size: cover;
+}
+
+#wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: unset !important;
+}
+
+#wrapper .container {
+  margin: 0 !important;
+  width: 100%;
+  padding: 0 !important;
 }
 
 /********************************************************************   Titres */
@@ -215,4 +286,50 @@ p {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gold-clair);
+}
+
+/************************************************************************
+*   Page d'accueil
+*************************************************************************/
+
+.webgl-wow {
+  background-color: var(--white);
+  width: calc(100vw - (100vw - 100%));
+  height: 100vh;
+  margin: 0 !important;
+  padding: 0 !important;
+  top: -100px !important;
+  position: relative !important;
+}
+
+.webgl-wow canvas {
+  position: absolute !important;
+}
+
+#sep-wow {
+  margin: 0 !important;
+  position: absolute;
+  top: 100%;
+}
+
+#histoire-engagement {
+  max-width: 80vw;
+  margin: 5vh auto;
+}
+
+.produits-phares {
+  width: 90vw !important;
+  margin: 5vh auto !important;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.histoire {
+  padding-right: 80px;
+}
+
+.engagements {
+  padding-left: 80px;
 }
