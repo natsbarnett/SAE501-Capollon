@@ -15,7 +15,7 @@ Ne modifiez pas nécéssairement le nom de la branche parce que c'est le nom de 
 | IA Recommandations | Not done|
 | Page Hooks | Not done|
 | Prestashop | Not done|
-| Page d'accueil | Not done|
+| Page d'accueil | Done |
 | Page produit | Not done|
 | Page des gammes | Not done|
 | Page de la gamme | Not done|
