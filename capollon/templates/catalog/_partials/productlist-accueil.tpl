@@ -22,10 +22,21 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<section class="featured-products clearfix">
-  {include file="catalog/_partials/productlist-accueil.tpl" products=$products cssClass="row" productClass="col-xs-12 col-sm-6 col-lg-4 col-xl-3"}
- 
-  <div><a class="voir-plus-products btn" href="{$allProductsLink}">
-    {l s='Tous nos produits' d='Shop.Theme.Catalog'}<i class="material-icons">&#xE315;</i>
-  </a></div>
-</section>
+
+{capture assign="productClasses"}
+    {if !empty($productClass)}
+        {$productClass}
+    {else}
+        col-xs-12 col-sm-6 col-xl-4
+    {/if}
+{/capture}
+
+<div class="products{if !empty($cssClass)} {$cssClass}{/if} list-prod">
+    {assign var="counter" value=0} {* Initialize counter *}
+    {foreach from=$products item="product" key="position"}
+        {if $counter < 3} {* Limit to 3 products *}
+            {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position productClasses=$productClasses}
+            {assign var="counter" value=$counter+1} {* Increment counter *}
+        {/if}
+    {/foreach}
+</div>

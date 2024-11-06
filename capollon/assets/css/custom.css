@@ -52,7 +52,7 @@ header {
 }
 
 header:hover {
-  background: var(--noir);
+  background: var(--noir) !important;
 }
 
 header div {
@@ -70,7 +70,7 @@ header img {
 }
 
 .header-links-toggle {
-  width: calc(100vw - (100vw - 100%));
+  width: 100vw;
   padding: var(--padding);
   display: block !important;
 }
@@ -219,8 +219,8 @@ footer a:hover {
 
 .separator {
   display: block;
-  width: 100%;
-  margin: 2vh auto;
+  width: 100vw;
+  margin: 2vh 0 !important;
   height: 5.5vh;
   background: url("../images/Bordure.svg") center center no-repeat;
   background-size: cover;
@@ -238,6 +238,20 @@ footer a:hover {
   padding: 0 !important;
 }
 
+.landing {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#main,
+#content-wrapper,
+.row,
+.container,
+#wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100vw !important;
+}
 /********************************************************************   Titres */
 h1,
 h2,
@@ -245,9 +259,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Marcellus", serif;
+  font-family: "Marcellus", serif !important;
   font-weight: 700;
-  color: var(--gold);
+  color: var(--gold) !important;
   font-style: normal;
 }
 
@@ -294,7 +308,7 @@ p {
 
 .webgl-wow {
   background-color: var(--white);
-  width: calc(100vw - (100vw - 100%));
+  width: 100vw !important;
   height: 100vh;
   margin: 0 !important;
   padding: 0 !important;
@@ -318,8 +332,9 @@ p {
 }
 
 .produits-phares {
-  width: 90vw !important;
+  max-width: 70vw !important;
   margin: 5vh auto !important;
+  padding: 0 !important;
 }
 
 .text-right {
@@ -332,4 +347,119 @@ p {
 
 .engagements {
   padding-left: 80px;
+}
+
+/**********************************************************************
+    Classes personnalisées
+***********************************************************************/
+
+/********************************************************************   Liste des produits*/
+.list-prod {
+  display: flex;
+  justify-content: space-evenly;
+  row-gap: 40px;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  margin: 5vh auto !important;
+}
+
+/********************************************************************   Cartes des produits*/
+.product-card {
+  flex: 0 0 29%;
+  min-width: 300px;
+  max-width: 300px;
+  margin: 0 auto !important;
+}
+
+.card-image picture {
+  width: 300px;
+  height: 300px;
+}
+
+.card-image picture img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.card-body {
+  padding: 5px 10px;
+  position: relative;
+  min-height: 10vh !important;
+}
+
+.card-body div {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card-body h3 {
+  text-transform: none !important;
+  color: var(--white) !important;
+  font-weight: unset !important;
+}
+
+.card-body h3 a {
+  color: var(--white) !important;
+}
+
+.voir-plus-prod {
+  display: block !important;
+  background-color: var(--gold);
+  padding: var(--padding);
+  display: flex;
+  text-align: center;
+  font-family: "Marcellus", serif;
+  border-radius: var(--border-radius);
+  transition: 0.2s ease-in-out;
+  flex: 1;
+  color: var(--noir);
+  text-decoration: none;
+}
+
+.voir-plus-prod:hover {
+  background-color: var(--gold-clair);
+}
+
+
+.voir-plus-products {
+  display: block;
+  margin: 5vh auto !important;
+  max-width: fit-content !important;
+}
+/******************************************************************************* Boutons */
+
+.btn {
+  display: block;
+  text-align: center;
+  background-color: var(--gold);
+  color: var(--noir) !important;
+  font-family: "Marcellus", "serif";
+  font-size: 15px;
+  text-decoration: none;
+  padding: var(--padding);
+  min-width: 15vw;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--gold-clair) !important;
+  color: var(--noir) !important;
+}
+
+a {
+  display: inline-block;
+  color: var(--gold) !important;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--gold-clair) !important;
 }
