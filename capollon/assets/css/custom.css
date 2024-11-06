@@ -1,0 +1,465 @@
+:root {
+  --gold: #daa520;
+  --gold-clair: #e8b533;
+  --noir: #1e1e1e;
+  --header: #1e1e1ebd;
+  --noir-profond: #000;
+  --white: #fbfbfb;
+  --border-radius: 8px;
+  --padding: 10px 20px;
+  --padding-footer: 20px 40px;
+  --taille-ronds-commande: 100px;
+  --margin-section: 0 5vw;
+}
+/*
+    Elements de prestashop qui clc
+*/
+#wrapper {
+  background: transparent !important;
+}
+
+/*
+    Elements de base
+*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--noir) !important;
+  color: var(--white) !important;
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  max-width: calc(100vw - (100vw - 100%)) !important;
+  font-style: normal;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/*************************************************************************  
+          Header
+**************************************************************************/
+header {
+  position: sticky !important;
+  top: 0;
+  left: 0 !important;
+  background: var(--header) !important;
+  padding: var(--padding);
+  transition: 0.2s ease-in-out;
+  margin: 0 !important;
+  z-index: 15;
+}
+
+header:hover {
+  background: var(--noir) !important;
+}
+
+header div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  width: 50px;
+}
+
+.header-links-toggle img {
+  margin-top: 20px;
+}
+
+.header-links-toggle {
+  width: 100vw;
+  padding: var(--padding);
+  display: block !important;
+}
+
+.header-links-toggle .liens {
+  display: flex;
+  align-items: flex-start !important;
+}
+
+.header-links-toggle .liens div {
+  display: block !important;
+}
+
+#header a {
+  color: var(--gold) !important;
+  font-family: "Marcellus", serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 2vh 0;
+  display: block;
+  font-size: 16px;
+}
+
+.header-links {
+  display: none;
+  width: 21.5rem;
+  height: 3.1875rem;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.3125rem;
+  flex-shrink: 0;
+  font-family: "Marcellus", serif;
+}
+
+.header-links a {
+  color: var(--gold);
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+.header-links a:hover {
+  color: var(--gold-clair);
+}
+
+header .menu-button,
+header .menu-button-close {
+  width: 30px !important;
+}
+
+@media (min-width: 900px) {
+  header .menu-button {
+    display: none;
+  }
+
+  .header-links {
+    display: flex;
+  }
+}
+
+.mobile-menu {
+  height: fit-content;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: var(--noir);
+  transition: 0.4s;
+  transform: translateX(-120%);
+  width: 100%;
+}
+
+.active {
+  transform: translateX(0);
+}
+
+#menu-button {
+  cursor: pointer;
+  /* Changer le curseur sur le bouton */
+}
+
+#header .header_top {
+  background-color: transparent !important;
+}
+
+/********************************************************************   Footer */
+
+footer {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.589em;
+  gap: 0 !important;
+}
+
+footer .separator {
+  margin: 0 !important;
+}
+
+footer .content {
+  padding: var(--padding-footer);
+  max-width: 100%;
+  background-color: var(--noir-profond);
+}
+
+@media (max-width: 999px) {
+  footer img {
+    width: 50%;
+  }
+}
+
+footer .content div a {
+  color: var(--gold);
+  display: block;
+  text-decoration: none;
+  font-family: "Marcellus", serif;
+  transition: 0.2s ease-in-out;
+}
+
+footer a:hover {
+  color: var(--gold-clair);
+}
+
+@media (min-width: 1000px) {
+  footer .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  footer img {
+    flex: 0 0 30%;
+    max-width: 200px;
+  }
+
+  footer .content div {
+    flex: 0 0 70% !important;
+  }
+
+  footer .content div a {
+    text-align: right;
+  }
+}
+
+/********************************************************************   Séparateur */
+
+.separator {
+  display: block;
+  width: 100vw;
+  margin: 2vh 0 !important;
+  height: 5.5vh;
+  background: url("../images/Bordure.svg") center center no-repeat;
+  background-size: cover;
+}
+
+#wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: unset !important;
+}
+
+#wrapper .container {
+  margin: 0 !important;
+  width: 100%;
+  padding: 0 !important;
+}
+
+.landing {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#main,
+#content-wrapper,
+.row,
+.container,
+#wrapper {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: 100vw !important;
+}
+/********************************************************************   Titres */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Marcellus", serif !important;
+  font-weight: 700;
+  color: var(--gold) !important;
+  font-style: normal;
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+/********************************************************************   Texte */
+p {
+  color: var(--white);
+}
+/************************************************************************************** Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--noir);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-clair);
+}
+
+/************************************************************************
+*   Page d'accueil
+*************************************************************************/
+
+.webgl-wow {
+  background-color: var(--white);
+  width: 100vw !important;
+  height: 100vh;
+  margin: 0 !important;
+  padding: 0 !important;
+  top: -100px !important;
+  position: relative !important;
+}
+
+.webgl-wow canvas {
+  position: absolute !important;
+}
+
+#sep-wow {
+  margin: 0 !important;
+  position: absolute;
+  top: 100%;
+}
+
+#histoire-engagement {
+  max-width: 80vw;
+  margin: 5vh auto;
+}
+
+.produits-phares {
+  max-width: 70vw !important;
+  margin: 5vh auto !important;
+  padding: 0 !important;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.histoire {
+  padding-right: 80px;
+}
+
+.engagements {
+  padding-left: 80px;
+}
+
+/**********************************************************************
+    Classes personnalisées
+***********************************************************************/
+
+/********************************************************************   Liste des produits*/
+.list-prod {
+  display: flex;
+  justify-content: space-evenly;
+  row-gap: 40px;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  margin: 5vh auto !important;
+}
+
+/********************************************************************   Cartes des produits*/
+.product-card {
+  flex: 0 0 29%;
+  min-width: 300px;
+  max-width: 300px;
+  margin: 0 auto !important;
+}
+
+.card-image picture {
+  width: 300px;
+  height: 300px;
+}
+
+.card-image picture img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.card-body {
+  padding: 5px 10px;
+  position: relative;
+  min-height: 10vh !important;
+}
+
+.card-body div {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.card-body h3 {
+  text-transform: none !important;
+  color: var(--white) !important;
+  font-weight: unset !important;
+}
+
+.card-body h3 a {
+  color: var(--white) !important;
+}
+
+.voir-plus-prod {
+  display: block !important;
+  background-color: var(--gold);
+  padding: var(--padding);
+  display: flex;
+  text-align: center;
+  font-family: "Marcellus", serif;
+  border-radius: var(--border-radius);
+  transition: 0.2s ease-in-out;
+  flex: 1;
+  color: var(--noir);
+  text-decoration: none;
+}
+
+.voir-plus-prod:hover {
+  background-color: var(--gold-clair);
+}
+
+
+.voir-plus-products {
+  display: block;
+  margin: 5vh auto !important;
+  max-width: fit-content !important;
+}
+/******************************************************************************* Boutons */
+
+.btn {
+  display: block;
+  text-align: center;
+  background-color: var(--gold);
+  color: var(--noir) !important;
+  font-family: "Marcellus", "serif";
+  font-size: 15px;
+  text-decoration: none;
+  padding: var(--padding);
+  min-width: 15vw;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--gold-clair) !important;
+  color: var(--noir) !important;
+}
+
+a {
+  display: inline-block;
+  color: var(--gold) !important;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--gold-clair) !important;
+}
