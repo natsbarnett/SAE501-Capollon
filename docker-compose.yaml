@@ -1,3 +1,5 @@
+version: '3.8'  # Specify the version of Docker Compose
+
 services:
   capollon_bdd:
     container_name: capollon_bdd
@@ -11,6 +13,7 @@ services:
       MARIADB_USER: ${ENV_USER}
       MARIADB_PASSWORD: ${ENV_PASSWORD}
       MARIADB_RANDOM_ROOT_PASSWORD: 1
+
   capollon_web:
     container_name: capollon_web
     image: prestashop/prestashop:latest
@@ -33,8 +36,22 @@ services:
       - psdata:/var/www/html
       - ./capollon:/var/www/html/themes/capollon
       - ./my_module:/var/www/html/modules/my_module
+
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 3001:80
+    environment:
+      PMA_HOST: capollon_bdd
+      PMA_USER: ${ENV_USER}
+      PMA_PASSWORD: ${ENV_PASSWORD}
+    networks:
+      - prestashop_network
+
 volumes:
   dbdata:
   psdata:
+
 networks:
   prestashop_network:
