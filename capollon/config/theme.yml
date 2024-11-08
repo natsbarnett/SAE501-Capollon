@@ -1,0 +1,14 @@
+parent: classic
+name: capollon
+display_name: Capollon Classic
+version: 2.1.3
+author:
+  name: "Capollon"
+  email: "contact@capollon.fr"
+  url: "https://www.prestashop-project.org"
+
+assets:
+  use_parent_assets: true
+  css:
+    all:
+      - assets/css/custom.css
