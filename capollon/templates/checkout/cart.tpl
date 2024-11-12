@@ -51,10 +51,6 @@
       </div>
     {/block}
 
-    {block name='hook_reassurance'}
-      {hook h='displayReassurance'}
-    {/block}
-
   </aside>
 
       <!-- Left Block: cart product informations & shipping -->
@@ -79,6 +75,10 @@
           {hook h='displayShoppingCartFooter'}
         {/block}
       </div>
+
+      {block name='hook_reassurance'}
+        {hook h='displayReassurance'}
+      {/block}
 
     </div>
     
