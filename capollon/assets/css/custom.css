@@ -226,7 +226,6 @@ footer a:hover {
   background-size: cover;
 }
 
-
 #wrapper {
   margin: 0 !important;
   padding: 0 !important;
@@ -437,7 +436,17 @@ p {
   margin: 5vh auto !important;
 }
 
+.product-container .product-cover {
+  display: flex;
+  max-width: 50vw !important;
+  justify-content: center !important;
+  flex-direction: column;
+}
 
+.product-images > li.thumb-container .thumb.selected,
+.product-images > li.thumb-container .thumb:hover {
+  border-color: var(--gold) !important;
+}
 
 .current-price {
   color: var(--gold) !important;
@@ -453,10 +462,7 @@ p {
   font-family: "Marcellus", serif;
 }
 
-#fiche-produit
-
-
-#fiche-produit .prix-gamme {
+#fiche-produit #fiche-produit .prix-gamme {
   display: flex;
   flex-wrap: wrap;
   gap: 1%;
@@ -496,43 +502,48 @@ p {
   align-items: center;
 }
 
-#fiche-produit .qty .input-group {
-  display: flex !important;
-  align-items: center;
-  gap: 5px;
-}
-
-#fiche-produit .btn-touchspin {
-  width: 10px !important;
-  padding: 0 !important;
-}
-
 @media (min-width: 1127px) {
   #fiche-produit {
     float: right;
     border-left: 2px solid var(--gold);
     padding-left: 40px;
-    max-width: 40vw !important;
+    max-width: 30vw !important;
+  }
+
+  .product-container .product-cover {
+    max-width: 50vw !important;
   }
 }
 
-.btn-comment-big{
+.btn-comment-big {
   width: 50vw !important;
   margin: 5vh auto !important;
 }
 
-
-.product-quantity{
+.product-quantity {
   flex-wrap: wrap;
 }
 
-.product-quantity div:first-child{
-  flex: 0 0 50% !important;
+.product-quantity .parent-input input[type="number"] {
+  font-size: 20px !important;
+  border: 1px solid var(--gold) !important;
+  color: var(--white) !important;
+  background-color: var(--noir) !important;
 }
 
-.product-quantity button:first-child{
-  flex: 0 0 30% !important;
+.product-quantity .parent-input {
+  border: 2px solid var(--gold) !important;
+  border-radius: 11px;
 }
+
+.wishlist-button-add{
+  background-color: var(--gold) !important;
+}
+
+.wishlist-button-add i {
+  color: var(--noir) !important;
+}
+
 
 /***************************************************** Commentaires */
 #empty-product-comment {
@@ -652,6 +663,11 @@ p {
 }
 
 /******************************************************************************* Boutons */
+.breadcrumb ol{
+  margin: 2vh 5vw !important;
+  max-width: 90vw !important;
+}
+
 
 .btn {
   display: block;
@@ -761,23 +777,22 @@ textarea:focus {
   outline: none !important;
 }
 
-
 /********************************************************************   Page panier */
 
-.page-panier .card{
+.page-panier .card {
   background: none;
 }
 
-.panier-aside .value{
-  color:var(--white);
+.panier-aside .value {
+  color: var(--white);
   font-weight: 400;
 }
 
-.panier-aside .infos{
+.panier-aside .infos {
   margin: 3vh auto;
 }
 
-.cart-summary-line{
+.cart-summary-line {
   flex: 0 0 50%;
 }
 
@@ -787,7 +802,7 @@ textarea:focus {
   font-size: 16px;
 }
 
-.card-block.cart-detailed-subtotals+.cart-summary-totals .cart-total {
+.card-block.cart-detailed-subtotals + .cart-summary-totals .cart-total {
   border-top: 0.5px solid var(--gold);
   padding-top: 25px;
 }
@@ -805,22 +820,25 @@ textarea:focus {
   }
 }
 
-.page-panier .product-line-actions{
+.page-panier .product-line-actions {
   padding: 0px 15px !important;
   max-width: calc(100vw - 60px);
 }
 
-.page-panier .parent-input, .page-panier .parent-input2{
+.page-panier .parent-input,
+.page-panier .parent-input2 {
   display: block;
   height: fit-content;
   width: fit-content;
 }
 
-.page-panier .col-md-5, .page-panier .col-md-6, .page-panier .col-md-10{
+.page-panier .col-md-5,
+.page-panier .col-md-6,
+.page-panier .col-md-10 {
   padding: 0px;
 }
 
-.parent-input .bootstrap-touchspin{
+.parent-input .bootstrap-touchspin {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -839,56 +857,65 @@ textarea:focus {
   position: absolute;
 }
 
-.parent-input .bootstrap-touchspin .input-group-btn-vertical{
+.parent-input .bootstrap-touchspin .input-group-btn-vertical {
   /* display: flex; */
   display: flex;
   position: relative;
   gap: 54px;
   align-items: flex-end;
   background-color: var(--gold);
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   overflow: hidden;
-  padding:2px;
+  padding: 2px;
   width: 100%;
 }
 
-.page-panier .btn, .parent-input .btn{
+.page-panier .btn,
+.parent-input .btn {
   min-width: auto;
 }
 
-.bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-up, .bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-down{
+.bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-up,
+.bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-down {
   border: none;
-  background:none ;
-  border-radius: 8px;
+  background: none;
+  border-radius: var(--border-radius);
   width: 5vw;
   min-width: 20px;
   display: block;
 }
 
-.parent-input .bootstrap-touchspin .input-group-btn-vertical .touchspin-up,.parent-input .bootstrap-touchspin .input-group-btn-vertical .touchspin-down{
+.parent-input .bootstrap-touchspin .input-group-btn-vertical .touchspin-up,
+.parent-input .bootstrap-touchspin .input-group-btn-vertical .touchspin-down {
   height: 100%;
   width: 100%;
 }
 
 .parent-input .bootstrap-touchspin .input-group-btn-vertical .touchspin-up {
-transform: translateY(5%) !important;
+  transform: translateY(5%) !important;
 }
 
-.parent-input .bootstrap-touchspin .input-group-btn-vertical .touchspin-up::after {
+.parent-input
+  .bootstrap-touchspin
+  .input-group-btn-vertical
+  .touchspin-up::after {
   content: "+" !important;
   font-size: 25px;
 }
 
-.parent-input .bootstrap-touchspin .input-group-btn-vertical .touchspin-down::after {
+.parent-input
+  .bootstrap-touchspin
+  .input-group-btn-vertical
+  .touchspin-down::after {
   content: "-" !important;
   font-size: 25px;
 }
 
-.page-panier .groupe-actions{ 
+.page-panier .groupe-actions {
   display: flex;
 }
 
-.page-panier .trash-product{
+.page-panier .trash-product {
   content: "";
   background-image: url("../images/trash.svg"); /* The image used */
   background-position: center; /* Center the image */
@@ -898,10 +925,9 @@ transform: translateY(5%) !important;
   height: 35px;
 }
 
-.page-panier .trash-product:hover{
+.page-panier .trash-product:hover {
   transform: scale(0.9);
 }
-
 
 /* pas encore vu */
 
@@ -922,7 +948,8 @@ transform: translateY(5%) !important;
   flex: 0 0 40%;
 }
 
-.page-panier .product-image, .page-panier .block-image{
+.page-panier .product-image,
+.page-panier .block-image {
   display: block;
   height: fit-content;
   width: fit-content;
@@ -937,7 +964,7 @@ transform: translateY(5%) !important;
 }
 
 .page-panier .image {
-  display:block;
+  display: block;
   width: 90vw;
   height: 90vw;
   margin: 0 auto !important;
@@ -994,9 +1021,6 @@ transform: translateY(5%) !important;
 .panier-card .prix-unitaire {
   font-size: 20px;
 }
-
-
-
 
 /* v *** a vérifier *** v */
 
