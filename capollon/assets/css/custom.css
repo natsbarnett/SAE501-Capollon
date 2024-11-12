@@ -521,6 +521,11 @@ a:hover {
   width: fit-content;
 }
 
+.page-panier .parent-input2{
+  display: flex;
+  flex-direction: column;
+}
+
 .page-panier .col-md-5, .page-panier .col-md-6, .page-panier .col-md-10{
   padding: 0px;
 }
@@ -564,7 +569,7 @@ a:hover {
 .bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-up, .bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-down{
   border: none;
   background:none ;
-  border-radius: 8px;
+  border-radius: var(--border-radius);
   width: 5vw;
   min-width: 20px;
   display: block;
@@ -593,6 +598,13 @@ transform: translateY(5%) !important;
   display: flex;
 }
 
+.page-panier .qty-price{
+  color: var(--white);
+  font-size: 40px;
+  margin-top: 5vh;
+
+}
+
 .page-panier .trash-product{
   content: "";
   background-image: url("../images/trash.svg"); /* The image used */
@@ -609,23 +621,6 @@ transform: translateY(5%) !important;
 
 
 /* pas encore vu */
-
-@media (min-width: 1127px) {
-  .panier-list {
-    max-width: 50vw;
-  }
-}
-
-.panier-list .panier-card {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5%;
-  margin: 5% auto;
-}
-
-.panier-list .image-panier {
-  flex: 0 0 40%;
-}
 
 .page-panier .product-image, .page-panier .block-image{
   display: block;
@@ -645,7 +640,8 @@ transform: translateY(5%) !important;
   display:block;
   width: 90vw;
   height: 90vw;
-  margin: 0 auto !important;
+  margin: 0 auto 20px !important;
+  max-width: calc(100vw - 45px);
 }
 
 .page-panier .image img {
@@ -689,11 +685,10 @@ transform: translateY(5%) !important;
     width: 50px;
     height: 50px;
   }
-}
 
-.panier-card .prix-tot {
-  font-size: 40px;
-  margin-top: 5vh;
+  .cart-item {
+    border-bottom: 1px solid var(--gold);
+  }
 }
 
 .panier-card .prix-unitaire {
@@ -701,30 +696,40 @@ transform: translateY(5%) !important;
 }
 
 
+.discount{
+  background-color: #951807 !important;
+  border-radius: 8px;
+}
+
+.product-price{
+  color: var(--white);
+}
+
+.has-discount.product-price{
+  color: #ff4d36;
+}
+
+.product-line-info .label{
+  color: var(--white);
+}
+
+
 
 
 /* v *** a vérifier *** v */
 
-@media (min-width: 1127px) {
+@media (min-width: 990px) {
   .panier-aside {
     float: right;
     border-left: 2px solid var(--gold);
     padding-left: 50px;
-    width: 15vw;
+    padding-right: 50px;
+    width: 20vw;
   }
 
   #fiche-produit {
     float: right;
     border-left: 2px solid var(--gold);
     padding-left: 40px;
-  }
-}
-
-@media (min-width: 1127px) {
-  .panier-aside {
-    float: right;
-    border-left: 2px solid var(--gold);
-    padding-left: 50px;
-    width: 15vw;
   }
 }

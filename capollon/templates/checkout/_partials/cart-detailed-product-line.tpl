@@ -45,7 +45,7 @@
   <!--  product line body: label, discounts, price, attributes, customizations -->
   <div class="product-line-grid-body col-md-4 col-xs-8">
     <div class="product-line-info">
-      <a class="label" href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a>
+      <a class="label" href="{$product.url}" data-id_customization="{$product.id_customization|intval}"><h3>{$product.name}</h3></a>
     </div>
 
     <div class="product-line-info product-price h5 {if $product.has_discount}has-discount{/if}">
@@ -55,7 +55,7 @@
           {if $product.discount_type === 'percentage'}
             <span class="discount discount-percentage">
                 -{$product.discount_percentage_absolute}
-              </span>
+            </span>
           {else}
             <span class="discount discount-amount">
                 -{$product.discount_to_display}
@@ -150,14 +150,12 @@
             {/if}
           </div>
           <div class="col-md-6 col-xs-2 price">
-            <span class="product-price">
-              <strong>
+            <span class="product-price qty-price">
                 {if !empty($product.is_gift)}
                   <span class="gift">{l s='Gift' d='Shop.Theme.Checkout'}</span>
                 {else}
                   {$product.total}
                 {/if}
-              </strong>
             </span>
           </div>
         </div>
