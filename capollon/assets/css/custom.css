@@ -222,7 +222,7 @@ footer a:hover {
   width: 100vw;
   margin: 2vh 0 !important;
   height: 5.5vh;
-  background: url("../images/Bordure.svg") center center no-repeat;
+  background: ("../images/Bordure.svg") center center no-repeat;
   background-size: cover;
 }
 
@@ -424,12 +424,232 @@ p {
   background-color: var(--gold-clair);
 }
 
-
 .voir-plus-products {
   display: block;
   margin: 5vh auto !important;
   max-width: fit-content !important;
 }
+/******************************************************************************* Fiche produit */
+
+.product-container {
+  max-width: 90vw !important;
+  margin: 5vh auto !important;
+}
+
+
+
+.current-price {
+  color: var(--gold) !important;
+}
+
+.discount {
+  background-color: var(--gold) !important;
+}
+
+.current-price,
+.discount,
+.regular-price {
+  font-family: "Marcellus", serif;
+}
+
+#fiche-produit
+
+
+#fiche-produit .prix-gamme {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%;
+  align-items: center;
+}
+
+#fiche-produit .prix {
+  font-size: 25px;
+  flex: 0 0 30%;
+}
+
+#fiche-produit .gammes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+  flex: 0 0 65%;
+}
+
+#fiche-produit .gammes-list .gamme {
+  color: var(--gold);
+  padding: var(--padding);
+  border: 1px solid var(--gold);
+  border-radius: var(--border-radius);
+}
+
+#fiche-produit .choix-taille {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#fiche-produit .taille-capote label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#fiche-produit .qty .input-group {
+  display: flex !important;
+  align-items: center;
+  gap: 5px;
+}
+
+#fiche-produit .btn-touchspin {
+  width: 10px !important;
+  padding: 0 !important;
+}
+
+@media (min-width: 1127px) {
+  #fiche-produit {
+    float: right;
+    border-left: 2px solid var(--gold);
+    padding-left: 40px;
+    max-width: 40vw !important;
+  }
+}
+
+.btn-comment-big{
+  width: 50vw !important;
+  margin: 5vh auto !important;
+}
+
+
+.product-quantity{
+  flex-wrap: wrap;
+}
+
+.product-quantity div:first-child{
+  flex: 0 0 50% !important;
+}
+
+.product-quantity button:first-child{
+  flex: 0 0 30% !important;
+}
+
+/***************************************************** Commentaires */
+#empty-product-comment {
+  background: transparent !important;
+  max-width: 90vw !important;
+  margin: 0 auto !important;
+}
+
+#empty-product-comment .btn {
+  max-width: 60vw !important;
+  margin: 5vh auto !important;
+}
+
+#product-comments-list .product-comment-list-item {
+  background-color: var(--noir) !important;
+  display: flex !important;
+  flex-wrap: wrap;
+  max-width: 80vw !important;
+  margin: 0 auto !important;
+}
+
+#product-comments-list .product-comment-list-item .comment-infos {
+  flex: 0 0 10%;
+  color: var(--white) !important;
+}
+
+#product-comments-list .product-comment-list-item .comment-infos .comment-date,
+#product-comments-list
+  .product-comment-list-item
+  .comment-infos
+  .comment-author {
+  font-family: "Marcellus", serif;
+}
+
+#product-comments-list .product-comment-list-item .comment-content {
+  flex: 0 0 70%;
+  color: var(--white) !important;
+}
+
+#product-comments-list .product-comment-list-item .comment-content p {
+  color: var(--white) !important;
+}
+
+#product-comments-list .product-comment-list-item .comment-content p.h4 {
+  color: var(--gold) !important;
+  font-family: "Marcellus", serif;
+}
+
+#product-comments-list-header {
+  color: var(--gold) !important;
+  font-family: "Marcellus", serif;
+}
+
+.star-content div.star,
+.star-content div.star-on {
+  background: transparent;
+  background-image: url("../images/starss.png") !important;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.star-content div.star-on {
+  background-position: -24px 0 !important;
+}
+
+/****************************************************** Modal */
+#post-product-comment-modal .modal-dialog {
+  max-width: 80vw !important;
+}
+
+#post-product-comment-modal .modal-dialog .modal-content,
+#product-comment-posted-modal .modal-dialog .modal-content {
+  background-color: var(--noir) !important;
+}
+
+#post-product-comment-modal .modal-dialog .modal-header p,
+#product-comment-posted-modal .modal-dialog .modal-header p {
+  color: var(--gold) !important;
+  font-family: "Marcellus", serif !important;
+}
+
+#post-product-comment-modal .modal-dialog .modal-header .close span {
+  color: var(--gold-clair) !important;
+}
+
+#post-product-comment-modal .modal-dialog .modal-body form .row label,
+#post-product-comment-modal .modal-dialog .modal-body form .row p,
+#post-product-comment-modal .modal-dialog .modal-body form label {
+  color: var(--white) !important;
+  display: block !important;
+  text-align: left !important;
+}
+
+#post-product-comment-modal .modal-dialog .modal-body form #comment_title,
+#post-product-comment-modal .modal-dialog .modal-body form textarea,
+#post-product-comment-modal .modal-dialog .modal-body form label {
+  margin: 1vh auto !important;
+}
+
+#post-product-comment-modal
+  .modal-dialog
+  .modal-body
+  form
+  .row
+  .post-comment-buttons {
+  margin: 1vh auto !important;
+  justify-content: center !important;
+}
+
+#post-product-comment-modal .modal-dialog .modal-body form #comment_title {
+  max-width: 90% !important;
+}
+
+#post-product-comment-modal .modal-dialog .modal-body form textarea {
+  max-width: 92% !important;
+  min-width: 92% !important;
+}
+
 /******************************************************************************* Boutons */
 
 .btn {
@@ -462,4 +682,80 @@ a {
 
 a:hover {
   color: var(--gold-clair) !important;
+}
+
+label span {
+  color: var(--white) !important;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  appearance: none;
+  background-color: var(--gold);
+  margin: 0;
+  font: inherit;
+  color: var(--gold);
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid var(--gold);
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before,
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="checkbox"]::before,
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+}
+
+input[type="radio"]:checked::before,
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+  background-color: var(--noir);
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="date"],
+select {
+  max-width: inherit;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  height: fit-content;
+  background-color: transparent;
+  color: var(--white);
+  border: 3px solid var(--gold);
+}
+
+input:focus {
+  outline: none !important;
+}
+
+textarea {
+  width: 100%;
+  border: 2px solid var(--gold) !important;
+  border-radius: var(--border-radius);
+  background-color: transparent;
+  color: var(--white);
+  padding: var(--padding);
+  font-size: 15px;
+  font-family: "Raleway", sans-serif;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 25vh;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none !important;
 }
