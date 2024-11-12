@@ -100,6 +100,9 @@
           {block name='product_add_to_cart'}
             {include file='catalog/_partials/product-add-to-cart.tpl'}
           {/block}
+
+          {* Input to refresh product HTML removed, block kept for compatibility with themes *}
+          {block name='product_refresh'}{/block}
         </div>
       </aside>
 
@@ -114,9 +117,9 @@
           </div>
         </div>
       </div>
-      <p class="description-prod">
-        {$product.description|strip_tags}
-      </p>
+
+      {$product.description nofilter}
+
 
       <div class="comment-section">
         <h2>Donnez votre avis</h2>

@@ -222,7 +222,7 @@ footer a:hover {
   width: 100vw;
   margin: 2vh 0 !important;
   height: 5.5vh;
-  background: ("../images/Bordure.svg") center center no-repeat;
+  background: url("../images/Bordure.svg") center center no-repeat;
   background-size: cover;
 }
 
@@ -536,14 +536,13 @@ p {
   border-radius: 11px;
 }
 
-.wishlist-button-add{
+.wishlist-button-add {
   background-color: var(--gold) !important;
 }
 
 .wishlist-button-add i {
   color: var(--noir) !important;
 }
-
 
 /***************************************************** Commentaires */
 #empty-product-comment {
@@ -663,11 +662,10 @@ p {
 }
 
 /******************************************************************************* Boutons */
-.breadcrumb ol{
+.breadcrumb ol {
   margin: 2vh 5vw !important;
   max-width: 90vw !important;
 }
-
 
 .btn {
   display: block;
