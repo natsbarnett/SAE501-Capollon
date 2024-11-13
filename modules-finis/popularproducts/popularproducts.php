@@ -9,7 +9,7 @@ class PopularProducts extends Module
     {
         $this->name = 'popularproducts';
         $this->tab = 'front_office_features';
-        $this->version = '1.0.13';
+        $this->version = '1.0.15';
         $this->author = 'Capollon';
         $this->need_instance = 0;
         $this->bootstrap = true; // Optionnel, selon la version de PrestaShop
