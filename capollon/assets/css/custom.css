@@ -742,6 +742,42 @@ input[type="checkbox"]:checked::before {
   background-color: var(--noir);
 }
 
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(99%);
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="date"],
+select {
+  padding: var(--padding) !important;
+  border-radius: var(--border-radius) !important;
+  height: fit-content !important;
+  background-color: transparent !important;
+  color: var(--white) !important;
+  border: 3px solid var(--gold) !important;
+}
+
+input:focus, textarea:focus {
+  outline: none !important;
+}
+
+textarea {
+  width: 100% !important;
+  border: 2px solid var(--gold) !important;
+  border-radius: var(--border-radius) !important;
+  background-color: transparent !important;
+  color: var(--white) !important;
+  padding: var(--padding) !important;
+  font-size: 15px !important;
+  font-family: "Raleway", sans-serif !important;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 25vh !important;
+  resize: none !important;
+}
+
 /********************************************************************   Page panier */
 
 .page-panier .card {
