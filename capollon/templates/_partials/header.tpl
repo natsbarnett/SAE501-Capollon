@@ -44,12 +44,12 @@
             <a href="#">Contact</a>
           </div>
           <div class="option_connexion">
-          {if $logged} <!-- Vérifie si l'utilisateur est connecté -->
+          {if $customer.is_logged} <!-- Vérifie si l'utilisateur est connecté -->
             <div class="option1"><a href="">Mes infos</a></div>
             <div class="separation_option"></div>
             <div class="option_centre"><a href="">Mon panier</a></div>
             <div class="separation_option"></div>
-            <div class="option2"><a href="">Se déconnecter</a></div>
+            <div class="option2"><a href="">Se déconnecter</a></div> module > hook > (quand le header se charge afficher le chat bot)
           {else}
               <div class="option1"><a href="{$urls.pages.authentication|escape:'html'}?create_account=1">Se connecter</a></div>
           {/if}

@@ -795,6 +795,15 @@ textarea {
 
 /********************************************************************   Page panier */
 
+.page-panier{
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+.page-panier h1{
+  margin-left: 25px;
+}
+
 .page-panier .card {
   background: none;
 }
