@@ -799,12 +799,12 @@ textarea {
 
 /********************************************************************   Page panier */
 
-.page-panier{
+.page-panier {
   overflow-x: hidden;
   max-width: 100vw;
 }
 
-.page-panier h1{
+.page-panier h1 {
   margin-left: 25px;
 }
 
@@ -1230,15 +1230,83 @@ textarea {
 }
 
 /*************************************************************** Page liens du compte */
-#my-account #main{
+#my-account #main {
   max-width: 90vw !important;
   margin: 5vh auto !important;
 }
 
-#my-account .links span{
+#my-account .links span {
   background: transparent !important;
 }
 
-#my-account .links{
+#my-account .links {
   display: flex !important;
+  flex-wrap: wrap;
+  max-width: 55vw !important;
+  justify-content: center !important;
+  margin: 2vh auto !important;
+}
+
+#my-account .links a {
+  display: block;
+  text-align: left !important;
+  flex: 0 0 45% !important;
+  color: var(--white) !important;
+  font-family: "Marcellus", serif;
+  font-weight: normal !important;
+}
+
+#my-account .links a:hover {
+  color: var(--gold) !important;
+}
+
+#my-account .links span.link-item {
+  padding: 0 !important;
+  padding-left: 30px !important;
+}
+
+#my-account .links i {
+  display: none !important;
+}
+
+#my-account #identity-link {
+  background: transparent url("../images/my-profile/user.png") no-repeat;
+}
+
+#my-account #address-link {
+  background: transparent url("../images/my-profile/address.png") no-repeat;
+}
+
+#my-account #history-link {
+  background: transparent url("../images/my-profile/history.png") no-repeat;
+}
+
+#my-account #order-slips-link {
+  background: transparent url("../images/my-profile/coupon.png") no-repeat;
+}
+
+#my-account #wishlist-link {
+  background: transparent url("../images/my-profile/wishlist.png") no-repeat;
+}
+
+#my-account #psgdpr-link {
+  background: transparent url("../images/my-profile/personal-info.png")
+    no-repeat;
+}
+
+#my-account #identity-link,
+#my-account #address-link,
+#my-account #history-link,
+#my-account #order-slips-link,
+#my-account #wishlist-link,
+#my-account #psgdpr-link {
+  background-position: left center;
+  background-size: 30px 30px;
+  background-repeat: no-repeat !important;
+}
+
+
+#my-account .page-footer .btn{
+  max-width: 40vw !important;
+  margin: 2vh auto !important;
 }
