@@ -38,6 +38,11 @@ body {
   overflow-x: hidden;
 }
 
+main .wrapper {
+  min-height: 100vh !important;
+  position: relative !important;
+}
+
 /*************************************************************************  
           Header
 **************************************************************************/
@@ -165,6 +170,7 @@ footer {
   flex-direction: column;
   line-height: 1.589em;
   gap: 0 !important;
+  width: 100% !important;
 }
 
 footer .separator {
@@ -685,7 +691,8 @@ figcaption.image-caption div p {
 }
 /******************************************************************************* Boutons */
 
-.btn {
+.btn,
+#addresses .addresses-footer a {
   display: block;
   text-align: center;
   background-color: var(--gold);
@@ -701,7 +708,8 @@ figcaption.image-caption div p {
   transition: 0.2s ease-in-out;
 }
 
-.btn:hover {
+.btn:hover,
+#addresses .addresses-footer a:hover {
   background-color: var(--gold-clair) !important;
   color: var(--noir) !important;
 }
@@ -764,6 +772,7 @@ input[type="password"],
 input[type="email"],
 input[type="text"],
 input[type="date"],
+input[type="tel"],
 select {
   padding: var(--padding) !important;
   border-radius: var(--border-radius) !important;
@@ -771,6 +780,16 @@ select {
   background-color: transparent !important;
   color: var(--white) !important;
   border: 3px solid var(--gold) !important;
+}
+
+select option {
+  background: var(--noir) !important;
+  color: var(--white) !important;
+  transition: 0.2s ease-in-out !important;
+}
+
+select option:hover {
+  background: var(--gold) !important;
 }
 
 input:focus,
@@ -1082,7 +1101,8 @@ textarea {
 
 /********************************************************** Login / Register */
 #registration #main,
-#authentication #main {
+#authentication #main,
+#identity #content {
   margin: 5vh auto !important;
   max-width: 90vw !important;
 }
@@ -1095,7 +1115,9 @@ textarea {
 
 .page-authentication #content,
 .page-authentication section form div,
-.page-registration #content {
+.page-registration #content,
+#identity #content,
+#address #content {
   background: transparent !important;
   color: var(--white) !important;
 }
@@ -1103,8 +1125,11 @@ textarea {
 .page-authentication section form div {
   max-width: 50vw !important;
 }
-.page-registration #content {
+.page-registration #content,
+#identity #content,
+#address #content {
   max-width: 70vw !important;
+  margin: 2vh auto !important;
 }
 
 .page-authentication #content .input-group {
@@ -1133,13 +1158,14 @@ textarea {
   background-color: var(--noir-profond) !important;
 }
 
-.input-group.focus {
-  border: none !important;
+.input-group.focus,
+select:focus {
   outline: none !important;
 }
 
 .page-authentication #content .input-group-btn button,
-.page-registration .field-password-policy .form-group div .input-group button {
+.page-registration .field-password-policy .form-group div .input-group button,
+#identity .field-password-policy .form-group div .input-group button {
   padding: 0.78rem 0.1rem 0.78rem 0.2rem !important;
   background-color: var(--gold) !important;
   border: 3px solid var(--gold) !important;
@@ -1154,7 +1180,8 @@ textarea {
   .form-group
   div
   .input-group
-  button:hover {
+  button:hover,
+#identity .field-password-policy .form-group div .input-group button:hover {
   background-color: var(--gold-clair) !important;
 }
 
@@ -1165,12 +1192,15 @@ textarea {
 }
 
 .page-authentication .form-group label,
-.page-registration .input-group-btn {
+.page-registration .input-group-btn,
+#identity .input-group-btn {
   flex: 0 0 20% !important;
 }
 
 .page-authentication .form-group div,
-.page-registration #field-password {
+.page-registration #field-password,
+#identity #field-password,
+#identity #field-new_password {
   flex: 0 0 60% !important;
 }
 
@@ -1218,19 +1248,25 @@ textarea {
   position: relative !important;
 }
 
-.page-registration .field-password-policy .form-group div .input-group {
+.page-registration .field-password-policy .form-group div .input-group,
+#identity .field-password-policy .form-group div .input-group {
   display: flex !important;
-  align-items: center;
+  align-items: center !important;
 }
 
 .page-registration .form-control-submit,
-#submit-login {
+#submit-login,
+#identity .form-control-submit,
+#address .form-control-submit {
   max-width: 50vw !important;
   margin: 0 auto;
 }
 
 /*************************************************************** Page liens du compte */
-#my-account #main {
+#identity #main,
+#my-account #main,
+#address #main,
+.page-order-detail #main {
   max-width: 90vw !important;
   margin: 5vh auto !important;
 }
@@ -1242,15 +1278,16 @@ textarea {
 #my-account .links {
   display: flex !important;
   flex-wrap: wrap;
-  max-width: 55vw !important;
-  justify-content: center !important;
+  align-items: center;
+  max-width: 40vw !important;
+  justify-content: space-around !important;
   margin: 2vh auto !important;
 }
 
 #my-account .links a {
   display: block;
   text-align: left !important;
-  flex: 0 0 45% !important;
+  flex: 0 0 40% !important;
   color: var(--white) !important;
   font-family: "Marcellus", serif;
   font-weight: normal !important;
@@ -1273,7 +1310,8 @@ textarea {
   background: transparent url("../images/my-profile/user.png") no-repeat;
 }
 
-#my-account #address-link {
+#my-account #address-link,
+#my-account #addresses-link {
   background: transparent url("../images/my-profile/address.png") no-repeat;
 }
 
@@ -1281,7 +1319,8 @@ textarea {
   background: transparent url("../images/my-profile/history.png") no-repeat;
 }
 
-#my-account #order-slips-link {
+#my-account #order-slips-link,
+#my-account #discounts-link {
   background: transparent url("../images/my-profile/coupon.png") no-repeat;
 }
 
@@ -1296,8 +1335,10 @@ textarea {
 
 #my-account #identity-link,
 #my-account #address-link,
+#my-account #addresses-link,
 #my-account #history-link,
 #my-account #order-slips-link,
+#my-account #discounts-link,
 #my-account #wishlist-link,
 #my-account #psgdpr-link {
   background-position: left center;
@@ -1305,8 +1346,176 @@ textarea {
   background-repeat: no-repeat !important;
 }
 
-
-#my-account .page-footer .btn{
+#my-account .page-footer .btn {
   max-width: 40vw !important;
   margin: 2vh auto !important;
+}
+
+/**************************************************************** Infos perso */
+#identity .page-footer,
+#address .page-footer,
+#addresses .page-footer,
+#history .page-footer,
+#order-slip .page-footer,
+#module-blockwishlist-lists .wishlist-footer-links,
+#module-psgdpr-gdpr .page-footer,
+.page-order-detail .page-footer,
+#discount .page-footer {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  gap: 15px !important;
+}
+
+#identity .page-footer a,
+#address .page-footer a,
+#addresses .page-footer a,
+#history .page-footer a,
+#order-slip .page-footer a,
+#module-blockwishlist-lists .wishlist-footer-links a,
+#module-psgdpr-gdpr .page-footer a,
+.page-order-detail .page-footer a,
+#discount .page-footer a {
+  display: block !important;
+}
+
+/*************************************************************** Adresses */
+#address label {
+  max-width: 10vw !important;
+}
+
+#address .form-control-comment {
+  text-align: right !important;
+}
+
+#address .form-footer {
+  margin: 5vh auto !important;
+}
+
+#addresses #main {
+  max-width: 90vw !important;
+  margin: 0 auto !important;
+}
+
+#addresses #content {
+  max-width: 80vw !important;
+  margin: 5vh auto !important;
+}
+
+#addresses .address {
+  flex: 0 0 25% !important;
+  background-color: var(--noir-profond) !important;
+  max-width: fit-content;
+  padding: var(--padding) !important;
+  border-radius: var(--border-radius) !important;
+}
+
+#addresses .address .address-body {
+  color: var(--white) !important;
+}
+
+#addresses .address .address-footer {
+  border-color: var(--gold-clair) !important;
+}
+
+#addresses .addresses-footer a {
+  max-width: 40vw !important;
+  margin: 5vh auto !important;
+}
+
+/************************************************************* History */
+
+#history #content {
+  background: transparent !important;
+}
+
+#history h6 {
+  color: var(--white) !important;
+  font-weight: normal !important;
+}
+
+#history table th,
+#history table td,
+.page-order-detail table th,
+.page-order-detail table td {
+  border: 3px solid var(--noir) !important;
+}
+
+#history table th,
+.page-order-detail table th {
+  background-color: var(--gold-clair) !important;
+  color: var(--noir) !important;
+  font-family: "Marcellus", serif !important;
+}
+
+#history table td,
+.page-order-detail table td {
+  color: var(--white) !important;
+}
+
+/******************************************************* Détails commande */
+
+.page-order-detail .box {
+  background-color: transparent !important;
+}
+.page-order-detail #order-infos,
+.page-order-detail .addresses {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-evenly !important;
+  gap: 10px !important;
+}
+
+.page-order-detail #order-infos .box,
+.page-order-detail .addresses div {
+  flex: 0 0 30% !important;
+}
+
+.page-order-detail #order-infos .box:first-child a {
+  font-family: "Marcellus", serif;
+}
+
+.page-order-detail .order-message-form {
+  max-width: 60vw !important;
+  margin: 2vh auto !important;
+}
+
+.page-order-detail .order-message-form .form-group {
+  margin: 2vh auto !important;
+  max-width: 50vw !important;
+}
+
+.page-order-detail .order-message-form label {
+  max-width: 50px !important;
+}
+
+.page-order-detail .order-message-form select {
+  width: 37.25vw !important;
+}
+
+.page-order-detail .order-message-form .form-footer button {
+  max-width: 40vw !important;
+  margin: 2vh auto !important;
+}
+
+/**************************************************************** Credit Slip */
+
+#order-slip #content {
+  background: transparent !important;
+}
+
+#order-slip #main {
+  max-width: 80vw !important;
+  margin: 5vh auto !important;
+}
+
+/************************************************************** Vouchers */
+
+#discount #content {
+  background: transparent !important;
+}
+
+#order-slip #main {
+  max-width: 80vw !important;
+  margin: 5vh auto !important;
 }

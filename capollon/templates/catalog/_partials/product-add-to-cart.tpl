@@ -28,7 +28,7 @@
 
     {block name='product_quantity'}
       <div class="product-quantity clearfix">
-        <div class="qty">
+        <div class="qty parent-input">
           <input
             type="number"
             name="qty"
