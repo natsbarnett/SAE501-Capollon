@@ -463,6 +463,16 @@ p {
   font-family: "Marcellus", serif;
 }
 
+figcaption.image-caption {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+figcaption.image-caption div p {
+  color: var(--white) !important;
+  font-family: "Marcellus", serif;
+}
+
 #fiche-produit #fiche-produit .prix-gamme {
   display: flex;
   flex-wrap: wrap;
@@ -534,9 +544,8 @@ p {
   background-color: var(--noir) !important;
 }
 
-.product-quantity .parent-input {
-  border: 2px solid var(--gold) !important;
-  border-radius: 11px;
+.product-quantity .parent-input span{
+  padding: 5px 10px !important;
 }
 
 .wishlist-button-add {
@@ -545,6 +554,11 @@ p {
 
 .wishlist-button-add i {
   color: var(--noir) !important;
+}
+
+.blockreassurance_product div span,
+.blockreassurance_product div p {
+  color: var(--white) !important;
 }
 
 /***************************************************** Commentaires */
@@ -759,7 +773,8 @@ select {
   border: 3px solid var(--gold) !important;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: none !important;
 }
 

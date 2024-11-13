@@ -27,42 +27,44 @@
 {block name='content'}
 
   <section class="page-panier" id="main">
-  <h1>Votre panier</h1>
+    <h1>Votre panier</h1>
     <div class="cart-grid row">
 
-    <!-- Right Block: cart subtotal & cart total -->
-    <aside class="panier-aside cart-grid-right col-lg-4">
+      <!-- Right Block: cart subtotal & cart total -->
+      <aside class="panier-aside cart-grid-right col-lg-4">
 
-    {block name='cart_summary'}
-      <div class="card cart-summary">
+        {block name='cart_summary'}
+          <div class="card cart-summary">
 
-        {block name='hook_shopping_cart'}
-          {hook h='displayShoppingCart'}
+            {block name='hook_shopping_cart'}
+              {hook h='displayShoppingCart'}
+            {/block}
+
+            {block name='cart_totals'}
+              {include file='checkout/_partials/cart-detailed-totals.tpl' cart=$cart}
+            {/block}
+
+            {block name='cart_actions'}
+              {include file='checkout/_partials/cart-detailed-actions.tpl' cart=$cart}
+            {/block}
+
+          </div>
         {/block}
-
-        {block name='cart_totals'}
-          {include file='checkout/_partials/cart-detailed-totals.tpl' cart=$cart}
+        {block name='hook_reassurance'}
+          {hook h='displayReassurance'}
         {/block}
-
-        {block name='cart_actions'}
-          {include file='checkout/_partials/cart-detailed-actions.tpl' cart=$cart}
-        {/block}
-
-      </div>
-    {/block}
-
-  </aside>
+      </aside>
 
       <!-- Left Block: cart product informations & shipping -->
       <div class="cart-grid-body col-lg-8">
 
         <!-- cart products detailed -->
         <div class="card cart-container">
-          
+
           {block name='cart_overview'}
             {include file='checkout/_partials/cart-detailed.tpl' cart=$cart}
           {/block}
-        </div> 
+        </div>
 
         {block name='continue_shopping'}
           <a class="label" href="{$urls.pages.index}">
@@ -76,13 +78,11 @@
         {/block}
       </div>
 
-      {block name='hook_reassurance'}
-        {hook h='displayReassurance'}
-      {/block}
+
 
     </div>
-    
+
     {hook h='displayCrossSellingShoppingCart'}
-    
+
   </section>
 {/block}
