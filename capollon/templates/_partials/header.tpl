@@ -43,6 +43,17 @@
           <div>
             <a href="#">Contact</a>
           </div>
+          <div class="option_connexion">
+          {if $logged} <!-- Vérifie si l'utilisateur est connecté -->
+            <div class="option1"><a href="">Mes infos</a></div>
+            <div class="separation_option"></div>
+            <div class="option_centre"><a href="">Mon panier</a></div>
+            <div class="separation_option"></div>
+            <div class="option2"><a href="">Se déconnecter</a></div>
+          {else}
+              <div class="option1"><a href="{$urls.pages.authentication|escape:'html'}?create_account=1">Se connecter</a></div>
+          {/if}
+          </div>
         </div>
         <div>
           <img src="/themes/capollon/assets/images/burger.svg" alt="" class="menu-button-close" width="100%" />
