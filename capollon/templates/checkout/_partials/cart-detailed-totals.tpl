@@ -45,19 +45,6 @@
         </div>
       {/if}
     {/foreach}
-
-    <!-- Ajout de la ligne de livraison -->
-    <div class="livraison cart-summary-line" id="cart-subtotal-shipping">
-        <span class="label">Livraison</span>
-        <span class="value">
-            {if $cart.subtotals.shipping.amount == 0}
-              gratuite
-            {else}
-              {$cart.subtotals.shipping.value}
-            {/if}
-        </span>
-    </div>
-
   </div>
 
           

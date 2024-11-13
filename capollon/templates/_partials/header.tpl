@@ -49,7 +49,7 @@
             <div class="separation_option"></div>
             <div class="option_centre"><a href="">Mon panier</a></div>
             <div class="separation_option"></div>
-            <div class="option2"><a href="">Se déconnecter</a></div> module > hook > (quand le header se charge afficher le chat bot)
+            <div class="option2"><a href="">Se déconnecter</a></div> 
           {else}
               <div class="option1"><a href="{$urls.pages.authentication|escape:'html'}?create_account=1">Se connecter</a></div>
           {/if}
