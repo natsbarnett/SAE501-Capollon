@@ -1155,11 +1155,13 @@ textarea {
   align-items: center;
 }
 
-.page-authentication .form-group label {
+.page-authentication .form-group label,
+.page-registration .input-group-btn {
   flex: 0 0 20% !important;
 }
 
-.page-authentication .form-group div {
+.page-authentication .form-group div,
+.page-registration #field-password {
   flex: 0 0 60% !important;
 }
 
@@ -1212,15 +1214,22 @@ textarea {
   align-items: center;
 }
 
-.page-registration #field-password {
-  flex: 0 0 60% !important;
-}
-
-.page-registration .input-group-btn {
-  flex: 0 0 20%;
-}
 .page-registration .form-control-submit,
 #submit-login {
   max-width: 50vw !important;
   margin: 0 auto;
+}
+
+/*************************************************************** Page liens du compte */
+#my-account #main{
+  max-width: 90vw !important;
+  margin: 5vh auto !important;
+}
+
+#my-account .links span{
+  background: transparent !important;
+}
+
+#my-account .links{
+  display: flex !important;
 }
