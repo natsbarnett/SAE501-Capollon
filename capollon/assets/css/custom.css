@@ -544,7 +544,7 @@ figcaption.image-caption div p {
   background-color: var(--noir) !important;
 }
 
-.product-quantity .parent-input span{
+.product-quantity .parent-input span {
   padding: 5px 10px !important;
 }
 
@@ -776,6 +776,10 @@ select {
 input:focus,
 textarea:focus {
   outline: none !important;
+}
+
+input:is(:-webkit-autofill, :autofill) {
+  background: var(--noir-profond) !important;
 }
 
 textarea {
@@ -1065,4 +1069,158 @@ textarea {
     border-left: 2px solid var(--gold);
     padding-left: 40px;
   }
+}
+
+/********************************************************** Login / Register */
+#registration #main,
+#authentication #main {
+  margin: 5vh auto !important;
+  max-width: 90vw !important;
+}
+
+.register-form p a,
+.forgot-password a,
+.no-account a {
+  font-family: "Marcellus", serif;
+}
+
+.page-authentication #content,
+.page-authentication section form div,
+.page-registration #content {
+  background: transparent !important;
+  color: var(--white) !important;
+}
+.page-authentication #content,
+.page-authentication section form div {
+  max-width: 50vw !important;
+}
+.page-registration #content {
+  max-width: 70vw !important;
+}
+
+.page-authentication #content .input-group {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap;
+  margin: 2vh auto;
+}
+
+.page-authentication #content .input-group input {
+  flex: 0 0 50% !important;
+}
+
+.page-authentication #content .input-group-btn {
+  flex: 0 0 10% !important;
+  width: 20px !important;
+}
+
+.page-authentication .form-control:focus {
+  outline: none !important;
+}
+
+.page-authentication .form-control:focus input {
+  outline: none !important;
+  border: none !important;
+  background-color: var(--noir-profond) !important;
+}
+
+.input-group.focus {
+  border: none !important;
+  outline: none !important;
+}
+
+.page-authentication #content .input-group-btn button,
+.page-registration .field-password-policy .form-group div .input-group button {
+  padding: 0.78rem 0.1rem 0.78rem 0.2rem !important;
+  background-color: var(--gold) !important;
+  border: 3px solid var(--gold) !important;
+  width: inherit !important;
+  display: block !important;
+  transition: 0.2s ease-in-out !important;
+}
+
+.page-authentication #content .input-group-btn button:hover,
+.page-registration
+  .field-password-policy
+  .form-group
+  div
+  .input-group
+  button:hover {
+  background-color: var(--gold-clair) !important;
+}
+
+.page-authentication .form-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.page-authentication .form-group label {
+  flex: 0 0 20% !important;
+}
+
+.page-authentication .form-group div {
+  flex: 0 0 60% !important;
+}
+
+.custom-radio {
+  background: transparent !important;
+  border: none !important;
+}
+
+.custom-checkbox input,
+.custom-radio input {
+  opacity: 1 !important;
+}
+
+.custom-checkbox input {
+  width: 15px !important;
+}
+
+.custom-radio input {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.custom-checkbox span,
+.custom-radio span {
+  display: none !important;
+}
+
+.custom-checkbox label,
+.custom-radio label {
+  flex-wrap: wrap;
+  width: 100% !important;
+  gap: 10px !important;
+  display: flex !important;
+}
+
+.custom-radio label {
+  align-items: center !important;
+}
+
+.custom-checkbox label em {
+  place-self: flex-end;
+}
+
+.custom-checkbox label input {
+  position: relative !important;
+}
+
+.page-registration .field-password-policy .form-group div .input-group {
+  display: flex !important;
+  align-items: center;
+}
+
+.page-registration #field-password {
+  flex: 0 0 60% !important;
+}
+
+.page-registration .input-group-btn {
+  flex: 0 0 20%;
+}
+.page-registration .form-control-submit,
+#submit-login {
+  max-width: 50vw !important;
+  margin: 0 auto;
 }
