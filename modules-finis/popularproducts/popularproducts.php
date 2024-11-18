@@ -9,7 +9,7 @@ class PopularProducts extends Module
     {
         $this->name = 'popularproducts';
         $this->tab = 'front_office_features';
-        $this->version = '1.0.15';
+        $this->version = '1.0.18';
         $this->author = 'Capollon';
         $this->need_instance = 0;
         $this->bootstrap = true; // Optionnel, selon la version de PrestaShop
@@ -20,9 +20,15 @@ class PopularProducts extends Module
         $this->description = $this->l('Displays popular products on the homepage.');
     }
 
+    public function uninstall()
+    {
+        return parent::uninstall() && $this->unregisterHook('prodListHome');
+    }
+
+
     public function install()
     {
-        return parent::install() && $this->registerHook('displayHome');
+        return parent::install() && $this->registerHook('prodListHome');
     }
 
     public function getRandomProducts()
@@ -47,7 +53,7 @@ class PopularProducts extends Module
 
 
 
-    public function hookDisplayHome($params)
+    public function hookProdListHome($params)
     {
         // Récupérer 3 produits aléatoires
         $randomProducts = $this->getRandomProducts();
