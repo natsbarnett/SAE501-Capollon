@@ -37,6 +37,47 @@ body {
   overflow-x: hidden;
 }
 
+section {
+  margin: var(--margin-section);
+}
+
+
+textarea {
+  width: 100%;
+  border: 2px solid var(--gold);
+  border-radius: var(--border-radius);
+  background-color: transparent;
+  color: var(--white);
+  padding: var(--padding);
+  font-size: 15px;
+  font-family: "Raleway", sans-serif;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 25vh;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none !important;
+}
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="date"],
+select {
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  height: fit-content;
+  background-color: transparent;
+  color: var(--white);
+  border: 3px solid var(--gold);
+}
+
+label {
+  display: block;
+}
+
 /*************************************************************************  
           Header
 **************************************************************************/
@@ -462,4 +503,45 @@ a {
 
 a:hover {
   color: var(--gold-clair) !important;
+}
+
+/********************************************************************   formulaire de contact */
+
+@media (min-width: 850px) {
+  .contact-form form {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 849px) {
+  .contact-form {
+    max-width: 90%;
+  }
+}
+
+.contact-form {
+  all:unset
+}
+
+.contact-form div {
+  margin: 10px auto;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"] {
+  width: 100%;
+  font-size: 15px;
+  font-family: "Marcellus", serif;
+}
+
+.submit-container {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.submit-container input {
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
 }
