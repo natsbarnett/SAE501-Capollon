@@ -300,6 +300,10 @@ footer a:hover {
   padding: 0 !important;
   max-width: 100vw !important;
 }
+
+#main {
+  min-height: 80vh;
+}
 /********************************************************************   Titres */
 h1,
 h2,
@@ -1189,6 +1193,14 @@ textarea {
   max-width: 90vw !important;
 }
 
+.form-control-valign {
+  display: flex;
+}
+
+.form-control-valign label{
+  flex: 0 0 10%;
+}
+
 .register-form p a,
 .forgot-password a,
 .no-account a {
@@ -1543,14 +1555,13 @@ select:focus {
 
 /******************************************************* Page données RGPD */
 
-#module-psgdpr-gdpr #content{
+#module-psgdpr-gdpr #content {
   background-color: transparent !important;
 }
 
-#module-psgdpr-gdpr .page_content div{
+#module-psgdpr-gdpr .page_content div {
   background-color: var(--noir-profond) !important;
 }
-
 
 /******************************************************* Détails commande */
 
@@ -1603,7 +1614,9 @@ select:focus {
   background: transparent !important;
 }
 
-#order-slip #main {
+#order-slip #main,
+#discount #main,
+#module-psgdpr-gdpr #main {
   max-width: 80vw !important;
   margin: 5vh auto !important;
 }
