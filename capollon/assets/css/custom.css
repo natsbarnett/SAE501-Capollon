@@ -1197,7 +1197,7 @@ textarea {
   display: flex;
 }
 
-.form-control-valign label{
+.form-control-valign label {
   flex: 0 0 10%;
 }
 
@@ -1553,6 +1553,10 @@ select:focus {
   color: var(--white) !important;
 }
 
+#history .row {
+  display: flex !important;
+}
+
 /******************************************************* Page données RGPD */
 
 #module-psgdpr-gdpr #content {
@@ -1616,7 +1620,8 @@ select:focus {
 
 #order-slip #main,
 #discount #main,
-#module-psgdpr-gdpr #main {
+#module-psgdpr-gdpr #main,
+#history #main {
   max-width: 80vw !important;
   margin: 5vh auto !important;
 }
