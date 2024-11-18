@@ -22,46 +22,42 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-{* {if $page['meta']['title'] === 'Contact us'}
-{$layout = 'layouts/layout-full-width.tpl'}
-{/if}
-{extends file=$layout}
+{block name="address_form"}
+  <div class="js-address-form">
+    {include file='_partials/form-errors.tpl' errors=$errors['']}
 
-{block name='content'}
-  <section id="main">
-    {block name='page_header_container'}
-      {block name='page_title' hide}
-        <header class="page-header">
-          <h1>{$smarty.block.child}</h1>
-        </header>
+    {block name="address_form_url"}
+    <form
+      method="POST"
+      action="{url entity='address' params=['id_address' => $id_address]}"
+      data-id-address="{$id_address}"
+      data-refresh-url="{url entity='address' params=['ajax' => 1, 'action' => 'addressForm']}"
+    >
+    {/block}
+
+      {block name="address_form_fields"}
+        <section class="form-fields">
+          {block name='form_fields'}
+            {foreach from=$formFields item="field"}
+              {block name='form_field'}
+                {form_field field=$field}
+              {/block}
+            {/foreach}
+          {/block}
+        </section>
       {/block}
-    {/block}
 
-    {block name='page_content_container'}
-      <div id="content" class="page-content card card-block">
-        {block name='page_content_top'}{/block}
-        {block name='page_content'}
-          <!-- Page content -->
-        {/block}
-      </div>
-    {/block}
-
-    {block name='page_footer_container'}
-      <footer class="page-footer">
-        {block name='page_footer'}
-          <!-- Footer content -->
+      {block name="address_form_footer"}
+      <footer class="form-footer clearfix">
+        <input type="hidden" name="submitAddress" value="1">
+        {block name='form_buttons'}
+          <button class="btn btn-primary form-control-submit float-xs-right" type="submit">
+            {l s='Save' d='Shop.Theme.Actions'}
+          </button>
         {/block}
       </footer>
-    {/block}
+      {/block}
 
-  </section>
-{/block} *}
-{extends file='catalog/listing/product-list.tpl'}
-
-{block name='product_list_header'}
-    {include file='catalog/_partials/category-header.tpl' listing=$listing category=$category}
-{/block}
-
-{block name='product_list_footer'}
-    {include file='catalog/_partials/category-footer.tpl' listing=$listing category=$category}
+    </form>
+  </div>
 {/block}

@@ -22,46 +22,39 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-{* {if $page['meta']['title'] === 'Contact us'}
-{$layout = 'layouts/layout-full-width.tpl'}
-{/if}
-{extends file=$layout}
+{block name='login_form'}
 
-{block name='content'}
-  <section id="main">
-    {block name='page_header_container'}
-      {block name='page_title' hide}
-        <header class="page-header">
-          <h1>{$smarty.block.child}</h1>
-        </header>
+  {block name='login_form_errors'}
+    {include file='_partials/form-errors.tpl' errors=$errors['']}
+  {/block}
+
+  <form id="login-form" action="{block name='login_form_actionurl'}{$action}{/block}" method="post">
+
+    <div>
+      {block name='login_form_fields'}
+        {foreach from=$formFields item="field"}
+          {block name='form_field'}
+            {form_field field=$field}
+          {/block}
+        {/foreach}
       {/block}
-    {/block}
-
-    {block name='page_content_container'}
-      <div id="content" class="page-content card card-block">
-        {block name='page_content_top'}{/block}
-        {block name='page_content'}
-          <!-- Page content -->
-        {/block}
+      <div class="forgot-password">
+        <a href="{$urls.pages.password}" rel="nofollow">
+          {l s='Forgot your password?' d='Shop.Theme.Customeraccount'}
+        </a>
       </div>
-    {/block}
+    </div>
 
-    {block name='page_footer_container'}
-      <footer class="page-footer">
-        {block name='page_footer'}
-          <!-- Footer content -->
+    {block name='login_form_footer'}
+      <footer class="form-footer text-sm-center clearfix">
+        <input type="hidden" name="submitLogin" value="1">
+        {block name='form_buttons'}
+          <button id="submit-login" class="btn btn-primary" data-link-action="sign-in" type="submit" class="form-control-submit">
+            {l s='Sign in' d='Shop.Theme.Actions'}
+          </button>
         {/block}
       </footer>
     {/block}
 
-  </section>
-{/block} *}
-{extends file='catalog/listing/product-list.tpl'}
-
-{block name='product_list_header'}
-    {include file='catalog/_partials/category-header.tpl' listing=$listing category=$category}
-{/block}
-
-{block name='product_list_footer'}
-    {include file='catalog/_partials/category-footer.tpl' listing=$listing category=$category}
+  </form>
 {/block}
