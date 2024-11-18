@@ -48,7 +48,6 @@ section {
   margin: var(--margin-section);
 }
 
-
 textarea {
   width: 100%;
   border: 2px solid var(--gold);
@@ -782,7 +781,7 @@ a:hover {
 }
 
 .contact-form {
-  all:unset
+  all: unset;
 }
 
 .contact-form div {
@@ -1508,33 +1507,50 @@ select:focus {
 
 /************************************************************* History */
 
-#history #content {
+#history #content,
+#discount #content {
   background: transparent !important;
 }
 
-#history h6 {
+#history h6,
+#discount h6 {
   color: var(--white) !important;
   font-weight: normal !important;
 }
-
 #history table th,
 #history table td,
 .page-order-detail table th,
-.page-order-detail table td {
+.page-order-detail table td,
+#discount table th,
+#discount table td {
   border: 3px solid var(--noir) !important;
 }
 
 #history table th,
-.page-order-detail table th {
+.page-order-detail table th,
+#discount table th {
   background-color: var(--gold-clair) !important;
   color: var(--noir) !important;
   font-family: "Marcellus", serif !important;
 }
 
 #history table td,
-.page-order-detail table td {
+.page-order-detail table td,
+#discount table td,
+#discount .cart-rule {
   color: var(--white) !important;
 }
+
+/******************************************************* Page données RGPD */
+
+#module-psgdpr-gdpr #content{
+  background-color: transparent !important;
+}
+
+#module-psgdpr-gdpr .page_content div{
+  background-color: var(--noir-profond) !important;
+}
+
 
 /******************************************************* Détails commande */
 
