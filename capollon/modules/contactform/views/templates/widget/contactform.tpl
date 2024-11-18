@@ -39,7 +39,7 @@
       {if !$notifications || $notifications.nw_error}
         <div class="form-group row">
           <div class="col-md-9 col-md-offset-3">
-            <h3>Nous contacter</h3>
+            <h1>Nous contacter</h1>
           </div>
         </div>
         <div>
