@@ -22,7 +22,9 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+
 {extends file='page.tpl'}
+
 
 {block name='page_content_container'}
   {* <section id="content" class="page-home">
@@ -43,9 +45,8 @@
 
   <section class="produits-phares">
     <h2>Nos produits phares</h2>
-    {block name='hook_home'}
-      {$HOOK_HOME nofilter}
-    {/block}
+    {hook h='displayHome'}
+
   </section>
 
   <div class="separator"></div>

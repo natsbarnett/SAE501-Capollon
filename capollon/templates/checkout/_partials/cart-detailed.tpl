@@ -22,38 +22,21 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-{if $page['meta']['title'] === 'Contact us'}
-{$layout = 'layouts/layout-full-width.tpl'}
-{/if}
-{extends file=$layout}
-
-{block name='content'}
-  <section id="main">
-    {block name='page_header_container'}
-      {block name='page_title' hide}
-        <header class="page-header">
-          <h1>{$smarty.block.child}</h1>
-        </header>
-      {/block}
-    {/block}
-
-    {block name='page_content_container'}
-      <div id="content" class="page-content card card-block">
-        {block name='page_content_top'}{/block}
-        {block name='page_content'}
-          <!-- Page content -->
-        {/block}
-      </div>
-    {/block}
-
-    {block name='page_footer_container'}
-      <footer class="page-footer">
-        {block name='page_footer'}
-          <!-- Footer content -->
-        {/block}
-      </footer>
-    {/block}
-
-  </section>
-
+{block name='cart_detailed_product'}
+  <div class="cart-overview js-cart" data-refresh-url="{url entity='cart' params=['ajax' => true, 'action' => 'refresh']}">
+    {if $cart.products}
+    <ul class="cart-items">
+      {foreach from=$cart.products item=product}
+        <li class="cart-item">
+          {block name='cart_detailed_product_line'}
+            {include file='checkout/_partials/cart-detailed-product-line.tpl' product=$product}
+          {/block}
+        </li>
+        {if is_array($product.customizations) && $product.customizations|count >1}<hr>{/if}
+      {/foreach}
+    </ul>
+    {else}
+      <span class="no-items">{l s='There are no more items in your cart' d='Shop.Theme.Checkout'}</span>
+    {/if}
+  </div>
 {/block}

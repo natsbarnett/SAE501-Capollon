@@ -16,10 +16,10 @@ Ne modifiez pas nécéssairement le nom de la branche parce que c'est le nom de 
 | Page Hooks | Not done|
 | Prestashop | Not done|
 | Page d'accueil | Done |
-| Page produit | Not done|
+| Page produit | Done |
 | Page des gammes | Not done|
 | Page de la gamme | Not done|
-| Page de panier | Not done|
+| Page de panier | Done |
 | Page de commande | Not done|
 | Pages Login / Register | Not done|
 | Page Contact | Not done|
