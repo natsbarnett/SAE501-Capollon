@@ -1340,7 +1340,6 @@ body#checkout section.checkout-step .delivery-options .delivery-option {
   padding: 0 !important;
 }
 
-
 @media (min-width: 900px) {
   .header-links-toggle .liens .option_connexion {
     position: fixed;
