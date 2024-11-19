@@ -43,7 +43,7 @@
           <div>
             <a href="#">Contact</a>
           </div>
-          <div class="option_connexion">
+          <div class="option_connexion" id="menu_profil">
           {if $customer.is_logged} <!-- Vérifie si l'utilisateur est connecté -->
             <div class="option1"><a href="">Mes infos</a></div>
             <div class="separation_option"></div>
@@ -74,7 +74,7 @@
         <a href="#">Contact</a>
       </div>
       <div>
-        <a href="#"><img src="/themes/capollon/assets/images/profile.svg" alt="profil" class="profil" /></a>
+        <img src="/themes/capollon/assets/images/profile.svg" alt="profil" class="profil" id="trigger" />
       </div>
     </div>
     <img src="/themes/capollon/assets/images/burger-lines.svg" alt="" class="menu-button" width="100%" />
