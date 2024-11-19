@@ -1254,7 +1254,7 @@ textarea {
   transition: 0.4s cubic-bezier(0.66,-0.01, 0.36, 0.99);
 }
 
-#header .option1 a, #header .option2 a, #header .option_centre a {
+#header .option1 a, #header .option2 a, #header .option_centre a, #header .option_seul a {
   color: var(--white) !important;
   font-family: "Raleway", sans-serif;
   text-transform: none;
@@ -1264,7 +1264,7 @@ textarea {
   font-size: 15px;
 }
 
-#header .option1:hover a, #header .option2:hover a, #header .option_centre:hover a {
+#header .option1:hover a, #header .option2:hover a, #header .option_centre:hover a, #header .option_seul:hover a {
   color: var(--gold-clair) !important;
 }
 
@@ -1283,6 +1283,10 @@ textarea {
 
 .option2 a{
   padding: 5px 20px 10px;
+}
+
+.option_seul a{
+  padding: 10px 20px 10px;
 }
 
 .header-links-toggle .liens .menu_profil_visible {
