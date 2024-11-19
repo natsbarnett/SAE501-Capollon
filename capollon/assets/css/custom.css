@@ -1220,6 +1220,22 @@ textarea {
   color: var(--white);
 }
 
+.block-promo .promo-code form{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+}
+
+.block-promo .promo-input+button{
+  border:none;
+}
+
+.cart-grid-right .promo-discounts .cart-summary-line .label .code{
+  color: #f14b35;
+}
+
 /* v *** a vérifier *** v */
 
 @media (min-width: 990px) {
