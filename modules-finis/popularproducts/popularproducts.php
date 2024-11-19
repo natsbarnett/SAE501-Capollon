@@ -9,9 +9,12 @@ class PopularProducts extends Module
     {
         $this->name = 'popularproducts';
         $this->tab = 'front_office_features';
-        $this->version = '1.0.18';
+        $this->version = '1.0.20';
         $this->author = 'Capollon';
         $this->need_instance = 0;
+
+        $this->ps_versions_compliancy = ['min' => '1.7.8.0', 'max' => _PS_VERSION_];
+        $this->confirmUninstall = $this->l('Êtes-vous sûr de vouloir désinstaller le module ?');
         $this->bootstrap = true; // Optionnel, selon la version de PrestaShop
 
         parent::__construct();
@@ -20,15 +23,14 @@ class PopularProducts extends Module
         $this->description = $this->l('Displays popular products on the homepage.');
     }
 
-    public function uninstall()
-    {
-        return parent::uninstall() && $this->unregisterHook('prodListHome');
-    }
 
 
     public function install()
     {
-        return parent::install() && $this->registerHook('prodListHome');
+        if (!parent::install() || !$this->registerHook('prodListHome')) {
+            return false;
+        }
+        return true;
     }
 
     public function getRandomProducts()
@@ -67,6 +69,10 @@ class PopularProducts extends Module
     }
 
 
+    public function uninstall()
+    {
+        return parent::uninstall() && $this->unregisterHook('prodListHome');
+    }
 
 
 }
