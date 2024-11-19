@@ -88,7 +88,6 @@ label {
           Header
 **************************************************************************/
 #header {
-  position: sticky !important;
   top: 0;
   left: 0 !important;
   background: var(--header) !important;
@@ -96,6 +95,12 @@ label {
   transition: 0.2s ease-in-out;
   margin: 0 !important;
   z-index: 15;
+}
+
+@media (min-width:768px){
+  #header {
+    position: sticky !important;
+  }
 }
 
 header:hover {
@@ -481,6 +486,59 @@ p {
   margin: 5vh auto !important;
   max-width: fit-content !important;
 }
+/******************************************************************************* Liste produits */
+
+#category #wrapper .container {
+  max-width: 80vw !important;
+  margin: 5vh auto !important;
+}
+
+#category #left-column {
+  display: none !important;
+}
+
+#category #content-wrapper,
+#category #products {
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+
+#category .products {
+  row-gap: 25px !important;
+}
+
+#category .texte-produits{
+  margin: 5vh 8vh;
+}
+
+
+#category .texte-produits ul li{
+  list-style-type: disc;
+}
+
+.orange-span{
+  color: var(--gold) !important;
+  font-weight: 700;
+}
+
+#category .pagination{
+  display: flex;
+  justify-content: center !important;
+  flex-direction: column;
+  align-items: center;
+  width: 100% !important;
+}
+
+#category .pagination .offset-md-2{
+  padding: 0 !important;
+}
+
+#category .pagination ul{
+  background-color: transparent !important;
+}
+
+
 /******************************************************************************* Fiche produit */
 
 .product-container {
