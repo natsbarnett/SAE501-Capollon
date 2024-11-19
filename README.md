@@ -17,11 +17,10 @@ Ne modifiez pas nécéssairement le nom de la branche parce que c'est le nom de 
 | Prestashop | Not done|
 | Page d'accueil | Done |
 | Page produit | Done |
-| Page des gammes | Not done|
-| Page de la gamme | Not done|
+| Page liste des produits | Done|
 | Page de panier | Done |
 | Page de commande | Not done|
-| Pages Login / Register | Not done|
-| Page Contact | Not done|
+| Pages Login / Register | Done |
+| Page Contact | Done |
 
   Si vous avez des questions concernant Jira : https://jira-ticket-bot.app/
