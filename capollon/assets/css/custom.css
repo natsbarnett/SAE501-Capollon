@@ -83,7 +83,10 @@ select {
 label {
   display: block;
 }
-
+.orange-span {
+  color: var(--gold) !important;
+  font-weight: 700;
+}
 /*************************************************************************  
           Header
 **************************************************************************/
@@ -97,7 +100,7 @@ label {
   z-index: 15;
 }
 
-@media (min-width:768px){
+@media (min-width: 768px) {
   #header {
     position: sticky !important;
   }
@@ -503,26 +506,19 @@ p {
   margin: 0 auto !important;
 }
 
-
 #category .products {
   row-gap: 25px !important;
 }
 
-#category .texte-produits{
+#category .texte-produits {
   margin: 5vh 8vh;
 }
 
-
-#category .texte-produits ul li{
+#category .texte-produits ul li {
   list-style-type: disc;
 }
 
-.orange-span{
-  color: var(--gold) !important;
-  font-weight: 700;
-}
-
-#category .pagination{
+#category .pagination {
   display: flex;
   justify-content: center !important;
   flex-direction: column;
@@ -530,14 +526,13 @@ p {
   width: 100% !important;
 }
 
-#category .pagination .offset-md-2{
+#category .pagination .offset-md-2 {
   padding: 0 !important;
 }
 
-#category .pagination ul{
+#category .pagination ul {
   background-color: transparent !important;
 }
-
 
 /******************************************************************************* Fiche produit */
 
