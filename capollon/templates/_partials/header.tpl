@@ -43,15 +43,15 @@
           <div>
             <a href="#">Contact</a>
           </div>
-          <div class="option_connexion">
+          <div class="option_connexion" id="menu_profil">
           {if $customer.is_logged} <!-- Vérifie si l'utilisateur est connecté -->
-            <div class="option1"><a href="">Mes infos</a></div>
+            <div class="option1"><a href="/my-account">Mes infos</a></div>
             <div class="separation_option"></div>
-            <div class="option_centre"><a href="">Mon panier</a></div>
+            <div class="option_centre"><a href="/cart?action=show">Mon panier</a></div>
             <div class="separation_option"></div>
-            <div class="option2"><a href="">Se déconnecter</a></div> 
+            <div class="option2"><a href="/?mylogout=">Se déconnecter</a></div> 
           {else}
-              <div class="option1"><a href="{$urls.pages.authentication|escape:'html'}?create_account=1">Se connecter</a></div>
+              <div class="option_seul"><a href="/login">Se connecter</a></div>
           {/if}
           </div>
         </div>
@@ -74,7 +74,7 @@
         <a href="#">Contact</a>
       </div>
       <div>
-        <a href="#"><img src="/themes/capollon/assets/images/profile.svg" alt="profil" class="profil" /></a>
+        <img src="/themes/capollon/assets/images/profile.svg" alt="profil" class="profil" id="trigger" />
       </div>
     </div>
     <img src="/themes/capollon/assets/images/burger-lines.svg" alt="" class="menu-button" width="100%" />

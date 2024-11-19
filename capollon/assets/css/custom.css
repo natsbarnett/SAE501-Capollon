@@ -957,10 +957,10 @@ textarea {
 
 /********************************************************************   Page panier */
 
-.page-panier {
+/* .page-panier{
   overflow-x: hidden;
   max-width: 100vw;
-}
+} */
 
 .page-panier h1 {
   margin-left: 25px;
@@ -1220,6 +1220,22 @@ textarea {
   color: var(--white);
 }
 
+.block-promo .promo-code form {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+}
+
+.block-promo .promo-input + button {
+  border: none;
+}
+
+.cart-grid-right .promo-discounts .cart-summary-line .label .code {
+  color: #f14b35;
+}
+
 /* v *** a vérifier *** v */
 
 @media (min-width: 990px) {
@@ -1319,10 +1335,71 @@ body#checkout section.checkout-step .delivery-options .delivery-option {
   align-items: center;
 }
 
-
 #checkout #footer {
   background: transparent !important;
   padding: 0 !important;
+}
+
+
+@media (min-width: 900px) {
+  .header-links-toggle .liens .option_connexion {
+    position: fixed;
+    background-color: var(--noir-profond);
+    top: 100px;
+    right: 25px;
+    transform: translateX(calc(120vw + 200px));
+    opacity: 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    padding: 0 10px;
+    transition: 0.4s cubic-bezier(0.66, -0.01, 0.36, 0.99);
+  }
+
+  #header .option1 a,
+  #header .option2 a,
+  #header .option_centre a,
+  #header .option_seul a {
+    color: var(--white) !important;
+    font-family: "Raleway", sans-serif;
+    text-transform: none;
+    margin: 0;
+    text-align: center;
+    transition: 0.2s;
+    font-size: 15px;
+  }
+
+  #header .option1:hover a,
+  #header .option2:hover a,
+  #header .option_centre:hover a,
+  #header .option_seul:hover a {
+    color: var(--gold-clair) !important;
+  }
+
+  .option1 a {
+    padding: 10px 20px 5px;
+  }
+
+  .separation_option {
+    height: 1px;
+    background-color: var(--gold);
+  }
+
+  .option_centre a {
+    padding: 5px 20px;
+  }
+
+  .option2 a {
+    padding: 5px 20px 10px;
+  }
+
+  .option_seul a {
+    padding: 10px 20px 10px;
+  }
+
+  .header-links-toggle .liens .menu_profil_visible {
+    transform: translateX(120vw);
+    opacity: 1;
+  }
 }
 /********************************************************** Login / Register */
 #registration #main,
