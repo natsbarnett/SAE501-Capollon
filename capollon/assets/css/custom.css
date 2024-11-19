@@ -1238,6 +1238,92 @@ textarea {
   }
 }
 
+/********************************************************** Checkout */
+
+@media (min-width: 1120px) {
+  #checkout .cart-grid-right {
+    float: right;
+    border-left: 2px solid var(--gold);
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 18vw;
+  }
+}
+
+#checkout .cart-grid-right section div {
+  padding: 0 !important;
+}
+
+#checkout .cart-grid-right .card {
+  background-color: transparent !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+#checkout .value {
+  color: var(--white) !important;
+  font-weight: normal !important;
+}
+
+#checkout .cart-grid-right .card .card-block {
+  width: 100%;
+  padding: 10px 0 !important;
+}
+
+#checkout .promo-name .label {
+  color: var(--white) !important;
+}
+
+#checkout .checkout-step {
+  background-color: var(--noir-profond) !important;
+}
+
+#checkout .js-current-step .step-number {
+  background-color: var(--gold) !important;
+  color: var(--noir) !important;
+}
+
+#checkout .checkout-step .step-number {
+  border-color: var(--gold) !important;
+}
+
+#checkout #delivery-addresses article {
+  background: transparent !important;
+  border-color: var(--gold) !important;
+}
+
+#checkout #delivery-addresses .address-alias {
+  color: var(--gold) !important;
+  font-family: "Marcellus", serif !important;
+  font-weight: normal;
+}
+
+#checkout #delivery-addresses article a {
+  color: var(--gold) !important;
+}
+
+#checkout #delivery-addresses article a:hover {
+  color: var(--gold-clair) !important;
+}
+
+body#checkout section.checkout-step .delivery-options .delivery-option {
+  background: var(--noir-profond) !important;
+  display: flex;
+  align-items: center;
+  border: none !important;
+}
+
+#checkout section.checkout-step .delivery-options .delivery-option .row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+
+#checkout #footer {
+  background: transparent !important;
+  padding: 0 !important;
+}
 /********************************************************** Login / Register */
 #registration #main,
 #authentication #main,
