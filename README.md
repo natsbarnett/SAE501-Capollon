@@ -21,7 +21,7 @@ Ne modifiez pas nécéssairement le nom de la branche parce que c'est le nom de 
 | Page de la gamme | Not done|
 | Page de panier | Done |
 | Page de commande | Not done|
-| Pages Login / Register | Not done|
-| Page Contact | Not done|
+| Pages Login / Register | Done |
+| Page Contact | Done |
 
   Si vous avez des questions concernant Jira : https://jira-ticket-bot.app/
