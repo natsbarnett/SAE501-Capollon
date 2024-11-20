@@ -1768,3 +1768,12 @@ select:focus {
 
 
 
+/************************* code chat bot a déplacé **/
+
+.message{
+  background: none !important;
+  border: none  !important;
+  outline: none  !important;
+  padding: 0 !important;
+  height: 96px !important;
+}
