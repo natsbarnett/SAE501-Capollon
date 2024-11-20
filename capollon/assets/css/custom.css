@@ -116,6 +116,10 @@ label {
   align-items: center;
 }
 
+#header #disp-n-2 {
+  display: none !important;
+}
+
 #header img {
   width: 50px;
 }
@@ -210,6 +214,67 @@ header .menu-button-close {
 
 #header .header_top {
   background-color: transparent !important;
+}
+
+@media (min-width: 900px) {
+  .header-links-toggle .liens .option_connexion {
+    position: fixed;
+    background-color: var(--noir-profond);
+    top: 100px;
+    right: 25px;
+    transform: translateX(calc(120vw + 200px));
+    opacity: 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    padding: 0 10px;
+    transition: 0.4s cubic-bezier(0.66, -0.01, 0.36, 0.99);
+  }
+
+  #header .option1 a,
+  #header .option2 a,
+  #header .option_centre a,
+  #header .option_seul a {
+    color: var(--white) !important;
+    font-family: "Raleway", sans-serif;
+    text-transform: none;
+    margin: 0;
+    text-align: center;
+    transition: 0.2s;
+    font-size: 15px;
+  }
+
+  #header .option1:hover a,
+  #header .option2:hover a,
+  #header .option_centre:hover a,
+  #header .option_seul:hover a {
+    color: var(--gold-clair) !important;
+  }
+
+  .option1 a {
+    padding: 10px 20px 5px;
+  }
+
+  .separation_option {
+    height: 1px;
+    background-color: var(--gold);
+  }
+
+  .option_centre a {
+    padding: 5px 20px;
+  }
+
+  .option2 a {
+    padding: 5px 20px 10px;
+  }
+
+  .option_seul a {
+    padding: 10px 20px 10px;
+  }
+
+  .header-links-toggle .liens .menu_profil_visible {
+    transform: translateX(120vw);
+    opacity: 1;
+  }
 }
 
 /********************************************************************   Footer */
@@ -730,23 +795,48 @@ figcaption.image-caption div p {
 }
 
 /****************************************************** Modal */
-#post-product-comment-modal .modal-dialog {
+#post-product-comment-modal .modal-dialog,
+#blockcart-modal .modal-dialog {
   max-width: 80vw !important;
 }
 
 #post-product-comment-modal .modal-dialog .modal-content,
-#product-comment-posted-modal .modal-dialog .modal-content {
+#product-comment-posted-modal .modal-dialog .modal-content,
+#blockcart-modal .modal-dialog .modal-content .modal-header,
+#blockcart-modal .modal-dialog .modal-content .modal-body {
   background-color: var(--noir) !important;
 }
 
 #post-product-comment-modal .modal-dialog .modal-header p,
-#product-comment-posted-modal .modal-dialog .modal-header p {
+#product-comment-posted-modal .modal-dialog .modal-header p,
+#blockcart-modal .modal-dialog .modal-header h4 {
   color: var(--gold) !important;
   font-family: "Marcellus", serif !important;
 }
 
-#post-product-comment-modal .modal-dialog .modal-header .close span {
+#blockcart-modal .modal-dialog .modal-body .cart-content p {
+  color: var(--white) !important;
+}
+
+#blockcart-modal .modal-dialog .modal-body .cart-content p span.label {
+  color: var(--gold) !important;
+}
+
+#blockcart-modal .modal-dialog .modal-body .cart-content .product-total {
+  background: var(--noir-profond) !important;
+}
+
+#blockcart-modal .modal-dialog .modal-body .product-price {
+  color: var(--white) !important;
+}
+
+#post-product-comment-modal .modal-dialog .modal-header .close span,
+#blockcart-modal .modal-dialog .modal-header .close span i {
   color: var(--gold-clair) !important;
+}
+
+#blockcart-modal .modal-dialog .modal-header {
+  border-color: var(--gold) !important;
 }
 
 #post-product-comment-modal .modal-dialog .modal-body form .row label,
@@ -938,21 +1028,6 @@ textarea:focus {
 
 input:is(:-webkit-autofill, :autofill) {
   background: var(--noir-profond) !important;
-}
-
-textarea {
-  width: 100% !important;
-  border: 2px solid var(--gold) !important;
-  border-radius: var(--border-radius) !important;
-  background-color: transparent !important;
-  color: var(--white) !important;
-  padding: var(--padding) !important;
-  font-size: 15px !important;
-  font-family: "Raleway", sans-serif !important;
-  min-width: 100%;
-  max-width: 100%;
-  min-height: 25vh !important;
-  resize: none !important;
 }
 
 /********************************************************************   Page panier */
@@ -1224,7 +1299,7 @@ textarea {
   color: var(--white);
 }
 
-.block-promo .promo-code form{
+.block-promo .promo-code form {
   display: flex;
   flex-direction: row-reverse;
   align-items: baseline;
@@ -1232,11 +1307,11 @@ textarea {
   gap: 5px;
 }
 
-.block-promo .promo-input+button{
-  border:none;
+.block-promo .promo-input + button {
+  border: none;
 }
 
-.cart-grid-right .promo-discounts .cart-summary-line .label .code{
+.cart-grid-right .promo-discounts .cart-summary-line .label .code {
   color: #f14b35;
 }
 
@@ -1258,61 +1333,133 @@ textarea {
   }
 }
 
+/********************************************************** Checkout */
 
-@media (min-width: 900px) {
-
-.header-links-toggle .liens .option_connexion{
-  position: fixed;
-  background-color: var(--noir-profond);
-  top:100px;
-  right: 25px;
-  transform: translateX(calc(120vw + 200px));
-  opacity: 0;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  padding: 0 10px;
-  transition: 0.4s cubic-bezier(0.66,-0.01, 0.36, 0.99);
+@media (min-width: 1120px) {
+  #checkout .cart-grid-right {
+    float: right;
+    border-left: 2px solid var(--gold);
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 18vw;
+  }
 }
 
-#header .option1 a, #header .option2 a, #header .option_centre a, #header .option_seul a {
+@media (max-width:500px){
+  #checkout aside{
+    padding: 0 !important;
+  }
+
+  #checkout .col-xs-12{
+    padding: 0 !important;
+  }
+}
+
+
+
+#checkout .cart-grid-right section div {
+  padding: 0 !important;
+}
+
+#checkout .cart-grid-right .card {
+  background-color: transparent !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+#checkout .value {
   color: var(--white) !important;
-  font-family: "Raleway", sans-serif;
-  text-transform: none;
-  margin: 0;
-  text-align: center;
-  transition: 0.2s;
-  font-size: 15px;
+  font-weight: normal !important;
 }
 
-#header .option1:hover a, #header .option2:hover a, #header .option_centre:hover a, #header .option_seul:hover a {
+#checkout .cart-grid-right .card .card-block {
+  width: 100%;
+  padding: 10px 0 !important;
+}
+
+#checkout .promo-name .label {
+  color: var(--white) !important;
+}
+
+#checkout .checkout-step {
+  background-color: var(--noir-profond) !important;
+}
+
+#checkout .js-current-step .step-number {
+  background-color: var(--gold) !important;
+  color: var(--noir) !important;
+}
+
+#checkout .checkout-step .step-number {
+  border-color: var(--gold) !important;
+}
+
+#checkout #delivery-addresses article {
+  background: transparent !important;
+  border-color: var(--gold) !important;
+}
+
+#checkout #delivery-addresses .address-alias {
+  color: var(--gold) !important;
+  font-family: "Marcellus", serif !important;
+  font-weight: normal;
+}
+
+#checkout #delivery-addresses article a {
+  color: var(--gold) !important;
+}
+
+#checkout #delivery-addresses article a:hover {
   color: var(--gold-clair) !important;
 }
 
-.option1 a{
-  padding: 10px 20px 5px;
+body#checkout section.checkout-step .delivery-options .delivery-option {
+  background: var(--noir-profond) !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: none !important;
 }
 
-.separation_option{
-  height: 1px;
-  background-color: var(--gold);
+body#checkout
+  section.checkout-step
+  .delivery-options
+  .delivery-option
+  div.col-sm-1 {
+  flex: 0 0 5%;
 }
 
-.option_centre a{
-  padding: 5px 20px;
+body#checkout section.checkout-step .delivery-options .delivery-option label {
+  flex: 1;
 }
 
-.option2 a{
-  padding: 5px 20px 10px;
+body#checkout
+  section.checkout-step
+  .delivery-options
+  .delivery-option
+  .row
+  div {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
-.option_seul a{
-  padding: 10px 20px 10px;
+#checkout #footer {
+  background: transparent !important;
+  padding: 0 !important;
 }
 
-.header-links-toggle .liens .menu_profil_visible {
-  transform: translateX(120vw);
-  opacity: 1;
+#checkout .media {
+  display: flex;
+  gap: 5px;
 }
+
+#checkout #delivery {
+  margin: 5vh auto;
+}
+
+#checkout textarea {
+  max-width: 80% !important;
+  min-width: 79% !important;
 }
 /********************************************************** Login / Register */
 #registration #main,
@@ -1755,6 +1902,65 @@ select:focus {
   margin: 5vh auto !important;
 }
 
+/************************************************************** Page confirmation commande */
+
+#order-confirmation #main {
+  max-width: 85vw !important;
+  margin: 5vh auto !important;
+}
+
+#order-confirmation h1 {
+  padding-left: 60px;
+  background: transparent url("../images/cap-commande.svg") no-repeat left
+    center;
+  background-size: 50px;
+  margin: 5vh 0;
+}
+
+#order-confirmation #main .card {
+  background: transparent !important;
+}
+
+#order-confirmation #content-hook_order_confirmation {
+  border: 1px solid var(--gold);
+}
+
+#order-confirmation
+  #content-hook_order_confirmation
+  #ps_cashondelivery-displayOrderConfirmation
+  p {
+  padding-left: 30px;
+  background: transparent url("../images/arrow.svg") no-repeat left center;
+  background-size: 20px;
+}
+
+#order-confirmation #order-items .row {
+  display: flex;
+}
+
+#order-confirmation #order-items {
+  border: none !important;
+}
+
+#order-confirmation .order-confirmation-table table tbody tr td:first-child {
+  color: var(--gold) !important;
+  font-family: "Marcellus", serif;
+  font-size: 15px;
+}
+
+#order-confirmation .order-confirmation-table table tbody tr.total-value {
+  background: var(--noir-profond) !important;
+}
+
+#order-confirmation #order-details ul li {
+  list-style-type: disc;
+}
+
+@media (max-width: 500px) {
+  #order-confirmation .order-confirmation-table .order-line div.col-sm-2 {
+    display: none !important;
+  }
+}
 /************************************************************** Vouchers */
 
 #discount #content {
