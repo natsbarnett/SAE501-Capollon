@@ -116,6 +116,10 @@ label {
   align-items: center;
 }
 
+#header #disp-n-2 {
+  display: none !important;
+}
+
 #header img {
   width: 50px;
 }
@@ -730,23 +734,48 @@ figcaption.image-caption div p {
 }
 
 /****************************************************** Modal */
-#post-product-comment-modal .modal-dialog {
+#post-product-comment-modal .modal-dialog,
+#blockcart-modal .modal-dialog {
   max-width: 80vw !important;
 }
 
 #post-product-comment-modal .modal-dialog .modal-content,
-#product-comment-posted-modal .modal-dialog .modal-content {
+#product-comment-posted-modal .modal-dialog .modal-content,
+#blockcart-modal .modal-dialog .modal-content .modal-header,
+#blockcart-modal .modal-dialog .modal-content .modal-body {
   background-color: var(--noir) !important;
 }
 
 #post-product-comment-modal .modal-dialog .modal-header p,
-#product-comment-posted-modal .modal-dialog .modal-header p {
+#product-comment-posted-modal .modal-dialog .modal-header p,
+#blockcart-modal .modal-dialog .modal-header h4 {
   color: var(--gold) !important;
   font-family: "Marcellus", serif !important;
 }
 
-#post-product-comment-modal .modal-dialog .modal-header .close span {
+#blockcart-modal .modal-dialog .modal-body .cart-content p{
+  color: var(--white) !important;
+}
+
+#blockcart-modal .modal-dialog .modal-body .cart-content p span.label{
+  color: var(--gold) !important;
+}
+
+#blockcart-modal .modal-dialog .modal-body .cart-content .product-total{
+  background: var(--noir-profond) !important;
+}
+
+#blockcart-modal .modal-dialog .modal-body .product-price{
+  color: var(--white) !important;
+}
+
+#post-product-comment-modal .modal-dialog .modal-header .close span,
+#blockcart-modal .modal-dialog .modal-header .close span i {
   color: var(--gold-clair) !important;
+}
+
+#blockcart-modal .modal-dialog .modal-header{
+  border-color: var(--gold) !important;
 }
 
 #post-product-comment-modal .modal-dialog .modal-body form .row label,
@@ -1843,7 +1872,7 @@ select:focus {
 
 /************************************************************** Page confirmation commande */
 
-#order-confirmation #main .card{
+#order-confirmation #main .card {
   background: transparent !important;
 }
 
