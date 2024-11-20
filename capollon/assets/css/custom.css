@@ -1768,13 +1768,3 @@ select:focus {
 
 
 
-/************************* code chat bot a déplacé **/
-
-.message{
-  font-size: 16px;
-  font-family: 'Raleway', sans-serif;
-  width: 100%;
-  background: none !important;
-  border: none  !important;
-  outline: none  !important;
-}
