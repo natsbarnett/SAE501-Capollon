@@ -110,7 +110,7 @@ label {
   background: var(--noir) !important;
 }
 
-#header div {
+#header>div {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1212,8 +1212,12 @@ textarea {
   color: var(--white);
 }
 
-.has-discount.product-price {
-  color: #ff4d36;
+.has-discount.product-price, .block-promo .promo-name .cart-summary-line span {
+  color: #f65f4b;
+}
+
+.block-promo .promo-name .cart-summary-line .label{
+  color: var(--white)
 }
 
 .product-line-info .label {
@@ -1761,3 +1765,6 @@ select:focus {
   max-width: 80vw !important;
   margin: 5vh auto !important;
 }
+
+
+
