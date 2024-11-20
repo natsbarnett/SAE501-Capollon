@@ -1841,6 +1841,12 @@ select:focus {
   margin: 5vh auto !important;
 }
 
+/************************************************************** Page confirmation commande */
+
+#order-confirmation #main .card{
+  background: transparent !important;
+}
+
 /************************************************************** Vouchers */
 
 #discount #content {
