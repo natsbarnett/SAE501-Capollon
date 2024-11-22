@@ -22,48 +22,32 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-
- {* {if $page['meta']['title'] === 'Contact us'}
-{$layout = 'layouts/layout-full-width.tpl'}
-{/if}
 {extends file=$layout}
 
-{block name='content'}
-  <section id="main">
-    {block name='page_header_container'}
-      {block name='page_title' hide}
-        <header class="page-header">
-          <h1>{$smarty.block.child}</h1>
-        </header>
-      {/block}
-    {/block}
+{block name='header'}
+  {include file='../_partials/header.tpl'}
+{/block}
 
-    {block name='page_content_container'}
-      <div id="content" class="page-content card card-block">
-        {block name='page_content_top'}{/block}
-        {block name='page_content'}
-          <!-- Page content -->
+{block name='content'}
+  <section id="content">
+    <div class="row">
+      <aside class="cart-grid-right col-xs-12 col-lg-4">
+        {block name='cart_summary'}
+          {include file='checkout/_partials/cart-summary.tpl' cart=$cart}
+        {/block}
+
+      </aside>
+      <div class="cart-grid-body col-xs-12 col-lg-8">
+        {block name='checkout_process'}
+          {render file='checkout/checkout-process.tpl' ui=$checkout_process}
         {/block}
       </div>
-    {/block}
-
-    {block name='page_footer_container'}
-      <footer class="page-footer">
-        {block name='page_footer'}
-          <!-- Footer content -->
-        {/block}
-      </footer>
-    {/block}
-
+    </div>
   </section>
-{/block} *}
-
-{extends file='catalog/listing/product-list.tpl'}
-
-{block name='product_list_header'}
-    {include file='catalog/_partials/category-header.tpl' listing=$listing category=$category}
 {/block}
+<div>
+{hook h='displayReassurance'}
 
-{block name='product_list_footer'}
-    {include file='catalog/_partials/category-footer.tpl' listing=$listing category=$category}
-{/block}
+</div>
+
+  {include file='../_partials/footer.tpl'}

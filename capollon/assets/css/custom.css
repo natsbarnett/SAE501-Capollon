@@ -36,12 +36,17 @@ body {
   margin: 0;
   min-height: 100vh !important;
   overflow-x: hidden;
+  position: relative !important;
+}
+
+main .wrapper {
+  min-height: 100vh !important;
+  position: relative !important;
 }
 
 section {
   margin: var(--margin-section);
 }
-
 
 textarea {
   width: 100%;
@@ -78,12 +83,14 @@ select {
 label {
   display: block;
 }
-
+.orange-span {
+  color: var(--gold) !important;
+  font-weight: 700;
+}
 /*************************************************************************  
           Header
 **************************************************************************/
-header {
-  position: sticky !important;
+#header {
   top: 0;
   left: 0 !important;
   background: var(--header) !important;
@@ -93,17 +100,27 @@ header {
   z-index: 15;
 }
 
-header:hover {
+@media (min-width: 768px) {
+  #header {
+    position: sticky !important;
+  }
+}
+
+#header:hover {
   background: var(--noir) !important;
 }
 
-header div {
+#header>div {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header img {
+#header #disp-n-2 {
+  display: none !important;
+}
+
+#header img {
   width: 50px;
 }
 
@@ -199,6 +216,67 @@ header .menu-button-close {
   background-color: transparent !important;
 }
 
+@media (min-width: 900px) {
+  .header-links-toggle .liens .option_connexion {
+    position: fixed;
+    background-color: var(--noir-profond);
+    top: 100px;
+    right: 25px;
+    transform: translateX(calc(120vw + 200px));
+    opacity: 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    padding: 0 10px;
+    transition: 0.4s cubic-bezier(0.66, -0.01, 0.36, 0.99);
+  }
+
+  #header .option1 a,
+  #header .option2 a,
+  #header .option_centre a,
+  #header .option_seul a {
+    color: var(--white) !important;
+    font-family: "Raleway", sans-serif;
+    text-transform: none;
+    margin: 0;
+    text-align: center;
+    transition: 0.2s;
+    font-size: 15px;
+  }
+
+  #header .option1:hover a,
+  #header .option2:hover a,
+  #header .option_centre:hover a,
+  #header .option_seul:hover a {
+    color: var(--gold-clair) !important;
+  }
+
+  .option1 a {
+    padding: 10px 20px 5px;
+  }
+
+  .separation_option {
+    height: 1px;
+    background-color: var(--gold);
+  }
+
+  .option_centre a {
+    padding: 5px 20px;
+  }
+
+  .option2 a {
+    padding: 5px 20px 10px;
+  }
+
+  .option_seul a {
+    padding: 10px 20px 10px;
+  }
+
+  .header-links-toggle .liens .menu_profil_visible {
+    transform: translateX(120vw);
+    opacity: 1;
+  }
+}
+
 /********************************************************************   Footer */
 
 footer {
@@ -206,6 +284,7 @@ footer {
   flex-direction: column;
   line-height: 1.589em;
   gap: 0 !important;
+  width: 100% !important;
 }
 
 footer .separator {
@@ -293,6 +372,10 @@ footer a:hover {
   margin: 0 !important;
   padding: 0 !important;
   max-width: 100vw !important;
+}
+
+#main {
+  min-height: 80vh;
 }
 /********************************************************************   Titres */
 h1,
@@ -471,6 +554,51 @@ p {
   margin: 5vh auto !important;
   max-width: fit-content !important;
 }
+/******************************************************************************* Liste produits */
+
+#category #wrapper .container {
+  max-width: 80vw !important;
+  margin: 5vh auto !important;
+}
+
+#category #left-column {
+  display: none !important;
+}
+
+#category #content-wrapper,
+#category #products {
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+#category .products {
+  row-gap: 25px !important;
+}
+
+#category .texte-produits {
+  margin: 5vh 8vh;
+}
+
+#category .texte-produits ul li {
+  list-style-type: disc;
+}
+
+#category .pagination {
+  display: flex;
+  justify-content: center !important;
+  flex-direction: column;
+  align-items: center;
+  width: 100% !important;
+}
+
+#category .pagination .offset-md-2 {
+  padding: 0 !important;
+}
+
+#category .pagination ul {
+  background-color: transparent !important;
+}
+
 /******************************************************************************* Fiche produit */
 
 .product-container {
@@ -585,7 +713,7 @@ figcaption.image-caption div p {
   background-color: var(--noir) !important;
 }
 
-.product-quantity .parent-input span{
+.product-quantity .parent-input span {
   padding: 5px 10px !important;
 }
 
@@ -667,23 +795,48 @@ figcaption.image-caption div p {
 }
 
 /****************************************************** Modal */
-#post-product-comment-modal .modal-dialog {
+#post-product-comment-modal .modal-dialog,
+#blockcart-modal .modal-dialog {
   max-width: 80vw !important;
 }
 
 #post-product-comment-modal .modal-dialog .modal-content,
-#product-comment-posted-modal .modal-dialog .modal-content {
+#product-comment-posted-modal .modal-dialog .modal-content,
+#blockcart-modal .modal-dialog .modal-content .modal-header,
+#blockcart-modal .modal-dialog .modal-content .modal-body {
   background-color: var(--noir) !important;
 }
 
 #post-product-comment-modal .modal-dialog .modal-header p,
-#product-comment-posted-modal .modal-dialog .modal-header p {
+#product-comment-posted-modal .modal-dialog .modal-header p,
+#blockcart-modal .modal-dialog .modal-header h4 {
   color: var(--gold) !important;
   font-family: "Marcellus", serif !important;
 }
 
-#post-product-comment-modal .modal-dialog .modal-header .close span {
+#blockcart-modal .modal-dialog .modal-body .cart-content p {
+  color: var(--white) !important;
+}
+
+#blockcart-modal .modal-dialog .modal-body .cart-content p span.label {
+  color: var(--gold) !important;
+}
+
+#blockcart-modal .modal-dialog .modal-body .cart-content .product-total {
+  background: var(--noir-profond) !important;
+}
+
+#blockcart-modal .modal-dialog .modal-body .product-price {
+  color: var(--white) !important;
+}
+
+#post-product-comment-modal .modal-dialog .modal-header .close span,
+#blockcart-modal .modal-dialog .modal-header .close span i {
   color: var(--gold-clair) !important;
+}
+
+#blockcart-modal .modal-dialog .modal-header {
+  border-color: var(--gold) !important;
 }
 
 #post-product-comment-modal .modal-dialog .modal-body form .row label,
@@ -726,7 +879,8 @@ figcaption.image-caption div p {
 }
 /******************************************************************************* Boutons */
 
-.btn {
+.btn,
+#addresses .addresses-footer a {
   display: block;
   text-align: center;
   background-color: var(--gold);
@@ -742,7 +896,8 @@ figcaption.image-caption div p {
   transition: 0.2s ease-in-out;
 }
 
-.btn:hover {
+.btn:hover,
+#addresses .addresses-footer a:hover {
   background-color: var(--gold-clair) !important;
   color: var(--noir) !important;
 }
@@ -773,7 +928,7 @@ a:hover {
 }
 
 .contact-form {
-  all:unset
+  all: unset;
 }
 
 .contact-form div {
@@ -846,6 +1001,7 @@ input[type="password"],
 input[type="email"],
 input[type="text"],
 input[type="date"],
+input[type="tel"],
 select {
   padding: var(--padding) !important;
   border-radius: var(--border-radius) !important;
@@ -855,34 +1011,33 @@ select {
   border: 3px solid var(--gold) !important;
 }
 
+select option {
+  background: var(--noir) !important;
+  color: var(--white) !important;
+  transition: 0.2s ease-in-out !important;
+}
+
+select option:hover {
+  background: var(--gold) !important;
+}
+
 input:focus,
 textarea:focus {
   outline: none !important;
 }
 
-textarea {
-  width: 100% !important;
-  border: 2px solid var(--gold) !important;
-  border-radius: var(--border-radius) !important;
-  background-color: transparent !important;
-  color: var(--white) !important;
-  padding: var(--padding) !important;
-  font-size: 15px !important;
-  font-family: "Raleway", sans-serif !important;
-  min-width: 100%;
-  max-width: 100%;
-  min-height: 25vh !important;
-  resize: none !important;
+input:is(:-webkit-autofill, :autofill) {
+  background: var(--noir-profond) !important;
 }
 
 /********************************************************************   Page panier */
 
-.page-panier{
+/* .page-panier{
   overflow-x: hidden;
   max-width: 100vw;
-}
+} */
 
-.page-panier h1{
+.page-panier h1 {
   margin-left: 25px;
 }
 
@@ -1132,12 +1287,32 @@ textarea {
   color: var(--white);
 }
 
-.has-discount.product-price {
-  color: #ff4d36;
+.has-discount.product-price, .block-promo .promo-name .cart-summary-line span {
+  color: #f65f4b;
+}
+
+.block-promo .promo-name .cart-summary-line .label{
+  color: var(--white)
 }
 
 .product-line-info .label {
   color: var(--white);
+}
+
+.block-promo .promo-code form {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: baseline;
+  justify-content: center;
+  gap: 5px;
+}
+
+.block-promo .promo-input + button {
+  border: none;
+}
+
+.cart-grid-right .promo-discounts .cart-summary-line .label .code {
+  color: #f14b35;
 }
 
 /* v *** a vérifier *** v */
@@ -1157,3 +1332,645 @@ textarea {
     padding-left: 40px;
   }
 }
+
+/********************************************************** Checkout */
+
+@media (min-width: 1120px) {
+  #checkout .cart-grid-right {
+    float: right;
+    border-left: 2px solid var(--gold);
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 18vw;
+  }
+}
+
+@media (max-width:500px){
+  #checkout aside{
+    padding: 0 !important;
+  }
+
+  #checkout .col-xs-12{
+    padding: 0 !important;
+  }
+}
+
+
+
+#checkout .cart-grid-right section div {
+  padding: 0 !important;
+}
+
+#checkout .cart-grid-right .card {
+  background-color: transparent !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+}
+
+#checkout .value {
+  color: var(--white) !important;
+  font-weight: normal !important;
+}
+
+#checkout .cart-grid-right .card .card-block {
+  width: 100%;
+  padding: 10px 0 !important;
+}
+
+#checkout .promo-name .label {
+  color: var(--white) !important;
+}
+
+#checkout .checkout-step {
+  background-color: var(--noir-profond) !important;
+}
+
+#checkout .js-current-step .step-number {
+  background-color: var(--gold) !important;
+  color: var(--noir) !important;
+}
+
+#checkout .checkout-step .step-number {
+  border-color: var(--gold) !important;
+}
+
+#checkout #delivery-addresses article {
+  background: transparent !important;
+  border-color: var(--gold) !important;
+}
+
+#checkout #delivery-addresses .address-alias {
+  color: var(--gold) !important;
+  font-family: "Marcellus", serif !important;
+  font-weight: normal;
+}
+
+#checkout #delivery-addresses article a {
+  color: var(--gold) !important;
+}
+
+#checkout #delivery-addresses article a:hover {
+  color: var(--gold-clair) !important;
+}
+
+body#checkout section.checkout-step .delivery-options .delivery-option {
+  background: var(--noir-profond) !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: none !important;
+}
+
+body#checkout
+  section.checkout-step
+  .delivery-options
+  .delivery-option
+  div.col-sm-1 {
+  flex: 0 0 5%;
+}
+
+body#checkout section.checkout-step .delivery-options .delivery-option label {
+  flex: 1;
+}
+
+body#checkout
+  section.checkout-step
+  .delivery-options
+  .delivery-option
+  .row
+  div {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#checkout #footer {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+#checkout .media {
+  display: flex;
+  gap: 5px;
+}
+
+#checkout #delivery {
+  margin: 5vh auto;
+}
+
+#checkout textarea {
+  max-width: 80% !important;
+  min-width: 79% !important;
+}
+/********************************************************** Login / Register */
+#registration #main,
+#authentication #main,
+#identity #content {
+  margin: 5vh auto !important;
+  max-width: 90vw !important;
+}
+
+.form-control-valign {
+  display: flex;
+}
+
+.form-control-valign label {
+  flex: 0 0 10%;
+}
+
+.register-form p a,
+.forgot-password a,
+.no-account a {
+  font-family: "Marcellus", serif;
+}
+
+.page-authentication #content,
+.page-authentication section form div,
+.page-registration #content,
+#identity #content,
+#address #content {
+  background: transparent !important;
+  color: var(--white) !important;
+}
+.page-authentication #content,
+.page-authentication section form div {
+  max-width: 50vw !important;
+}
+.page-registration #content,
+#identity #content,
+#address #content {
+  max-width: 70vw !important;
+  margin: 2vh auto !important;
+}
+
+.page-authentication #content .input-group {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap;
+  margin: 2vh auto;
+}
+
+.page-authentication #content .input-group input {
+  flex: 0 0 50% !important;
+}
+
+.page-authentication #content .input-group-btn {
+  flex: 0 0 10% !important;
+  width: 20px !important;
+}
+
+.page-authentication .form-control:focus {
+  outline: none !important;
+}
+
+.page-authentication .form-control:focus input {
+  outline: none !important;
+  border: none !important;
+  background-color: var(--noir-profond) !important;
+}
+
+.input-group.focus,
+select:focus {
+  outline: none !important;
+}
+
+.page-authentication #content .input-group-btn button,
+.page-registration .field-password-policy .form-group div .input-group button,
+#identity .field-password-policy .form-group div .input-group button {
+  padding: 0.78rem 0.1rem 0.78rem 0.2rem !important;
+  background-color: var(--gold) !important;
+  border: 3px solid var(--gold) !important;
+  width: inherit !important;
+  display: block !important;
+  transition: 0.2s ease-in-out !important;
+}
+
+.page-authentication #content .input-group-btn button:hover,
+.page-registration
+  .field-password-policy
+  .form-group
+  div
+  .input-group
+  button:hover,
+#identity .field-password-policy .form-group div .input-group button:hover {
+  background-color: var(--gold-clair) !important;
+}
+
+.page-authentication .form-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.page-authentication .form-group label,
+.page-registration .input-group-btn,
+#identity .input-group-btn {
+  flex: 0 0 20% !important;
+}
+
+.page-authentication .form-group div,
+.page-registration #field-password,
+#identity #field-password,
+#identity #field-new_password {
+  flex: 0 0 60% !important;
+}
+
+.custom-radio {
+  background: transparent !important;
+  border: none !important;
+}
+
+.custom-checkbox input,
+.custom-radio input {
+  opacity: 1 !important;
+}
+
+.custom-checkbox input {
+  width: 15px !important;
+}
+
+.custom-radio input {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.custom-checkbox span,
+.custom-radio span {
+  display: none !important;
+}
+
+.custom-checkbox label,
+.custom-radio label {
+  flex-wrap: wrap;
+  width: 100% !important;
+  gap: 10px !important;
+  display: flex !important;
+}
+
+.custom-radio label {
+  align-items: center !important;
+}
+
+.custom-checkbox label em {
+  place-self: flex-end;
+}
+
+.custom-checkbox label input {
+  position: relative !important;
+}
+
+.page-registration .field-password-policy .form-group div .input-group,
+#identity .field-password-policy .form-group div .input-group {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.page-registration .form-control-submit,
+#submit-login,
+#identity .form-control-submit,
+#address .form-control-submit {
+  max-width: 50vw !important;
+  margin: 0 auto;
+}
+
+/*************************************************************** Page liens du compte */
+#identity #main,
+#my-account #main,
+#address #main,
+.page-order-detail #main {
+  max-width: 90vw !important;
+  margin: 5vh auto !important;
+}
+
+#my-account .links span {
+  background: transparent !important;
+}
+
+#my-account .links {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 40vw !important;
+  justify-content: space-around !important;
+  margin: 2vh auto !important;
+}
+
+#my-account .links a {
+  display: block;
+  text-align: left !important;
+  flex: 0 0 40% !important;
+  color: var(--white) !important;
+  font-family: "Marcellus", serif;
+  font-weight: normal !important;
+}
+
+#my-account .links a:hover {
+  color: var(--gold) !important;
+}
+
+#my-account .links span.link-item {
+  padding: 0 !important;
+  padding-left: 30px !important;
+}
+
+#my-account .links i {
+  display: none !important;
+}
+
+#my-account #identity-link {
+  background: transparent url("../images/my-profile/user.png") no-repeat;
+}
+
+#my-account #address-link,
+#my-account #addresses-link {
+  background: transparent url("../images/my-profile/address.png") no-repeat;
+}
+
+#my-account #history-link {
+  background: transparent url("../images/my-profile/history.png") no-repeat;
+}
+
+#my-account #order-slips-link,
+#my-account #discounts-link {
+  background: transparent url("../images/my-profile/coupon.png") no-repeat;
+}
+
+#my-account #wishlist-link {
+  background: transparent url("../images/my-profile/wishlist.png") no-repeat;
+}
+
+#my-account #psgdpr-link {
+  background: transparent url("../images/my-profile/personal-info.png")
+    no-repeat;
+}
+
+#my-account #identity-link,
+#my-account #address-link,
+#my-account #addresses-link,
+#my-account #history-link,
+#my-account #order-slips-link,
+#my-account #discounts-link,
+#my-account #wishlist-link,
+#my-account #psgdpr-link {
+  background-position: left center;
+  background-size: 30px 30px;
+  background-repeat: no-repeat !important;
+}
+
+#my-account .page-footer .btn {
+  max-width: 40vw !important;
+  margin: 2vh auto !important;
+}
+
+/**************************************************************** Infos perso */
+#identity .page-footer,
+#address .page-footer,
+#addresses .page-footer,
+#history .page-footer,
+#order-slip .page-footer,
+#module-blockwishlist-lists .wishlist-footer-links,
+#module-psgdpr-gdpr .page-footer,
+.page-order-detail .page-footer,
+#discount .page-footer {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  gap: 15px !important;
+}
+
+#identity .page-footer a,
+#address .page-footer a,
+#addresses .page-footer a,
+#history .page-footer a,
+#order-slip .page-footer a,
+#module-blockwishlist-lists .wishlist-footer-links a,
+#module-psgdpr-gdpr .page-footer a,
+.page-order-detail .page-footer a,
+#discount .page-footer a {
+  display: block !important;
+}
+
+/*************************************************************** Adresses */
+#address label {
+  max-width: 10vw !important;
+}
+
+#address .form-control-comment {
+  text-align: right !important;
+}
+
+#address .form-footer {
+  margin: 5vh auto !important;
+}
+
+#addresses #main {
+  max-width: 90vw !important;
+  margin: 0 auto !important;
+}
+
+#addresses #content {
+  max-width: 80vw !important;
+  margin: 5vh auto !important;
+}
+
+#addresses .address {
+  flex: 0 0 25% !important;
+  background-color: var(--noir-profond) !important;
+  max-width: fit-content;
+  padding: var(--padding) !important;
+  border-radius: var(--border-radius) !important;
+}
+
+#addresses .address .address-body {
+  color: var(--white) !important;
+}
+
+#addresses .address .address-footer {
+  border-color: var(--gold-clair) !important;
+}
+
+#addresses .addresses-footer a {
+  max-width: 40vw !important;
+  margin: 5vh auto !important;
+}
+
+/************************************************************* History */
+
+#history #content,
+#discount #content {
+  background: transparent !important;
+}
+
+#history h6,
+#discount h6 {
+  color: var(--white) !important;
+  font-weight: normal !important;
+}
+#history table th,
+#history table td,
+.page-order-detail table th,
+.page-order-detail table td,
+#discount table th,
+#discount table td {
+  border: 3px solid var(--noir) !important;
+}
+
+#history table th,
+.page-order-detail table th,
+#discount table th {
+  background-color: var(--gold-clair) !important;
+  color: var(--noir) !important;
+  font-family: "Marcellus", serif !important;
+}
+
+#history table td,
+.page-order-detail table td,
+#discount table td,
+#discount .cart-rule {
+  color: var(--white) !important;
+}
+
+#history .row {
+  display: flex !important;
+}
+
+/******************************************************* Page données RGPD */
+
+#module-psgdpr-gdpr #content {
+  background-color: transparent !important;
+}
+
+#module-psgdpr-gdpr .page_content div {
+  background-color: var(--noir-profond) !important;
+}
+
+/******************************************************* Détails commande */
+
+.page-order-detail .box {
+  background-color: transparent !important;
+}
+.page-order-detail #order-infos,
+.page-order-detail .addresses {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-evenly !important;
+  gap: 10px !important;
+}
+
+.page-order-detail #order-infos .box,
+.page-order-detail .addresses div {
+  flex: 0 0 30% !important;
+}
+
+.page-order-detail #order-infos .box:first-child a {
+  font-family: "Marcellus", serif;
+}
+
+.page-order-detail .order-message-form {
+  max-width: 60vw !important;
+  margin: 2vh auto !important;
+}
+
+.page-order-detail .order-message-form .form-group {
+  margin: 2vh auto !important;
+  max-width: 50vw !important;
+}
+
+.page-order-detail .order-message-form label {
+  max-width: 50px !important;
+}
+
+.page-order-detail .order-message-form select {
+  width: 37.25vw !important;
+}
+
+.page-order-detail .order-message-form .form-footer button {
+  max-width: 40vw !important;
+  margin: 2vh auto !important;
+}
+
+/**************************************************************** Credit Slip */
+
+#order-slip #content {
+  background: transparent !important;
+}
+
+#order-slip #main,
+#discount #main,
+#module-psgdpr-gdpr #main,
+#history #main {
+  max-width: 80vw !important;
+  margin: 5vh auto !important;
+}
+
+/************************************************************** Page confirmation commande */
+
+#order-confirmation #main {
+  max-width: 85vw !important;
+  margin: 5vh auto !important;
+}
+
+#order-confirmation h1 {
+  padding-left: 60px;
+  background: transparent url("../images/cap-commande.svg") no-repeat left
+    center;
+  background-size: 50px;
+  margin: 5vh 0;
+}
+
+#order-confirmation #main .card {
+  background: transparent !important;
+}
+
+#order-confirmation #content-hook_order_confirmation {
+  border: 1px solid var(--gold);
+}
+
+#order-confirmation
+  #content-hook_order_confirmation
+  #ps_cashondelivery-displayOrderConfirmation
+  p {
+  padding-left: 30px;
+  background: transparent url("../images/arrow.svg") no-repeat left center;
+  background-size: 20px;
+}
+
+#order-confirmation #order-items .row {
+  display: flex;
+}
+
+#order-confirmation #order-items {
+  border: none !important;
+}
+
+#order-confirmation .order-confirmation-table table tbody tr td:first-child {
+  color: var(--gold) !important;
+  font-family: "Marcellus", serif;
+  font-size: 15px;
+}
+
+#order-confirmation .order-confirmation-table table tbody tr.total-value {
+  background: var(--noir-profond) !important;
+}
+
+#order-confirmation #order-details ul li {
+  list-style-type: disc;
+}
+
+@media (max-width: 500px) {
+  #order-confirmation .order-confirmation-table .order-line div.col-sm-2 {
+    display: none !important;
+  }
+}
+/************************************************************** Vouchers */
+
+#discount #content {
+  background: transparent !important;
+}
+
+#order-slip #main {
+  max-width: 80vw !important;
+  margin: 5vh auto !important;
+}
+
+
+
