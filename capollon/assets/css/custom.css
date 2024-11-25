@@ -137,6 +137,7 @@ label {
 .header-links-toggle .liens {
   display: flex;
   align-items: flex-start !important;
+  justify-content: space-between;
 }
 
 .header-links-toggle .liens div {
