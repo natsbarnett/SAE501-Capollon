@@ -19,7 +19,7 @@ jobs:
             echo "${{ secrets.SSH_PASSPHRASE }}" | ssh-add ~/.ssh/id_rsa
       - name: Pull latest changes
         run: |
-          ssh -t ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}<<EOF
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}<<EOF
             cd /var/www/html
             [ -d "/var/www/html/SAE501-Capollon" ] && rm -rf ./SAE501-Capollon
             git pull origin main
