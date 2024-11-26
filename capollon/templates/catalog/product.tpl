@@ -125,7 +125,7 @@
           {/block}
         </div>
 
-        
+
       </aside>
 
       <div class="image-produit">
@@ -147,7 +147,7 @@
         {hook h='displayReassurance'}
       {/block}
 
-      
+
       <div class="comment-section">
         <h2>Donnez votre avis</h2>
       </div>
@@ -184,4 +184,5 @@
       {/block}
   </section>
 
+  <script src="/themes/capollon/assets/js/confettis.js"></script>
 {/block}
