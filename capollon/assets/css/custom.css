@@ -110,7 +110,7 @@ label {
   background: var(--noir) !important;
 }
 
-#header>div {
+#header > div {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -815,7 +815,8 @@ figcaption.image-caption div p {
   font-family: "Marcellus", serif !important;
 }
 
-#blockcart-modal .modal-dialog .modal-body .cart-content p {
+#blockcart-modal .modal-dialog .modal-body .cart-content p,
+#blockcart-modal .modal-dialog .modal-body span {
   color: var(--white) !important;
 }
 
@@ -1288,12 +1289,13 @@ input:is(:-webkit-autofill, :autofill) {
   color: var(--white);
 }
 
-.has-discount.product-price, .block-promo .promo-name .cart-summary-line span {
+.has-discount.product-price,
+.block-promo .promo-name .cart-summary-line span {
   color: #f65f4b;
 }
 
-.block-promo .promo-name .cart-summary-line .label{
-  color: var(--white)
+.block-promo .promo-name .cart-summary-line .label {
+  color: var(--white);
 }
 
 .product-line-info .label {
@@ -1346,17 +1348,15 @@ input:is(:-webkit-autofill, :autofill) {
   }
 }
 
-@media (max-width:500px){
-  #checkout aside{
+@media (max-width: 500px) {
+  #checkout aside {
     padding: 0 !important;
   }
 
-  #checkout .col-xs-12{
+  #checkout .col-xs-12 {
     padding: 0 !important;
   }
 }
-
-
 
 #checkout .cart-grid-right section div {
   padding: 0 !important;
@@ -1973,5 +1973,31 @@ select:focus {
   margin: 5vh auto !important;
 }
 
+/***************************************************** Chute confettis*/
+#confettiContainer {
+  position: fixed;
+  top: 0 !important;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
 
+.confetti {
+  position: absolute;
+  pointer-events: none;
+  animation: fall linear forwards;
+  --confetti-scale: 1; /* Valeur par défaut, sera remplacée par JavaScript */
+  transform: scale(var(--confetti-scale));
+}
 
+@keyframes fall {
+  0% {
+    transform: translateY(0) scale(var(--confetti-scale)) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) scale(var(--confetti-scale)) rotate(360deg);
+    opacity: 0;
+  }
+}

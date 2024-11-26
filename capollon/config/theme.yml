@@ -13,4 +13,4 @@ assets:
     all:
       - assets/css/custom.css
   js:
-      - assets/js/header.js
+    - assets/js/header.js
