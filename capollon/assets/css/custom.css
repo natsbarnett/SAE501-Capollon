@@ -48,12 +48,12 @@ section {
   margin: var(--margin-section);
 }
 
-textarea {
+textarea, textarea.form-control {
   width: 100%;
-  border: 2px solid var(--gold);
-  border-radius: var(--border-radius);
-  background-color: transparent;
-  color: var(--white);
+  border: 2px solid var(--gold) !important;
+  border-radius: var(--border-radius) !important;
+  background-color: transparent !important;
+  color: var(--white) !important;
   padding: var(--padding);
   font-size: 15px;
   font-family: "Raleway", sans-serif;
