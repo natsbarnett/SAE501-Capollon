@@ -97,16 +97,10 @@
         {hook h="displayWrapperBottom"}
       </section>
 
-      <div style="position: fixed; bottom: 20px; left: 20px; width: 300px; height: 400px; border: none; z-index: 1000;">
-    <iframe 
-        src="http://localhost:3000/" 
-        style="width: 100%; height: 100%; border: none; border-radius: 10px;">
-    </iframe>
-</div>
-
-      {* {hook h='displayChatBot'} *}
+      
 
       <footer id="footer" class="js-footer">
+      {hook h='displayChatBot'}
         {block name="footer"}
           {include file="_partials/footer.tpl"}
         {/block}
