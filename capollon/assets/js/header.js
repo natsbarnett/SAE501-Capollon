@@ -10,4 +10,11 @@ document.addEventListener("DOMContentLoaded", function () {
       var menu = document.querySelector(".mobile-menu");
       menu.classList.toggle("active");
     });
+
+
+  document.getElementById('trigger').addEventListener('click', function () {
+    const menu = document.querySelector('.option_connexion');
+    menu.classList.toggle('menu_profil_visible');
+  });
+  
 });

@@ -71,28 +71,28 @@
             <label for="taille-s">
               <img src="/themes/capollon/assets/images/capotes/taille-s.svg">
               <span>S</span>
-              <input type="checkbox" name="taille" id="taille-s" value="s">
+              <input type="radio" name="taille" id="taille-s" value="s">
             </label>
           </div>
           <div value="m" class="taille-capote">
             <label for="taille-m">
               <img src="/themes/capollon/assets/images/capotes/taille-m.svg">
               <span>M</span>
-              <input type="checkbox" name="taille" id="taille-m" value="m">
+              <input type="radio" name="taille" id="taille-m" value="m">
             </label>
           </div>
           <div value="l" class="taille-capote">
             <label for="taille-l">
               <img src="/themes/capollon/assets/images/capotes/taille-l.svg">
               <span>L</span>
-              <input type="checkbox" name="taille" id="taille-l" value="l">
+              <input type="radio" name="taille" id="taille-l" value="l">
             </label>
           </div>
           <div value="xl" class="taille-capote">
             <label for="taille-xl">
               <img src="/themes/capollon/assets/images/capotes/taille-xl.svg">
               <span>XL</span>
-              <input type="checkbox" name="taille" id="taille-xl" value="xl">
+              <input type="radio" name="taille" id="taille-xl" value="xl">
             </label>
           </div>
         </div>
@@ -125,7 +125,7 @@
           {/block}
         </div>
 
-        
+
       </aside>
 
       <div class="image-produit">
@@ -147,7 +147,7 @@
         {hook h='displayReassurance'}
       {/block}
 
-      
+
       <div class="comment-section">
         <h2>Donnez votre avis</h2>
       </div>
@@ -184,4 +184,5 @@
       {/block}
   </section>
 
+  <script src="/themes/capollon/assets/js/confettis.js"></script>
 {/block}

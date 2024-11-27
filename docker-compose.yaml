@@ -36,6 +36,7 @@ services:
       - psdata:/var/www/html
       - ./capollon:/var/www/html/themes/capollon
       - ./my_module:/var/www/html/modules/my_module
+      - ./controllers:/var/www/html/controllers
 
   phpmyadmin:
     container_name: phpmyadmin
