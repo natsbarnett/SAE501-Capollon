@@ -46,7 +46,6 @@
   <section class="produits-phares">
     <h2>Nos produits phares</h2>
     {hook h='prodListHome'}
-
   </section>
 
   <div class="separator"></div>
