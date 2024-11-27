@@ -19,7 +19,7 @@ Ne modifiez pas nécéssairement le nom de la branche parce que c'est le nom de 
 | Page produit | Done |
 | Page liste des produits | Done|
 | Page de panier | Done |
-| Page de commande | Not done|
+| Page de commande | Done |
 | Pages Login / Register | Done |
 | Page Contact | Done |
 
