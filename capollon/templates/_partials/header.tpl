@@ -31,17 +31,16 @@
       <div class="liens">
         <div>
           <div>
-            <a href="#">
-              <img src="/themes/capollon/assets/images/profile.svg" alt="profil" class="profil" /></a>
+              <img src="/themes/capollon/assets/images/profile.svg" alt="profil" class="profil" />
           </div>
           <div>
             <a href="/">Accueil</a>
           </div>
           <div>
-            <a href="#">Nos produits</a>
+            <a href="/2-home">Nos produits</a>
           </div>
           <div>
-            <a href="#">Contact</a>
+            <a href="/contact-us">Contact</a>
           </div>
           <div class="option_connexion" id="menu_profil">
             {if $customer.is_logged}
@@ -70,10 +69,10 @@
     </div>
     <div class="header-links">
       <div>
-        <a href="#">Nos produits</a>
+        <a href="/2-home">Nos produits</a>
       </div>
       <div>
-        <a href="#">Contact</a>
+        <a href="/contact-us">Contact</a>
       </div>
       <div id="disp-n-2">{hook h='displayNav2'}</div>
       <div>

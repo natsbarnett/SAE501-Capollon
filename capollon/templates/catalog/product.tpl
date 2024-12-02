@@ -52,6 +52,7 @@
     <meta content="{$product.url}">
 
     <div class="row product-container js-product-container">
+
       <aside id="fiche-produit">
         <h1>{block name='page_title'}{$product.name}{/block}</h1>
         {block name='product_description_short'}
@@ -69,28 +70,46 @@
         <div class="choix-taille">
           <div value="s" class="taille-capote">
             <label for="taille-s">
-              <img src="/themes/capollon/assets/images/capotes/taille-s.svg">
+              {* <img src="/themes/capollon/assets/images/capotes/taille-s.svg"> *}
+              <div class=taille_s>
+                <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
+                <div class=corp_capote_taille></div>
+                <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+              </div>
               <span>S</span>
               <input type="radio" name="taille" id="taille-s" value="s">
             </label>
           </div>
           <div value="m" class="taille-capote">
             <label for="taille-m">
-              <img src="/themes/capollon/assets/images/capotes/taille-m.svg">
+              {* <img src="/themes/capollon/assets/images/capotes/taille-s.svg"> *}
+              <div class=taille_m>
+                <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
+                <div class=corp_capote_taille></div>
+                <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+              </div>
               <span>M</span>
-              <input type="radio" name="taille" id="taille-m" value="m">
+              <input type="radio" name="taille" id="taille-m" value="s">
             </label>
           </div>
           <div value="l" class="taille-capote">
             <label for="taille-l">
-              <img src="/themes/capollon/assets/images/capotes/taille-l.svg">
+              <div class=taille_l>
+                <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
+                <div class=corp_capote_taille></div>
+                <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+              </div>
               <span>L</span>
               <input type="radio" name="taille" id="taille-l" value="l">
             </label>
           </div>
           <div value="xl" class="taille-capote">
             <label for="taille-xl">
-              <img src="/themes/capollon/assets/images/capotes/taille-xl.svg">
+              <div class=taille_xl>
+                <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
+                <div class=corp_capote_taille></div>
+                <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+              </div>
               <span>XL</span>
               <input type="radio" name="taille" id="taille-xl" value="xl">
             </label>
@@ -129,16 +148,16 @@
       </aside>
 
       <div class="image-produit">
-        <div class="image">
-          {block name='product_cover_thumbnails'}
-            {include file='catalog/_partials/product-cover-thumbnails.tpl'}
-          {/block}
-          <div class="scroll-box-arrows">
-            <i class="material-icons left">&#xE314;</i>
-            <i class="material-icons right">&#xE315;</i>
-          </div>
+      <div class="image">
+        {block name='product_cover_thumbnails'}
+          {include file='catalog/_partials/product-cover-thumbnails.tpl'}
+        {/block}
+        <div class="scroll-box-arrows">
+          <i class="material-icons left">&#xE314;</i>
+          <i class="material-icons right">&#xE315;</i>
         </div>
       </div>
+    </div>
 
       {$product.description nofilter}
 

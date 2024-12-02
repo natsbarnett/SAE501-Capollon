@@ -199,7 +199,7 @@ header .menu-button-close {
   bottom: 0;
   right: 0;
   background: var(--noir);
-  transition: 0.4s;
+  transition: 0.4s cubic-bezier(0.66, -0.01, 0.36, 0.99);
   transform: translateX(-120%);
   width: 100%;
 }
@@ -609,9 +609,31 @@ p {
 
 .product-container .product-cover {
   display: flex;
-  max-width: 50vw !important;
+  max-height: 70vh;
   justify-content: center !important;
   flex-direction: column;
+  background: url("../images/cadre.svg");
+  background-size: cover;
+  aspect-ratio: 1/1;
+}
+
+@media (min-width: 480px) {
+  .product-container .product-cover {
+    max-width: 50vw !important;
+  }
+}
+
+@media (max-width: 1128px) {
+  .product-container .product-cover {
+    margin: 5% auto;
+  }
+}
+
+.product-cover img{
+  width: 80%;
+  height: auto;
+  margin: 10%;
+  background-color: #ffffff00;
 }
 
 .product-images > li.thumb-container .thumb.selected,
@@ -669,10 +691,12 @@ figcaption.image-caption div p {
   border-radius: var(--border-radius);
 }
 
+/*   choix taille des capotes  */
+
 #fiche-produit .choix-taille {
   display: flex;
   flex-wrap: wrap;
-  gap: 5%;
+  gap: 10%;
   justify-content: center;
   align-items: flex-end;
 }
@@ -683,6 +707,75 @@ figcaption.image-caption div p {
   flex-direction: column;
   align-items: center;
   font-size: 16px !important;
+  cursor: pointer;
+}
+
+#fiche-produit .taille-capote label input {
+  cursor: pointer;
+}
+
+#fiche-produit .taille-capote label>div{
+  position: relative;
+}
+
+#fiche-produit .taille-capote label>div>div{
+  background: linear-gradient(to right, #FFF4DB, #FEE5A0);
+  height: 60px;
+  width: 28px;
+  border-radius: 14px 14px 0 0;
+  transition: 0.2s ease;
+  transform-origin: bottom;
+}
+
+#fiche-produit .taille-capote label>.taille_m>div{
+  height: 100px;
+}
+
+#fiche-produit .taille-capote label>.taille_l>div{
+  height: 150px;
+}
+
+#fiche-produit .taille-capote label>.taille_xl>div{
+  height: 200px;
+}
+
+#fiche-produit .taille-capote label:hover>div>div{
+  transform: scaleY(calc(1 + 10 / 60));
+}
+
+#fiche-produit .taille-capote label:hover>.taille_m>div{
+  transform: scaleY(calc(1 + 10 / 100));
+}
+
+#fiche-produit .taille-capote label:hover>.taille_l>div{
+  transform: scaleY(calc(1 + 10 / 150));
+}
+
+#fiche-produit .taille-capote label:hover>.taille_xl>div{
+  transform: scaleY(calc(1 + 10 / 200)); /* pour obtenir ca calc(1 + 10 / height) */
+}
+
+#fiche-produit .taille-capote label>div>.haut_capote_taille{
+  position: absolute;
+  transform: translate(-100%, -20%);
+  transition: 0.2s ease;
+}
+
+#fiche-produit .taille-capote label:hover>div>.haut_capote_taille{
+  transform: translate(-100%, -62%);
+}
+
+#fiche-produit .taille-capote label>div>.bas_capote_taille{
+  position: absolute;
+  transform: translate(-34px, -80%);
+}
+
+/*  bouton add to cart  */
+
+.product-actions .add-to-cart {
+  height: fit-content;
+  padding: 12.5px;
+  line-height: inherit;
 }
 
 @media (min-width: 1127px) {
@@ -691,6 +784,7 @@ figcaption.image-caption div p {
     border-left: 2px solid var(--gold);
     padding-left: 40px;
     max-width: 30vw !important;
+    margin-left: 5px;
   }
 
   .product-container .product-cover {
@@ -1329,7 +1423,7 @@ input:is(:-webkit-autofill, :autofill) {
     width: 20vw;
   }
 
-  #fiche-produit {
+  .panier-aside #fiche-produit {
     float: right;
     border-left: 2px solid var(--gold);
     padding-left: 40px;
@@ -1991,6 +2085,18 @@ select:focus {
   transform: scale(var(--confetti-scale));
 }
 
+@keyframes fall {
+  0% {
+    transform: translateY(0) scale(var(--confetti-scale)) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) scale(var(--confetti-scale)) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
 /************************* code chat bot a déplacé **/
 
 .container_chatbot{
@@ -1998,7 +2104,7 @@ select:focus {
   bottom: 20px; 
   left: 20px; 
   width: 300px; 
-  height: 400px; 
+  height: 300px; 
   border: none; 
   z-index: 1000;
 }
@@ -2016,18 +2122,20 @@ select:focus {
 
 .container_chatbot>iframe{
   pointer-events: auto;
+  height: 300px;
+  width: 300px;
+  overflow: none;
+  border-radius: 53px;
+  margin: 10px;
+
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 50%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 50%);
 }
 
 .container_chatbot .contour-chat{
   pointer-events: visible;
 }
-@keyframes fall {
-  0% {
-    transform: translateY(0) scale(var(--confetti-scale)) rotate(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100vh) scale(var(--confetti-scale)) rotate(360deg);
-    opacity: 0;
-  }
+
+footer{
+  position: relative;
 }
