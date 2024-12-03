@@ -24,3 +24,12 @@ Ne modifiez pas nécéssairement le nom de la branche parce que c'est le nom de 
 | Page Contact | Done |
 
   Si vous avez des questions concernant Jira : https://jira-ticket-bot.app/
+
+
+## Commande pour "entrer dans le docker" :
+
+docker exec -it capollon_web /bin/bash
+
+## Commande pour copier coller du docker vers le theme :
+
+docker cp <nom_du_conteneur>:/var/www/html/chemin/vers/fichier ./chemin/local

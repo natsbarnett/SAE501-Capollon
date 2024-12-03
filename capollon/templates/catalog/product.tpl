@@ -115,6 +115,11 @@
             </label>
           </div>
         </div>
+
+        {block name='product_variants'}
+          {include file='catalog/_partials/product-variants.tpl'}
+        {/block}
+        
         {if $product.is_customizable && count($product.customizations.fields)}
           {block name='product_customization'}
             {include file="catalog/_partials/product-customization.tpl" customizations=$product.customizations}
