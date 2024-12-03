@@ -636,6 +636,12 @@ p {
   background-color: #ffffff00;
 }
 
+.product-cover .layer{
+  width: 80%;
+  height: 80%;
+  margin: 10%;
+}
+
 .product-images > li.thumb-container .thumb.selected,
 .product-images > li.thumb-container .thumb:hover {
   border-color: var(--gold) !important;
