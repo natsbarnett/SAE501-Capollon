@@ -48,7 +48,8 @@ section {
   margin: var(--margin-section);
 }
 
-textarea, textarea.form-control {
+textarea,
+textarea.form-control {
   width: 100%;
   border: 2px solid var(--gold) !important;
   border-radius: var(--border-radius) !important;
@@ -557,9 +558,20 @@ p {
 }
 /******************************************************************************* Liste produits */
 
-#category #wrapper .container {
-  max-width: 80vw !important;
-  margin: 5vh auto !important;
+@media (max-width: 800px) {
+  #category #wrapper .container,
+  #search #wrapper .container {
+    max-width: 90vw;
+    margin: 5vh auto;
+  }
+}
+
+@media (min-width: 900px) {
+  #category #wrapper .container,
+  #search #wrapper .container {
+    max-width: 80vw !important;
+    margin: 5vh auto !important;
+  }
 }
 
 #category #left-column {
@@ -572,7 +584,8 @@ p {
   margin: 0 auto !important;
 }
 
-#category .products {
+#category .products,
+#search .products {
   row-gap: 25px !important;
 }
 
@@ -1972,6 +1985,34 @@ select:focus {
   max-width: 80vw !important;
   margin: 5vh auto !important;
 }
+
+/***************************************************** Pages d'erreurs*/
+
+#pagenotfound #main {
+  margin: 5vh auto !important;
+  max-width: 80vw !important;
+}
+
+#pagenotfound #content {
+  background: var(--noir-profond) !important;
+  border-radius: var(--border-radius);
+}
+
+#pagenotfound form {
+  max-width: fit-content !important;
+  margin: 2vh !important;
+}
+
+#pagenotfound #search_widget form input {
+  padding: 10px 20px 10px 40px !important;
+}
+
+#back-home{
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
+
 
 /***************************************************** Chute confettis*/
 #confettiContainer {
