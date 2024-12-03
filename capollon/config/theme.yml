@@ -12,5 +12,6 @@ assets:
   css:
     all:
       - assets/css/custom.css
+      - assets/css/error.css
   js:
     - assets/js/header.js
