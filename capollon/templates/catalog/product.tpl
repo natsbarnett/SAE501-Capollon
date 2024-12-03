@@ -67,6 +67,7 @@
             {* TODO : Trouver un moyen d'ajouter les catégories dont le produit fait partie *}
           </div>
         </div>
+        
         <div class="choix-taille">
           <div value="s" class="taille-capote">
             <label for="taille-s">

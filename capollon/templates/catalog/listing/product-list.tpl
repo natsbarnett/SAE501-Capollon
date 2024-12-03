@@ -34,86 +34,108 @@
       <h4>Découvrez notre Collection de Préservatifs Made in France</h4>
       <p>Plongez dans l'univers raffiné de notre gamme de préservatifs Made in France, où l'innovation rencontre
         l'élégance.
-          Chaque produit est soigneusement élaboré pour garantir sécurité, confort et plaisir.</p>
+      Chaque produit est soigneusement élaboré pour garantir sécurité, confort et plaisir.</p>
 
-        <ul>
-          <li><span class="orange-span">Préservatifs Ultra-Fins</span> : Pour une sensation de proximité inégalée.</li>
-          <li><span class="orange-span">Préservatifs Aromatisés</span> : Éveillez vos sens avec des saveurs exquises.</li>
-          <li><span class="orange-span">Préservatifs Écologiques</span> : Respectez la planète tout en préservant votre
-            plaisir.</li>
-        </ul>
-        <p>Choisissez l'excellence et l'authenticité, et faites l'expérience d'une protection de qualité supérieure, conçue
-          pour les amateurs de sensations authentiques.</p>
-      </div>
-      <section id="products">
-        {if $listing.products|count}
+    <ul>
+      <li><span class="orange-span">Préservatifs Ultra-Fins</span> : Pour une sensation de proximité inégalée.</li>
+      <li><span class="orange-span">Préservatifs Aromatisés</span> : Éveillez vos sens avec des saveurs exquises.</li>
+      <li><span class="orange-span">Préservatifs Écologiques</span> : Respectez la planète tout en préservant votre
+        plaisir.</li>
+    </ul>
+    <p>Choisissez l'excellence et l'authenticité, et faites l'expérience d'une protection de qualité supérieure, conçue
+      pour les amateurs de sensations authentiques.</p>
+  </div>
+  <div class="search-prod-list">
+    {block name='search'}
+    {hook h='displaySearch'}
+    {/block}
+  </div>
 
-
-
-            {block name='product_list_active_filters'}
-            <div class="hidden-sm-down">
-              {$listing.rendered_active_filters nofilter}
-            </div>
-
-
-            {/block}
+  <section id="products">
+    {if $listing.products|count}
 
 
 
-            {block name='product_list'}
 
-
-              {include file='catalog/_partials/products.tpl' listing=$listing productClass="col-xs-12 col-sm-6 col-xl-4"}
-
-
-            {/block}
-
-
-
-            {block name='product_list_bottom'}
-
-
-              {include file='catalog/_partials/products-bottom.tpl' listing=$listing}
-
-
-            {/block}
+    {block name='product_list_active_filters'}
+    <div class="hidden-sm-down">
+      {$listing.rendered_active_filters nofilter}
+    </div>
 
 
 
-          {else}
-          <div id="js-product-list-top"></div>
-
-          <div id="js-product-list">
-
-
-            {capture assign="errorContent"}
-              <h4>
-
-              {l s='No products available yet' d='Shop.Theme.Catalog'}</h4>
-              <p>
-
-              {l s='Stay tuned! More products will be shown here as they are added.' d='Shop.Theme.Catalog'}</p>
-
-
-            {/capture}
+    {/block}
 
 
 
-            {include file='errors/not-found.tpl' errorContent=$errorContent}
-          </div>
 
-          <div id="js-product-list-bottom"></div>
-
-
-          {/if}
-      </section>
+    {block name='product_list'}
 
 
 
-          {block name='product_list_footer'}
-      {/block}
+    {include file='catalog/_partials/products.tpl' listing=$listing productClass="col-xs-12 col-sm-6 col-xl-4"}
 
-      {hook h="displayFooterCategory"}
 
-    </section>
+
+    {/block}
+
+
+
+
+    {block name='product_list_bottom'}
+
+
+
+    {include file='catalog/_partials/products-bottom.tpl' listing=$listing}
+
+
+
+    {/block}
+
+
+
+
+    {else}
+    <div id="js-product-list-top"></div>
+
+    <div id="js-product-list">
+
+
+
+      {capture assign="errorContent"}
+      <h4>
+
+
+        {l s='No products available yet' d='Shop.Theme.Catalog'}</h4>
+      <p>
+
+
+        {l s='Stay tuned! More products will be shown here as they are added.' d='Shop.Theme.Catalog'}</p>
+
+
+
+      {/capture}
+
+
+
+
+      {include file='errors/not-found.tpl' errorContent=$errorContent}
+    </div>
+
+    <div id="js-product-list-bottom"></div>
+
+
+
+    {/if}
+  </section>
+
+
+
+
+  {block name='product_list_footer'}
   {/block}
+
+  {hook h="displayFooterCategory"}
+
+</section>
+{/block}

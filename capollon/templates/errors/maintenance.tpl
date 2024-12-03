@@ -22,50 +22,40 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-
-{* {if $page['meta']['title'] === 'Contact us'}
-{$layout = 'layouts/layout-full-width.tpl'}
-{/if}
-{extends file=$layout}
+{extends file='layouts/layout-error.tpl'}
 
 {block name='content'}
+
   <section id="main">
+
     {block name='page_header_container'}
-      {block name='page_title' hide}
-        <header class="page-header">
-          <h1>{$smarty.block.child}</h1>
-        </header>
-      {/block}
+      <header class="page-header">
+        {block name='page_header_logo'}
+        <div class="logo"><img src="{$shop.logo}" alt="logo" loading="lazy"></div>
+        {/block}
+
+        {block name='hook_maintenance'}
+          {$HOOK_MAINTENANCE nofilter}
+        {/block}
+
+        {block name='page_header'}
+          <h1>{block name='page_title'}{l s='We\'ll be back soon.' d='Shop.Theme.Global'}{/block}</h1>
+        {/block}
+      </header>
     {/block}
 
     {block name='page_content_container'}
-      <div id="content" class="page-content card card-block">
-        {block name='page_content_top'}{/block}
+      <section id="content" class="page-content page-maintenance">
         {block name='page_content'}
-          <!-- Page content -->
+          {$maintenance_text nofilter}
         {/block}
-      </div>
+      </section>
     {/block}
 
     {block name='page_footer_container'}
-      <footer class="page-footer">
-        {block name='page_footer'}
-          <!-- Footer content -->
-        {/block}
-      </footer>
+
     {/block}
 
   </section>
-{/block} *}
 
-
-
-{extends file='catalog/listing/product-list.tpl'}
-
-{block name='product_list_header'}
-  {include file='catalog/_partials/category-header.tpl' listing=$listing category=$category}
-{/block}
-
-{block name='product_list_footer'}
-  {include file='catalog/_partials/category-footer.tpl' listing=$listing category=$category}
 {/block}

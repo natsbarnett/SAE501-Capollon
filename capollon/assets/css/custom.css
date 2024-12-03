@@ -48,7 +48,8 @@ section {
   margin: var(--margin-section);
 }
 
-textarea, textarea.form-control {
+textarea,
+textarea.form-control {
   width: 100%;
   border: 2px solid var(--gold) !important;
   border-radius: var(--border-radius) !important;
@@ -557,9 +558,62 @@ p {
 }
 /******************************************************************************* Liste produits */
 
-#category #wrapper .container {
-  max-width: 80vw !important;
-  margin: 5vh auto !important;
+@media (max-width: 800px) {
+  #category #wrapper .container,
+  #search #wrapper .container {
+    max-width: 90vw;
+    margin: 5vh auto;
+  }
+}
+
+@media (min-width: 900px) {
+  #category #wrapper .container,
+  #search #wrapper .container {
+    max-width: 80vw !important;
+    margin: 5vh auto !important;
+  }
+}
+
+#category .search-prod-list #search_widget {
+  display: block;
+}
+
+#category .search-prod-list #search_widget input[name="s"] {
+  padding: 10px 20px 10px 40px !important;
+}
+
+@media (min-width: 900px) {
+  #category .search-prod-list {
+    display: flex;
+    justify-content: center;
+    margin: 5vh 0;
+  }
+  #category .search-prod-list #search_widget {
+    overflow: unset;
+    max-width: 70vw !important;
+  }
+
+  #category .search-prod-list #search_widget input {
+    max-width: 70vh !important;
+  }
+}
+
+@media (max-width: 899px) {
+  #category .search-prod-list {
+    display: flex;
+    justify-content: center;
+    width: 85vw;
+  }
+
+  #category .search-prod-list #search_widget {
+    max-width: 70vw !important;
+    float: none !important;
+    overflow: unset !important;
+  }
+
+  #category .search-prod-list #search_widget input {
+    max-width: 70vh !important;
+  }
 }
 
 #category #left-column {
@@ -572,7 +626,8 @@ p {
   margin: 0 auto !important;
 }
 
-#category .products {
+#category .products,
+#search .products {
   row-gap: 25px !important;
 }
 
@@ -629,14 +684,14 @@ p {
   }
 }
 
-.product-cover img{
+.product-cover img {
   width: 80%;
   height: auto;
   margin: 10%;
   background-color: #ffffff00;
 }
 
-.product-cover .layer{
+.product-cover .layer {
   width: 80%;
   height: 80%;
   margin: 10%;
@@ -720,12 +775,12 @@ figcaption.image-caption div p {
   cursor: pointer;
 }
 
-#fiche-produit .taille-capote label>div{
+#fiche-produit .taille-capote label > div {
   position: relative;
 }
 
-#fiche-produit .taille-capote label>div>div{
-  background: linear-gradient(to right, #FFF4DB, #FEE5A0);
+#fiche-produit .taille-capote label > div > div {
+  background: linear-gradient(to right, #fff4db, #fee5a0);
   height: 60px;
   width: 28px;
   border-radius: 14px 14px 0 0;
@@ -733,45 +788,47 @@ figcaption.image-caption div p {
   transform-origin: bottom;
 }
 
-#fiche-produit .taille-capote label>.taille_m>div{
+#fiche-produit .taille-capote label > .taille_m > div {
   height: 100px;
 }
 
-#fiche-produit .taille-capote label>.taille_l>div{
+#fiche-produit .taille-capote label > .taille_l > div {
   height: 150px;
 }
 
-#fiche-produit .taille-capote label>.taille_xl>div{
+#fiche-produit .taille-capote label > .taille_xl > div {
   height: 200px;
 }
 
-#fiche-produit .taille-capote label:hover>div>div{
+#fiche-produit .taille-capote label:hover > div > div {
   transform: scaleY(calc(1 + 10 / 60));
 }
 
-#fiche-produit .taille-capote label:hover>.taille_m>div{
+#fiche-produit .taille-capote label:hover > .taille_m > div {
   transform: scaleY(calc(1 + 10 / 100));
 }
 
-#fiche-produit .taille-capote label:hover>.taille_l>div{
+#fiche-produit .taille-capote label:hover > .taille_l > div {
   transform: scaleY(calc(1 + 10 / 150));
 }
 
-#fiche-produit .taille-capote label:hover>.taille_xl>div{
-  transform: scaleY(calc(1 + 10 / 200)); /* pour obtenir ca calc(1 + 10 / height) */
+#fiche-produit .taille-capote label:hover > .taille_xl > div {
+  transform: scaleY(
+    calc(1 + 10 / 200)
+  ); /* pour obtenir ca calc(1 + 10 / height) */
 }
 
-#fiche-produit .taille-capote label>div>.haut_capote_taille{
+#fiche-produit .taille-capote label > div > .haut_capote_taille {
   position: absolute;
   transform: translate(-100%, -20%);
   transition: 0.2s ease;
 }
 
-#fiche-produit .taille-capote label:hover>div>.haut_capote_taille{
+#fiche-produit .taille-capote label:hover > div > .haut_capote_taille {
   transform: translate(-100%, -62%);
 }
 
-#fiche-produit .taille-capote label>div>.bas_capote_taille{
+#fiche-produit .taille-capote label > div > .bas_capote_taille {
   position: absolute;
   transform: translate(-34px, -80%);
 }
@@ -2073,6 +2130,32 @@ select:focus {
   margin: 5vh auto !important;
 }
 
+/***************************************************** Pages d'erreurs*/
+
+#pagenotfound #main {
+  margin: 5vh auto !important;
+  max-width: 80vw !important;
+}
+
+#pagenotfound #content {
+  background: var(--noir-profond) !important;
+  border-radius: var(--border-radius);
+}
+
+#pagenotfound form {
+  max-width: fit-content !important;
+  margin: 2vh !important;
+}
+
+#pagenotfound #search_widget form input {
+  padding: 10px 20px 10px 40px !important;
+}
+
+#back-home {
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
 /***************************************************** Chute confettis*/
 #confettiContainer {
   position: fixed;
@@ -2102,31 +2185,33 @@ select:focus {
   }
 }
 
-
 /************************* code chat bot a déplacé **/
 
-.container_chatbot{
-  position: fixed; 
-  bottom: 20px; 
-  left: 20px; 
-  width: 300px; 
-  height: 300px; 
-  border: none; 
+.container_chatbot {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  width: 300px;
+  height: 300px;
+  border: none;
   z-index: 1000;
 }
 
-.container_chatbot>iframe{
-  width: 100%; 
-  height: 100%; 
-  border: none; 
+.container_chatbot > iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
   border-radius: 10px;
 }
 
-.container_chatbot, .container_chatbot html, .container_chatbot body, .container_chatbot main{
+.container_chatbot,
+.container_chatbot html,
+.container_chatbot body,
+.container_chatbot main {
   pointer-events: none !important;
 }
 
-.container_chatbot>iframe{
+.container_chatbot > iframe {
   pointer-events: auto;
   height: 300px;
   width: 300px;
@@ -2134,14 +2219,22 @@ select:focus {
   border-radius: 53px;
   margin: 10px;
 
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 50%);
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 50%);
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 50%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 50%
+  );
 }
 
-.container_chatbot .contour-chat{
+.container_chatbot .contour-chat {
   pointer-events: visible;
 }
 
-footer{
+footer {
   position: relative;
 }
