@@ -52,7 +52,6 @@
       </header>
 
       <section id="wrapper">
-        {hook h='displayChatBot'}
         {block name='notifications'}
           {include file='_partials/notifications.tpl'}
         {/block}
@@ -98,7 +97,10 @@
         {hook h="displayWrapperBottom"}
       </section>
 
+      
+
       <footer id="footer" class="js-footer">
+      {hook h='displayChatBot'}
         {block name="footer"}
           {include file="_partials/footer.tpl"}
         {/block}
