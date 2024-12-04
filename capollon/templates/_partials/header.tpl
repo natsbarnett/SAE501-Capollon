@@ -23,6 +23,8 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {assign var="theme_dir" value=$urls.theme_dir}
+{assign var="base_url" value=$urls.base_url}
+{assign var="prodlink" value=$urls.pages.category}
 
 {debug}
 
@@ -32,33 +34,33 @@
       <div class="liens">
         <div>
           <div>
-            <img src="{$theme_dir}/assets/images/profile.svg" alt="profil" class="profil" />
+            <img src="{$theme_dir}assets/images/profile.svg" alt="profil" class="profil" />
           </div>
           <div>
-            <a href="/">Accueil</a>
+            <a href="{$base_url}">Accueil</a>
           </div>
           <div>
-            <a href="/2-home">Nos produits</a>
+            <a href="{$prodlink}&id_category=2">Nos produits</a>
           </div>
           <div>
-            <a href="/contact-us">Contact</a>
+            <a href="{$base_url}contact-us">Contact</a>
           </div>
           <div class="option_connexion" id="menu_profil">
             {if $customer.is_logged}
               <!-- Vérifie si l'utilisateur est connecté -->
-              <div class="option1"><a href="/my-account">Mes infos</a></div>
+              <div class="option1"><a href="{$base_url}my-account">Mes infos</a></div>
               <div class="separation_option"></div>
-              <div class="option_centre"><a href="/cart?action=show">Mon panier</a></div>
+              <div class="option_centre"><a href="{$base_url}cart?action=show">Mon panier</a></div>
               <div class="separation_option"></div>
-              <div class="option2"><a href="/?mylogout=">Se déconnecter</a></div>
+              <div class="option2"><a href="{$base_url}?mylogout=">Se déconnecter</a></div>
             {else}
-              <div class="option_seul"><a href="/login">Se connecter</a></div>
+              <div class="option_seul"><a href="{$base_url}login">Se connecter</a></div>
             {/if}
           </div>
         </div>
 
         <div>
-          <img src="{$theme_dir}/assets/images/burger.svg" alt="" class="menu-button-close" width="100%" />
+          <img src="{$theme_dir}assets/images/burger.svg" alt="" class="menu-button-close" width="100%" />
         </div>
       </div>
     </div>
@@ -66,19 +68,19 @@
   </nav>
   <div>
     <div>
-      <a href="/"><img src="{$theme_dir}/assets/images/logo.svg" alt="logo" class="logo" /></a>
+      <a href="{$base_url}"><img src="{$theme_dir}assets/images/logo.svg" alt="logo" class="logo" /></a>
     </div>
     <div class="header-links">
       <div>
-        <a href="/2-home">Nos produits</a>
+        <a href="{$prodlink}&id_category=2">Nos produits</a>
       </div>
       <div>
-        <a href="/contact-us">Contact</a>
+        <a href="{$base_url}contact-us">Contact</a>
       </div>
       <div id="disp-n-2">{hook h='displayNav2'}</div>
       <div>
-        <img src="{$theme_dir}/assets/images/profile.svg" alt="profil" class="profil" id="trigger" />
+        <img src="{$theme_dir}assets/images/profile.svg" alt="profil" class="profil" id="trigger" />
       </div>
     </div>
-    <img src="{$theme_dir}/assets/images/burger-lines.svg" alt="" class="menu-button" width="100%" />
+    <img src="{$theme_dir}assets/images/burger-lines.svg" alt="" class="menu-button" width="100%" />
 {/block}
