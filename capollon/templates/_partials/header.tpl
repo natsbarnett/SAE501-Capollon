@@ -22,8 +22,9 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+{assign var="theme_dir" value=$urls.theme_dir}
 
-
+{debug}
 
 {block name='header_top'}
   <nav role="navigation" id="navig" class="mobile-menu">
@@ -31,7 +32,7 @@
       <div class="liens">
         <div>
           <div>
-              <img src="/themes/capollon/assets/images/profile.svg" alt="profil" class="profil" />
+            <img src="{$theme_dir}/assets/images/profile.svg" alt="profil" class="profil" />
           </div>
           <div>
             <a href="/">Accueil</a>
@@ -57,7 +58,7 @@
         </div>
 
         <div>
-          <img src="/themes/capollon/assets/images/burger.svg" alt="" class="menu-button-close" width="100%" />
+          <img src="{$theme_dir}/assets/images/burger.svg" alt="" class="menu-button-close" width="100%" />
         </div>
       </div>
     </div>
@@ -65,7 +66,7 @@
   </nav>
   <div>
     <div>
-      <a href="/"><img src="/themes/capollon/assets/images/logo.svg" alt="logo" class="logo" /></a>
+      <a href="/"><img src="{$theme_dir}/assets/images/logo.svg" alt="logo" class="logo" /></a>
     </div>
     <div class="header-links">
       <div>
@@ -76,8 +77,8 @@
       </div>
       <div id="disp-n-2">{hook h='displayNav2'}</div>
       <div>
-        <img src="/themes/capollon/assets/images/profile.svg" alt="profil" class="profil" id="trigger" />
+        <img src="{$theme_dir}/assets/images/profile.svg" alt="profil" class="profil" id="trigger" />
       </div>
     </div>
-    <img src="/themes/capollon/assets/images/burger-lines.svg" alt="" class="menu-button" width="100%" />
+    <img src="{$theme_dir}/assets/images/burger-lines.svg" alt="" class="menu-button" width="100%" />
 {/block}
