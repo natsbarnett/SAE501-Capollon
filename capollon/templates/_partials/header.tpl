@@ -26,7 +26,6 @@
 {assign var="base_url" value=$urls.base_url}
 {assign var="prodlink" value=$urls.pages.category}
 
-{debug}
 
 {block name='header_top'}
   <nav role="navigation" id="navig" class="mobile-menu">
