@@ -32,16 +32,67 @@
           {/foreach}
       </span>
       {if $group.group_type == 'select'}
-        <select
-          class="form-control form-control-select"
-          id="group_{$id_attribute_group}"
-          aria-label="{$group.name}"
-          data-product-attribute="{$id_attribute_group}"
-          name="group[{$id_attribute_group}]">
-          {foreach from=$group.attributes key=id_attribute item=group_attribute}
-            <option value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} selected="selected"{/if}>{$group_attribute.name}</option>
-          {/foreach}
-        </select>
+        {if $group.name == 'Size'}
+          <div class="choix-taille">
+          <div value="s" class="taille-capote">
+            <label for="taille-s">
+              {* <img src="/themes/capollon/assets/images/capotes/taille-s.svg"> *}
+              <div class=taille_s>
+                <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
+                <div class=corp_capote_taille></div>
+                <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+              </div>
+              <span>S</span>
+              <input type="radio" name="group[{$id_attribute_group}]" id="taille-s" value="s">
+            </label>
+          </div>
+          <div value="m" class="taille-capote">
+            <label for="taille-m">
+              {* <img src="/themes/capollon/assets/images/capotes/taille-s.svg"> *}
+              <div class=taille_m>
+                <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
+                <div class=corp_capote_taille></div>
+                <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+              </div>
+              <span>M</span>
+              <input type="radio" name="group[{$id_attribute_group}]" id="taille-m" value="s">
+            </label>
+          </div>
+          <div value="l" class="taille-capote">
+            <label for="taille-l">
+              <div class=taille_l>
+                <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
+                <div class=corp_capote_taille></div>
+                <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+              </div>
+              <span>L</span>
+              <input type="radio" name="group[{$id_attribute_group}]" id="taille-l" value="l">
+            </label>
+          </div>
+          <div value="xl" class="taille-capote">
+            <label for="taille-xl">
+              <div class=taille_xl>
+                <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
+                <div class=corp_capote_taille></div>
+                <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+              </div>
+              <span>XL</span>
+              <input type="radio" name="group[{$id_attribute_group}]" id="taille-xl" value="xl">
+            </label>
+          </div>
+        </div>
+        {else}
+          <select
+            class="form-control form-control-select"
+            id="group_{$id_attribute_group}"
+            aria-label="{$group.name}"
+            data-product-attribute="{$id_attribute_group}"
+            name="group[{$id_attribute_group}]">
+            {foreach from=$group.attributes key=id_attribute item=group_attribute}
+              <option value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} selected="selected"{/if}>{$group_attribute.name}</option>
+            {/foreach}
+          </select>
+        {/if}
       {elseif $group.group_type == 'color'}
         <ul id="group_{$id_attribute_group}">
           {foreach from=$group.attributes key=id_attribute item=group_attribute}

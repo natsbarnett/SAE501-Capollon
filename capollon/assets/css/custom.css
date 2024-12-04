@@ -145,6 +145,10 @@ label {
   display: block !important;
 }
 
+.header-links .profil{
+  cursor: pointer;
+}
+
 #header a {
   color: var(--gold) !important;
   font-family: "Marcellus", serif;
@@ -757,7 +761,7 @@ figcaption.image-caption div p {
 #fiche-produit .choix-taille {
   display: flex;
   flex-wrap: wrap;
-  gap: 10%;
+  gap: 8%;
   justify-content: center;
   align-items: flex-end;
 }
@@ -769,6 +773,7 @@ figcaption.image-caption div p {
   align-items: center;
   font-size: 16px !important;
   cursor: pointer;
+  padding: 0 15px;
 }
 
 #fiche-produit .taille-capote label input {
