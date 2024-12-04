@@ -22,9 +22,12 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+
+{assign var="theme_dir" value=$urls.theme_dir}
+
 <div class="separator"></div>
 <div class="content">
-  <img src="/themes/capollon/assets/images/logo-long.svg" alt="logo capollon" width="100px" />
+  <img src="{$theme_dir}/assets/images/logo-long.svg" alt="logo capollon" width="100px" />
   <div>
     <div><a href="#">Mentions légales</a></div>
     <div><a href="#">Politique de confidentialité</a></div>

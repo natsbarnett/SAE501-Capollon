@@ -1,3 +1,5 @@
+{assign var="prodlink" value=$urls.pages.category}
+
 {if isset($randomProducts) && $randomProducts|@count > 0}
     <div class="random-products list-prod">
         {foreach from=$randomProducts item=product}
@@ -26,7 +28,7 @@
 
     <!-- Ajouter un bouton pour voir tous les produits -->
     <div class="catalog-button">
-        <a href="/2-home" class="btn btn-primary">Voir tout le catalogue</a>
+        <a href="{$prodlink}&id_category=2" class="btn btn-primary">Voir tout le catalogue</a>
     </div>
 {else}
     <p>Aucun produit trouvé.</p>

@@ -23,6 +23,8 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {extends file=$layout}
+{assign var="theme_dir" value=$urls.theme_dir}
+
 
 {block name='head' append}
   <meta property="og:type" content="product">
@@ -73,9 +75,9 @@
             <label for="taille-s">
               {* <img src="/themes/capollon/assets/images/capotes/taille-s.svg"> *}
               <div class=taille_s>
-                <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
+                <img class=haut_capote_taille src="{$theme_dir}assets/images/capotes/haut_capote_taille.svg">
                 <div class=corp_capote_taille></div>
-                <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+                <img class=bas_capote_taille src="{$theme_dir}assets/images/capotes/bas_capote_taille.svg">
               </div>
               <span>S</span>
               <input type="radio" name="taille" id="taille-s" value="s">
@@ -85,9 +87,9 @@
             <label for="taille-m">
               {* <img src="/themes/capollon/assets/images/capotes/taille-s.svg"> *}
               <div class=taille_m>
-                <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
+                <img class=haut_capote_taille src="{$theme_dir}assets/images/capotes/haut_capote_taille.svg">
                 <div class=corp_capote_taille></div>
-                <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+                <img class=bas_capote_taille src="{$theme_dir}assets/images/capotes/bas_capote_taille.svg">
               </div>
               <span>M</span>
               <input type="radio" name="taille" id="taille-m" value="s">
@@ -96,9 +98,9 @@
           <div value="l" class="taille-capote">
             <label for="taille-l">
               <div class=taille_l>
-                <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
+                <img class=haut_capote_taille src="{$theme_dir}assets/images/capotes/haut_capote_taille.svg">
                 <div class=corp_capote_taille></div>
-                <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+                <img class=bas_capote_taille src="{$theme_dir}assets/images/capotes/bas_capote_taille.svg">
               </div>
               <span>L</span>
               <input type="radio" name="taille" id="taille-l" value="l">
@@ -107,9 +109,9 @@
           <div value="xl" class="taille-capote">
             <label for="taille-xl">
               <div class=taille_xl>
-                <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
+                <img class=haut_capote_taille src="{$theme_dir}assets/images/capotes/haut_capote_taille.svg">
                 <div class=corp_capote_taille></div>
-                <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+                <img class=bas_capote_taille src="{$theme_dir}assets/images/capotes/bas_capote_taille.svg">
               </div>
               <span>XL</span>
               <input type="radio" name="taille" id="taille-xl" value="xl">
@@ -209,5 +211,5 @@
       {/block}
   </section>
 
-  <script src="/themes/capollon/assets/js/confettis.js"></script>
+  <script src="{$theme_dir}assets/js/confettis.js"></script>
 {/block}
