@@ -22,7 +22,8 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-{block name='head_charset'}
+ {assign var="theme_dir" value=$urls.theme_dir}
+ {block name='head_charset'}
   <meta charset="utf-8">
 {/block}
 {block name='head_ie_compatibility'}
@@ -92,7 +93,7 @@
 
 {block name='javascript_head'}
   {include file="_partials/javascript.tpl" javascript=$javascript.head vars=$js_custom_vars}
-  <script src="/themes/capollon/assets/js/header.js"></script>
+  <script src="{$theme_dir}assets/js/header.js"></script>
 {/block}
 
 {block name='hook_header'}

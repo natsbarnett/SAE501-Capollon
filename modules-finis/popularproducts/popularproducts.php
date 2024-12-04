@@ -9,7 +9,7 @@ class PopularProducts extends Module
     {
         $this->name = 'popularproducts';
         $this->tab = 'front_office_features';
-        $this->version = '1.0.20';
+        $this->version = '1.0.22';
         $this->author = 'Capollon';
         $this->need_instance = 0;
 
