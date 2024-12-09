@@ -45,11 +45,14 @@
     <p>Choisissez l'excellence et l'authenticité, et faites l'expérience d'une protection de qualité supérieure, conçue
       pour les amateurs de sensations authentiques.</p>
   </div>
+
   <div class="search-prod-list">
     {block name='search'}
     {hook h='displaySearch'}
     {/block}
   </div>
+
+  {* {include file='catalog/_partials/facets.tpl'} *}
 
   <section id="products">
     {if $listing.products|count}

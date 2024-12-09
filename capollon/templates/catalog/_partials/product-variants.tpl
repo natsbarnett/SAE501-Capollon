@@ -22,6 +22,8 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+ {assign var="theme_dir" value=$urls.theme_dir}
+
 <div class="product-variants js-product-variants">
   {foreach from=$groups key=id_attribute_group item=group}
     {if !empty($group.attributes)}
@@ -33,54 +35,75 @@
       </span>
       {if $group.group_type == 'select'}
         {if $group.name == 'Size'}
+
           <div class="choix-taille">
-          <div value="s" class="taille-capote">
-            <label for="taille-s">
-              {* <img src="/themes/capollon/assets/images/capotes/taille-s.svg"> *}
-              <div class=taille_s>
-                <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
-                <div class=corp_capote_taille></div>
-                <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+            {foreach from=$group.attributes key=id_attribute item=group_attribute}
+              <div value="{$group_attribute.name|lower}" class="taille-capote">
+                <label for="taille-{$group_attribute.name|lower}">
+                  <div class="taille_{$group_attribute.name|lower}">
+                    <img class="haut_capote_taille" src="{$theme_dir}assets/images/capotes/haut_capote_taille.svg">
+                    <div class="corp_capote_taille"></div>
+                    <img class="bas_capote_taille" src="{$theme_dir}assets/images/capotes/bas_capote_taille.svg">
+                  </div>
+                  <span>{$group_attribute.name}</span>
+                  <input 
+                    type="radio" 
+                    name="group[{$id_attribute_group}]" 
+                    id="taille-{$group_attribute.name|lower}" 
+                    value="{$id_attribute}" 
+                    data-product-attribute="{$id_attribute_group}"
+                    {if $group_attribute.selected}checked{/if}>
+                </label>
               </div>
-              <span>S</span>
-              <input type="radio" name="group[{$id_attribute_group}]" id="taille-s" value="s">
-            </label>
+            {/foreach}
           </div>
-          <div value="m" class="taille-capote">
-            <label for="taille-m">
-              {* <img src="/themes/capollon/assets/images/capotes/taille-s.svg"> *}
-              <div class=taille_m>
-                <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
-                <div class=corp_capote_taille></div>
-                <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
-              </div>
-              <span>M</span>
-              <input type="radio" name="group[{$id_attribute_group}]" id="taille-m" value="s">
-            </label>
-          </div>
-          <div value="l" class="taille-capote">
-            <label for="taille-l">
-              <div class=taille_l>
-                <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
-                <div class=corp_capote_taille></div>
-                <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
-              </div>
-              <span>L</span>
-              <input type="radio" name="group[{$id_attribute_group}]" id="taille-l" value="l">
-            </label>
-          </div>
-          <div value="xl" class="taille-capote">
-            <label for="taille-xl">
-              <div class=taille_xl>
-                <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
-                <div class=corp_capote_taille></div>
-                <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
-              </div>
-              <span>XL</span>
-              <input type="radio" name="group[{$id_attribute_group}]" id="taille-xl" value="xl">
-            </label>
-          </div>
-        </div>
+
+          {* <div class="choix-taille">
+            <div value="s" class="taille-capote">
+              <label for="taille-s">
+                <div class=taille_s>
+                  <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
+                  <div class=corp_capote_taille></div>
+                  <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+                </div>
+                <span>S</span>
+                <input type="radio" name="group[{$id_attribute_group}]" id="taille-s" value="s">
+              </label>
+            </div>
+            <div value="m" class="taille-capote">
+              <label for="taille-m">
+                <div class=taille_m>
+                  <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
+                  <div class=corp_capote_taille></div>
+                  <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+                </div>
+                <span>M</span>
+                <input type="radio" name="group[{$id_attribute_group}]" id="taille-m" value="s">
+              </label>
+            </div>
+            <div value="l" class="taille-capote">
+              <label for="taille-l">
+                <div class=taille_l>
+                  <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
+                  <div class=corp_capote_taille></div>
+                  <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+                </div>
+                <span>L</span>
+                <input type="radio" name="group[{$id_attribute_group}]" id="taille-l" value="l">
+              </label>
+            </div>
+            <div value="xl" class="taille-capote">
+              <label for="taille-xl">
+                <div class=taille_xl>
+                  <img class=haut_capote_taille src="/themes/capollon/assets/images/capotes/haut_capote_taille.svg">
+                  <div class=corp_capote_taille></div>
+                  <img class=bas_capote_taille src="/themes/capollon/assets/images/capotes/bas_capote_taille.svg">
+                </div>
+                <span>XL</span>
+                <input type="radio" name="group[{$id_attribute_group}]" id="taille-xl" value="xl">
+              </label>
+            </div>
+          </div> *}
         {else}
           <select
             class="form-control form-control-select"

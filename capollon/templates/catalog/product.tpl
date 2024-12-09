@@ -70,10 +70,9 @@
           </div>
         </div>
         
-        <div class="choix-taille">
+        {* <div class="choix-taille">
           <div value="s" class="taille-capote">
             <label for="taille-s">
-              {* <img src="/themes/capollon/assets/images/capotes/taille-s.svg"> *}
               <div class=taille_s>
                 <img class=haut_capote_taille src="{$theme_dir}assets/images/capotes/haut_capote_taille.svg">
                 <div class=corp_capote_taille></div>
@@ -85,7 +84,6 @@
           </div>
           <div value="m" class="taille-capote">
             <label for="taille-m">
-              {* <img src="/themes/capollon/assets/images/capotes/taille-s.svg"> *}
               <div class=taille_m>
                 <img class=haut_capote_taille src="{$theme_dir}assets/images/capotes/haut_capote_taille.svg">
                 <div class=corp_capote_taille></div>
@@ -117,7 +115,7 @@
               <input type="radio" name="taille" id="taille-xl" value="xl">
             </label>
           </div>
-        </div>
+        </div> *}
         
         {if $product.is_customizable && count($product.customizations.fields)}
           {block name='product_customization'}

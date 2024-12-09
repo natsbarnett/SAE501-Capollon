@@ -838,6 +838,17 @@ figcaption.image-caption div p {
   transform: translate(-34px, -80%);
 }
 
+/* autres personnalisation */
+.custom-checkbox input[type=checkbox]+span.color, .variant-links .color, label .color {
+  border: 1px solid #5d5d5d;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.input-color:checked+span, .input-color:hover+span, .input-radio:checked+span, .input-radio:hover+span {
+  border: 2px solid var(--gold);
+}
+
 /*  bouton add to cart  */
 
 .product-actions .add-to-cart {
@@ -1291,6 +1302,7 @@ input:is(:-webkit-autofill, :autofill) {
 .parent-input .bootstrap-touchspin .input-group-btn-vertical {
   /* display: flex; */
   display: flex;
+  flex-direction: row-reverse;
   position: relative;
   gap: 54px;
   align-items: flex-end;
