@@ -15,8 +15,8 @@ error() {
 warn() {
     echo -e "${SETCOLOR_WARNING}$*${SETCOLOR_NORMAL}"
 }
-export TERM=xterm
-export DEBIAN_FRONTEND=noninteractive
+#export TERM=xterm
+
 
 if [[ $EUID -ne 0 ]]; then
     error "Ce script doit être exécuté avec des privilèges root. Utilisez sudo."
@@ -55,18 +55,22 @@ warn "Installation de Maria DB"
 apt-get -qq install mariadb-server
 service mariadb start
 
+read -p "Username : " username
+read -sp "Password : " password
+echo
+
 warn "Création de l'utilisateur MySQL..."
-warn "Création de l'utilisateur bdd_presta dans MariaDB..."
+warn "Création de l'utilisateur $(username) dans MariaDB..."
 mysql -u root <<EOF
-CREATE USER 'bdd_presta'@'localhost' IDENTIFIED BY 'presta_bdd';
-GRANT ALL PRIVILEGES ON *.* TO 'bdd_presta'@'localhost' WITH GRANT OPTION;
+CREATE USER '$(username)'@'localhost' IDENTIFIED BY '$(password)';
+GRANT ALL PRIVILEGES ON *.* TO '$(username)'@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 EOF
 
 if [[ $? -eq 0 ]]; then
-    success "L'utilisateur bdd_presta a été créé avec succès."
+    success "L'utilisateur $username a été créé avec succès."
 else
-    error "Erreur lors de la création de l'utilisateur bdd_presta."
+    error "Erreur lors de la création de l'utilisateur $username."
 fi
 
 #warn "Installation de PHP MyAdmin"
