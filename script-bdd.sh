@@ -1,5 +1,6 @@
 #!/bin/bash
 INSTALLDIR=/var/www/html/
+REPOSITORY=""
 SETCOLOR_FAILURE="\\033[1;31m"
 SETCOLOR_SUCCESS="\\033[1;32m"
 SETCOLOR_WARNING="\\033[1;33m"
@@ -54,18 +55,22 @@ warn "Installation de Maria DB"
 apt-get -qq install mariadb-server
 service mariadb start
 
-# Créer l'utilisateur mysql
-warn "Création de l'utilisateur mysql"
-read -p "Entrez le nom d'utilisateur à créer : " username
-echo
-read -sp "Entrez le mot de passe pour $username : " password
-echo
-mysql "CREATE USER '$username'@'localhost' IDENTIFIED BY '$password';"
-mysql "GRANT ALL PRIVILEGES ON * . * TO '$username'@'localhost';"
-mysql "quit;"
+warn "Création de l'utilisateur MySQL..."
+warn "Création de l'utilisateur bdd_presta dans MariaDB..."
+mysql -u root <<EOF
+CREATE USER 'bdd_presta'@'localhost' IDENTIFIED BY 'presta_bdd';
+GRANT ALL PRIVILEGES ON *.* TO 'bdd_presta'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+EOF
 
-warn "Installation de PHP MyAdmin"
-apt-get -qq phpmyadmin
+if [[ $? -eq 0 ]]; then
+    success "L'utilisateur bdd_presta a été créé avec succès."
+else
+    error "Erreur lors de la création de l'utilisateur bdd_presta."
+fi
+
+#warn "Installation de PHP MyAdmin"
+#apt-get -qq phpmyadmin
 
 warn "Vérification de l'installation d'Apache..."
 if service apache2 status; then
@@ -75,3 +80,23 @@ else
 fi
 
 service apache2 restart
+
+success "+---------------------------------------------------------+"
+success "+--             Récupération du repository              --+"
+success "+---------------------------------------------------------+"
+
+success "Dossier d'installation : $INSTALLDIR"
+rm -rf $INSTALLDIR
+warn "Récupération de l'archive sur git"
+git clone $REPOSITORY $INSTALLDIR
+
+success "Fait :D"
+warn "Changement des droits"
+
+chown -R www-data:www-data $INSTALLDIR
+chmod -R 775 $INSTALLDIR
+
+cd $INSTALLDIR && npm run dev
+
+service apache2 restart
+success "L'installation de la base de données est terminée ! :D"
