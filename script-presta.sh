@@ -18,47 +18,53 @@ warn() {
 export TERM=xterm
 export DEBIAN_FRONTEND=noninteractive
 
+
 success "+---------------------------------------------------------+"
 success "+--              Mise à jour des packages               --+"
 success "+---------------------------------------------------------+"
-
+# Mettre à jour les paquets
 warn "Mise à jour des paquets..."
-apt-get -qq update && apt-get -qq upgrade
+
+apt-get -qq update
+apt-get -qq upgrade
 success "Mises à jour faites"
 
 success "+---------------------------------------------------------+"
 success "+--             Installation du stack LAMP              --+"
 success "+---------------------------------------------------------+"
-
+# Installer Apache
 warn "Installation d'Apache..."
 apt-get -qq install apache2
 service apache2 start
 
+# Installer PHP
 warn "Installation de PHP..."
 apt-get -qq install php libapache2-mod-php php-mysql -y
 
 warn "Installation de modules PHP supplémentaires..."
 apt-get -qq install php-cli php-curl php-gd php-mbstring php-xml php-zip -y
-
+# Installation de git
 warn "Installation de git..."
 apt-get -qq install git -y
-
-warn "Installation de NodeJS..."
+# Installation de node JS
+warn "Installation de node JS ..."
 apt-get -qq install nodejs npm -y
 
+# Vérifier l'installation d'Apache
 warn "Vérification de l'installation d'Apache..."
 if service apache2 status; then
     success "Apache est installé et fonctionne."
 else
-    error "Erreur lors de l'installation d'apache."
+    error "Erreur lors de l'installation d'Apache."
 fi
 
 success "+---------------------------------------------------------+"
-success "+--             Récupération du repository              --+"
+success "+--             Installation du stack LAMP              --+"
 success "+---------------------------------------------------------+"
 
 success "Dossier d'installation : $INSTALLDIR"
 rm -rf $INSTALLDIR
+
 warn "Récupération de l'archive sur git"
 git clone $REPOSITORY $INSTALLDIR
 
@@ -66,8 +72,11 @@ success "Fait :D"
 warn "Changement des droits"
 
 chown -R www-data:www-data $INSTALLDIR
-chmod -R 775 $INSTALLDIR 
-
-cd $INSTALLDIR && npm install && npm run dev
+chmod -R 775 $INSTALLDIR
 
 success "L'installation du chatbot est terminée ! :D"
+warn "Récupérez les dépendances demandées par Prestashop et changez la taille maximale des uploads sur le fichier php.ini"
+
+service apache2 restart
+# # Fin du script
+success "L'installation du prestashop est terminée ! :D"
