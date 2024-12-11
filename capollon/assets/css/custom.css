@@ -145,6 +145,10 @@ label {
   display: block !important;
 }
 
+.header-links .profil{
+  cursor: pointer;
+}
+
 #header a {
   color: var(--gold) !important;
   font-family: "Marcellus", serif;
@@ -300,7 +304,7 @@ footer .content {
 }
 
 @media (max-width: 999px) {
-  footer img {
+  footer .content img {
     width: 50%;
   }
 }
@@ -757,7 +761,7 @@ figcaption.image-caption div p {
 #fiche-produit .choix-taille {
   display: flex;
   flex-wrap: wrap;
-  gap: 10%;
+  gap: 8%;
   justify-content: center;
   align-items: flex-end;
 }
@@ -769,6 +773,7 @@ figcaption.image-caption div p {
   align-items: center;
   font-size: 16px !important;
   cursor: pointer;
+  padding: 0 15px;
 }
 
 #fiche-produit .taille-capote label input {
@@ -831,6 +836,17 @@ figcaption.image-caption div p {
 #fiche-produit .taille-capote label > div > .bas_capote_taille {
   position: absolute;
   transform: translate(-34px, -80%);
+}
+
+/* autres personnalisation */
+.custom-checkbox input[type=checkbox]+span.color, .variant-links .color, label .color {
+  border: 1px solid #5d5d5d;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.input-color:checked+span, .input-color:hover+span, .input-radio:checked+span, .input-radio:hover+span {
+  border: 2px solid var(--gold);
 }
 
 /*  bouton add to cart  */
@@ -1286,6 +1302,7 @@ input:is(:-webkit-autofill, :autofill) {
 .parent-input .bootstrap-touchspin .input-group-btn-vertical {
   /* display: flex; */
   display: flex;
+  flex-direction: row-reverse;
   position: relative;
   gap: 54px;
   align-items: flex-end;
