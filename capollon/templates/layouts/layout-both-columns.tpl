@@ -100,7 +100,9 @@
       
 
       <footer id="footer" class="js-footer">
+      Salut
       {hook h='displayChatBot'}
+      salut
         {block name="footer"}
           {include file="_partials/footer.tpl"}
         {/block}
