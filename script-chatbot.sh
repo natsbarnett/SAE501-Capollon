@@ -16,8 +16,11 @@ error() {
 warn() {
     echo -e "${SETCOLOR_WARNING}$*${SETCOLOR_NORMAL}"
 }
-export TERM=xterm
-export DEBIAN_FRONTEND=noninteractive
+
+if [[ $EUID -ne 0 ]]; then
+    error "Ce script doit être exécuté avec des privilèges root. Utilisez sudo."
+    exit 1
+fi
 
 success "+---------------------------------------------------------+"
 success "+--              Mise à jour des packages               --+"
