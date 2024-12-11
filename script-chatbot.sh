@@ -59,7 +59,7 @@ success "+--             Récupération du repository              --+"
 success "+---------------------------------------------------------+"
 
 success "Dossier d'installation : $INSTALLDIR"
-rm -rf $INSTALLDIR
+#rm -rf $INSTALLDIR
 warn "Récupération de l'archive sur git"
 git clone $REPOSITORY $INSTALLDIR
 
