@@ -41,9 +41,9 @@
               <div value="{$group_attribute.name|lower}" class="taille-capote">
                 <label for="taille-{$group_attribute.name|lower}">
                   <div class="taille_{$group_attribute.name|lower}">
-                    <img class="haut_capote_taille" src="{$theme_dir}assets/images/capotes/haut_capote_taille.svg">
+                    <img class="haut_capote_taille" alt="haut du préservatif" src="{$theme_dir}assets/images/capotes/haut_capote_taille.svg">
                     <div class="corp_capote_taille"></div>
-                    <img class="bas_capote_taille" src="{$theme_dir}assets/images/capotes/bas_capote_taille.svg">
+                    <img class="bas_capote_taille" alt="bas du préservatif" src="{$theme_dir}assets/images/capotes/bas_capote_taille.svg">
                   </div>
                   <span>{$group_attribute.name}</span>
                   <input 

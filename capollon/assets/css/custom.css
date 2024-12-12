@@ -291,6 +291,8 @@ footer {
   line-height: 1.589em;
   gap: 0 !important;
   width: 100% !important;
+  padding-top: 0px !important;
+    margin-top: 2.5rem;
 }
 
 footer .separator {
